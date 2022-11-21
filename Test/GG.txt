@@ -124,12 +124,6 @@ Main.Name = "Main"
 Main.Parent = knixhub
 Main.AnchorPoint = Vector2.new(0.5, 0.5)
 Main.BackgroundColor3 = Color3.fromRGB(124, 18, 241)
-wait(1)
-Main.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-wait(.5)
-Main.BackgroundColor3 = Color3.fromRGB(124, 18, 241)
-wait(1)
-Main.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 Main.BorderSizePixel = 0
 Main.Position = UDim2.new(0.5, 0, 0.5, 0)
 Main.Size = UDim2.new(0, 0, 0, 0)
@@ -1601,9 +1595,10 @@ Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
 end
 function tabcontent:Line()
 				local Line = Instance.new("Frame")
-				local Button = Instance.new("TextButton")
+				local Buttohn = Instance.new("TextButton")
 				local ButtonRounded = Instance.new("ImageLabel")
 				local UIGradient = Instance.new("UIGradient")
+	
 	
 				Line.Name = "Line"
 				Line.Parent = SectionContent
@@ -1613,33 +1608,33 @@ function tabcontent:Line()
 				Line.Size = UDim2.new(0, 475, 0, 5)
 				Line.ZIndex = 5
 	
-				Button.Name = "Button"
-				Button.Parent = Line
-				Button.BackgroundColor3 = Color3.fromRGB(0, 191, 255)
-				Button.BackgroundTransparency = 1.000
-				Button.BorderSizePixel = 0
-				Button.ClipsDescendants = true
-				Button.Size = UDim2.new(0, 475, 0, 5)
-				Button.ZIndex = 6
-				Button.Font = Enum.Font.SourceSansBold
-				Button.Text = ""
-				Button.TextColor3 = Color3.fromRGB(255, 255, 255)
-				Button.TextSize = 15.000
+				Buttohn.Name = "Buttohn"
+				Buttohn.Parent = Line
+				Buttohn.BackgroundColor3 = Color3.fromRGB(0, 191, 255)
+				Buttohn.BackgroundTransparency = 1.000
+				Buttohn.BorderSizePixel = 0
+				Buttohn.ClipsDescendants = true
+				Buttohn.Size = UDim2.new(0, 475, 0, 5)
+				Buttohn.ZIndex = 6
+				Buttohn.Font = Enum.Font.SourceSansBold
+				Buttohn.Text = ""
+				Buttohn.TextColor3 = Color3.fromRGB(255, 255, 255)
+				Buttohn.TextSize = 15.000
 	
-				ButtonRounded.Name = "ButtonRounded"
-				ButtonRounded.Parent = Button
-				ButtonRounded.Active = true
-				ButtonRounded.AnchorPoint = Vector2.new(0.5, 0.5)
-				ButtonRounded.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				ButtonRounded.BackgroundTransparency = 1.000
-				ButtonRounded.Position = UDim2.new(0.49999997, 0, 0.5, 0)
-				ButtonRounded.Selectable = true
-				ButtonRounded.Size = UDim2.new(1, 0, 1, 0)
-				ButtonRounded.ZIndex = 5
-				ButtonRounded.Image = "rbxassetid://3570695787"
-				ButtonRounded.ScaleType = Enum.ScaleType.Slice
-				ButtonRounded.SliceCenter = Rect.new(100, 100, 100, 100)
-				ButtonRounded.SliceScale = 0.050
+				ButtohnRounded.Name = "ButtohnRounded"
+				ButtohnRounded.Parent = Buttohn
+				ButtohnRounded.Active = true
+				ButtohnRounded.AnchorPoint = Vector2.new(0.5, 0.5)
+				ButtohnRounded.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				ButtohnRounded.BackgroundTransparency = 1.000
+				ButtohnRounded.Position = UDim2.new(0.49999997, 0, 0.5, 0)
+				ButtohnRounded.Selectable = true
+				ButtohnRounded.Size = UDim2.new(1, 0, 1, 0)
+				ButtohnRounded.ZIndex = 5
+				ButtohnRounded.Image = "rbxassetid://3570695787"
+				ButtohnRounded.ScaleType = Enum.ScaleType.Slice
+				ButtohnRounded.SliceCenter = Rect.new(100, 100, 100, 100)
+				ButtohnRounded.SliceScale = 0.050
 	
 				UIGradient.Color = ColorSequence.new{
 					ColorSequenceKeypoint.new(0.00, 
@@ -1649,10 +1644,9 @@ function tabcontent:Line()
 						ColorIIII
 					)
 				}
-				UIGradient.Parent = ButtonRounded
+				UIGradient.Parent = ButtohnRounded
 			end
-	
-function tabcontent:Bind(text, keypreset, callback)
+	function tabcontent:Bind(text, keypreset, callback)
 local binding = false
 local Key = keypreset.Name
 local Bind = Instance.new("TextButton")
