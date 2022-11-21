@@ -123,7 +123,6 @@ local DragFrame = Instance.new("Frame")
 Main.Name = "Main"
 Main.Parent = knixhub
 Main.AnchorPoint = Vector2.new(0.5, 0.5)
-Main.BackgroundColor3 = Vector3("randomstring")
 Main.BackgroundColor3 = Color3.fromRGB(124, 18, 241)
 wait(1)
 Main.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
