@@ -123,8 +123,13 @@ local DragFrame = Instance.new("Frame")
 Main.Name = "Main"
 Main.Parent = knixhub
 Main.AnchorPoint = Vector2.new(0.5, 0.5)
-Main.BackgroundColor3 = ColorIIIII
+Main.BackgroundColor3 = Vector3("randomstring")
 Main.BackgroundColor3 = Color3.fromRGB(124, 18, 241)
+wait(1)
+Main.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+wait(.5)
+Main.BackgroundColor3 = Color3.fromRGB(124, 18, 241)
+wait(1)
 Main.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 Main.BorderSizePixel = 0
 Main.Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -614,7 +619,7 @@ Toggle.Size = UDim2.new(0, 363, 0, 42)
 Toggle.AutoButtonColor = false
 Toggle.Font = Enum.Font.SourceSans
 Toggle.Text = ""
-Toggle.TextColor3 = getgenv().Theme.Toggle.LeftColor
+Toggle.TextColor3 = Color3.fromRGB(157, 239, 255)
 Toggle.TextSize = 14.000
 
 ToggleCorner.CornerRadius = UDim.new(0, 5)
@@ -644,7 +649,7 @@ FrameToggle1Corner.Parent = FrameToggle1
 
 FrameToggle2.Name = "FrameToggle2"
 FrameToggle2.Parent = FrameToggle1
-FrameToggle2.BackgroundColor3 = getgenv().Theme.Toggle.RightColor
+FrameToggle2.BackgroundColor3 = Color3.fromRGB(157, 39, 102)
 FrameToggle2.Position = UDim2.new(0.0489999987, 0, 0.0930000022, 0)
 FrameToggle2.Size = UDim2.new(0, 33, 0, 14)
 
