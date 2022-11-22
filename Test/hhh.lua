@@ -1691,20 +1691,24 @@ spawn(function()
 while wait() do
 if getgenv().f then
 pcall(function()
-local plr = game.Players.LocalPlayer
-		if not plr.Character:FindFirstChild("Head") then
-			for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-				if string.find(v.Name, "Chest") then
-					print(v.Name)
-					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
-				end
-			end
-		else
-			plr.Character.Head:Destroy()
-end
-end)
-		end
-end
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+      if string.find(v.Name, "Chest") then
+          print(v.Name)
+          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+          wait(.15)
+      end
+  end
+  game.Players.LocalPlayer.Character.Head:Destroy()
+  for _,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+   if string.find(v.Name, "Chest") and v:IsA("TouchTransmitter") then
+   firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) --0 is touch
+   wait()
+   firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1) -- 1 is untouch
+   end
+   end
+  end)
+      end
+  end
 end)
 function chichdiem(CFgo) local Distance = (CFgo.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude local tween_s = game:service"TweenService"
   local info = TweenInfo.new((game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.Position - CFgo.Position).Magnitude/360, Enum.EasingStyle.Linear)
