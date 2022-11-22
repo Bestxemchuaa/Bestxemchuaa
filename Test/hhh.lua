@@ -1690,13 +1690,19 @@ end)
 spawn(function()
 while wait() do
 if getgenv().f then
-
-for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+pcall(function()
+local plr = game.Players.LocalPlayer
+		if not plr.Character:FindFirstChild("Head") then
+			for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 				if string.find(v.Name, "Chest") then
 					print(v.Name)
-					chichdiem(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * v.CFrame)
-end
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+				end
 			end
+		else
+			plr.Character.Head:Destroy()
+end
+end)
 		end
 end
 end)
