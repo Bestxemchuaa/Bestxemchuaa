@@ -1684,6 +1684,27 @@ end)();
 			end
 		end
 	end)
+	Main:Toggle("Auto Chest[90%]",false,function(jiee)
+	getgenv().f = jiee
+end)
+spawn(function()
+while wait() do
+if getgenv().f then
+
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+				if string.find(v.Name, "Chest") then
+					print(v.Name)
+					chichdiem(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * v.CFrame)
+end
+			end
+		end
+end
+end)
+function chichdiem(CFgo) local Distance = (CFgo.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude local tween_s = game:service"TweenService"
+  local info = TweenInfo.new((game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.Position - CFgo.Position).Magnitude/360, Enum.EasingStyle.Linear)
+   if Distance < 50 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFgo    end
+   local tween, err = pcall(function()  tween = tween_s:Create(game.Players.LocalPlayer.Character["HumanoidRootPart"], info, {CFrame = CFgo})
+    tween:Play()  end) end
 Main:Toggle("Auto Rengoku",false,function(vu)
     getgenv().AutoRengoku = vu
 end)	
@@ -3896,5 +3917,5 @@ Misc:Toggle("Auto Click",autoclick,function(value)
 	platform.Name = "WaterWalk"
 	platform.Size = Vector3.new(math.huge, 1, math.huge)
 	platform.Transparency = 1
-	platform.Anchored = true
+	platform.Anchored = true 
 	platform.Parent = game.workspace
