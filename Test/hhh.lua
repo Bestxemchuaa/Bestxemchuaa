@@ -1715,7 +1715,7 @@ function chichdiem(CFgo) local Distance = (CFgo.Position - game.Players.LocalPla
    if Distance < 50 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFgo    end
    local tween, err = pcall(function()  tween = tween_s:Create(game.Players.LocalPlayer.Character["HumanoidRootPart"], info, {CFrame = CFgo})
     tween:Play()  end) end
-Main:Toggle("Auto Chest[TP]",false,function(jie)
+Main:Toggle("Auto Chest[Tween]",false,function(jie)
 	getgenv().k = jie
 end)
 spawn(function()
