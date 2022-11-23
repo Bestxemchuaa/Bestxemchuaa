@@ -3869,6 +3869,26 @@ Misc:Toggle("Auto Click",autoclick,function(value)
             UpdateIslandESP() 
         end
     end)
+    spawn(function()
+		while wait() do
+			if getgenv().FlowerESP then
+				UpdateFlowerEsp() 
+			end
+			if getgenv().DevilFruitESP then
+				UpdateBfEsp() 
+			end
+			if getgenv().ChestESP  then
+				UpdateChestEsp() 
+			end
+			if getgenv().ESPPlayer then
+				UpdateEspPlayer()
+			end
+			if getgenv().IslandESP then
+				UpdateIslandESP()
+			end
+		end
+	end)
+	
     Misc:Button("Rejoin",function()
 		local ts = game:GetService("TeleportService")
 		local p = game:GetService("Players").LocalPlayer
