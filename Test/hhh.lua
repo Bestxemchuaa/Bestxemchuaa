@@ -1684,7 +1684,7 @@ end)();
 			end
 		end
 	end)
-	Main:Toggle("Auto Chest[90%]",false,function(jiee)
+	Main:Toggle("Auto Chest[TP]",false,function(jiee)
 	getgenv().f = jiee
 end)
 spawn(function()
@@ -1709,6 +1709,27 @@ for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
   end)
       end
   end
+end)
+function chichdiem(CFgo) local Distance = (CFgo.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude local tween_s = game:service"TweenService"
+  local info = TweenInfo.new((game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.Position - CFgo.Position).Magnitude/360, Enum.EasingStyle.Linear)
+   if Distance < 50 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFgo    end
+   local tween, err = pcall(function()  tween = tween_s:Create(game.Players.LocalPlayer.Character["HumanoidRootPart"], info, {CFrame = CFgo})
+    tween:Play()  end) end
+Main:Toggle("Auto Chest[TP]",false,function(jie)
+	getgenv().k = jie
+end)
+spawn(function()
+while wait() do
+if getgenv().k then
+
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+				if string.find(v.Name, "Chest") then
+					print(v.Name)
+					chichdiem(v.CFrame)
+end
+			end
+		end
+end
 end)
 function chichdiem(CFgo) local Distance = (CFgo.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude local tween_s = game:service"TweenService"
   local info = TweenInfo.new((game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.Position - CFgo.Position).Magnitude/360, Enum.EasingStyle.Linear)
