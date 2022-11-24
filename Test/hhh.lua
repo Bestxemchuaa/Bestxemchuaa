@@ -1205,7 +1205,6 @@ spawn(function()
 			if getgenv().AutoFarm then
 				AutoQuest()
 				TP()
-				autofarm()
 			end
 		end
 	end)
@@ -1300,104 +1299,6 @@ function TP()
 end
 
 end
-end
-
-function autofarm()
-    pcall(function()
-	if getgenv().AutoFarm then
-		if AutoQuest then
-			if LocalPlayer.PlayerGui.Main.Quest.Visible == false then
-				StopTween()
-				StatrMagnet = false
-				CheckQuest()
-				repeat chichdiem(CFrameQuest) wait() until getgenv().StopTween == true or not getgenv().AutoFarm or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQuest.Position).Magnitude <= 8
-				wait(0.9)
-				if getgenv().AutoFarm then
-					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
-					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest", NaemQuest, LevelQuest)
-				end
-			elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
-				CheckQuest()
-				if game:GetService("Workspace").Enemies:FindFirstChild(Ms) then
-					pcall(function()
-							for i, v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-								CheckQuest()  
-								if v.Name == Ms then
-									repeat wait()
-										spawn(function()
-											if game:GetService("Workspace").Enemies:FindFirstChild(Ms) and v.Humanoid.Health > 0 and v:FindFirstChild("Humanoid") then
-												if LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text:find(NameMon) then
-													chichdiem(v.HumanoidRootPart.CFrame * CFrame.new(0,30,0))
-													PosHee = v.HumanoidRootPart.CFrame
-													EquipWeapon(getgenv().tool)
-               Click()
-													PosHee = v.HumanoidRootPart.CFrame
-													v.HumanoidRootPart.CanCollide = false
-													v.HumanoidRootPart.Size = Vector3.new(50, 50, 50)
-													StatrMagnet = true
-												else
-													StopTween()
-													local args = {
-														[1] = "AbandonQuest"
-													 }
-													 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-												end  
-											else
-												CheckQuest() 
-												StatrMagnet = false
-												repeat chichdiem(CFrameMon) wait() until getgenv().StopTween == true or not getgenv().AutoFarm or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameMon.Position).Magnitude <= 8
-											end 
-										end)
-									until not v.Parent or v.Humanoid.Health <= 0 or getgenv().AutoFarm == false or LocalPlayer.PlayerGui.Main.Quest.Visible == false
-									CheckQuest() 
-									StatrMagnet = false
-								end
-							end
-						end
-					)
-				else
-					CheckQuest()
-					StatrMagnet = false
-					repeat chichdiem(CFrameMon) wait() until getgenv().StopTween == true or not getgenv().AutoFarm or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameMon.Position).Magnitude <= 8
-				end 
-			end
-		else
-			CheckQuest()
-			if game:GetService("Workspace").Enemies:FindFirstChild(Ms) then
-				pcall(
-					function()
-						for i, v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-							CheckQuest() 
-							if v.Name == Ms then
-								repeat wait()
-									if game:GetService("Workspace").Enemies:FindFirstChild(Ms) and v.Humanoid.Health > 0 and v:FindFirstChild("Humanoid") then
-										chichdiem(v.HumanoidRootPart.CFrame * CFrame.new(0,30,0))
-										EquipWeapon(getgenv().tool)
-Click()
-										PosHee = v.HumanoidRootPart.CFrame
-										v.HumanoidRootPart.CanCollide = false
-										v.HumanoidRootPart.Size = Vector3.new(50, 50, 50)
-										StatrMagnet = true
-									else
-										CheckQuest() 
-										StatrMagnet = false
-										repeat chichdiem(CFrameMon) wait() until getgenv().StopTween == true or not getgenv().AutoFarm or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameMon.Position).Magnitude <= 8
-									end 
-								until not v.Parent or v.Humanoid.Health <= 0 or getgenv().AutoFarm == false
-								CheckQuest() 
-								StatrMagnet = false
-							end
-						end
-					end
-				)
-			else
-				CheckQuest()
-				StatrMagnet = false
-				repeat chichdiem(CFrameMon) wait() until getgenv().StopTween == true or not getgenv().AutoFarm or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameMon.Position).Magnitude <= 8
-		     	end 
-		    end
-	    end
-	end)
 end
 
 
@@ -1572,6 +1473,62 @@ local CombatFrameworkR = concac(require(game:GetService("Players").LocalPlayer.P
 			end)
 		end)
 	end)
+	spawn(function()
+    game:GetService("RunService").RenderStepped:Connect(function()
+        if getgenv().fast == true then
+            game.Players.LocalPlayer.Character.Stun.Value = 0
+            game.Players.LocalPlayer.Character.Humanoid.Sit = false
+            game.Players.LocalPlayer.Character.Busy.Value = false        
+        end
+    end)
+end)
+spawn(function()
+while wait() do
+        if setscriptable then
+            setscriptable(game.Players.LocalPlayer, "SimulationRadius", true)
+            game.Players.LocalPlayer.SimulationRadius = math.huge * math.huge, math.huge * math.huge * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0
+        end
+    end
+end)
+spawn(function()
+	game:GetService("RunService").Stepped:Connect(function()
+		pcall(function()
+			local yedkuy112 = require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.CameraShaker)
+			local VirtualUser = game:GetService('VirtualUser')
+			local yedhee = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
+            yedkuy112.CameraShakeInstance.CameraShakeState.Inactive = 0
+            yedhee.activeController.hitboxMagnitude = 55
+			if getgenv().fast then
+                
+                    if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") then
+                        yedhee.activeController.timeToNextAttack = 3
+                    else
+                        yedhee.activeController.timeToNextAttack = -(math.huge^math.huge)
+                    end
+                    yedhee.activeController.attacking = false
+                    yedhee.activeController.increment = 3
+                    if yedhee.activeController:attack() then
+                        yedhee.activeController:attack()
+                    end
+                    yedhee.activeController.blocking = false
+                    yedhee.activeController.timeToNextBlock = 0
+                    game.Players.LocalPlayer.Character.Stun.Value = 0
+                    game.Players.LocalPlayer.Character.Humanoid.Sit = false
+                    yedhee.activeController.timeToNextAttack = 0
+                    yedhee.activeController.attacking = false
+                    yedhee.activeController.blocking = false
+                    yedhee.activeController.timeToNextAttack = 0
+                    yedhee.activeController.timeToNextBlock = 0
+                    yedhee.activeController.increment = 3
+                    yedhee.activeController.hitboxMagnitude = 55
+                    yedhee.activeController.focusStart = 0
+                    
+                   
+                end
+			
+		end)
+	end)
+end)
 	local concac
 if getupvalues then concac=getupvalues end
 if debug then 
@@ -1599,13 +1556,6 @@ spawn(function()
     end
 end)
 coroutine.wrap(function()
-local concac
-if getupvalues then concac=getupvalues end
-if debug then 
-  if debug.getupvalues then concac=debug.getupvalues end
-end
-require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.CameraShaker).Shake = function() end
-local v = concac(require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework))[2]
 local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:Stop()
     for v,v in pairs(getreg()) do
         if typeof(v) == "function" and getfenv(v).script == game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then
@@ -1634,7 +1584,7 @@ local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:S
         end
     end
 end)();
-                                 
+                              
                    Main:Toggle("Auto Evo Race",false,function(vu)
 		getgenv().Autorace = vu
 	end)
