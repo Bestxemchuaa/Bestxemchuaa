@@ -1152,7 +1152,7 @@ OPENCLOSE.TextScaled=true
 OPENCLOSE.TextSize=14.000
 OPENCLOSE.TextWrapped=true
 OPENCLOSE.MouseButton1Click:Connect(function()
-game.CoreGui:FindFirstChild("Best Xem Chùa").Enabled = not game.CoreGui:FindFirstChild("Best Xem Chùa").Enabled
+game.CoreGui:FindFirstChild("Library").Enabled = not game.CoreGui:FindFirstChild("Library").Enabled
 end)
 
 -- local win = UiLib:Window("Béo HUB | Blox Fruits v17.3", giongcaikia")
