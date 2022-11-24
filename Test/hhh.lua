@@ -7240,7 +7240,7 @@ OPENCLOSE.TextScaled=true
 OPENCLOSE.TextSize=14.000
 OPENCLOSE.TextWrapped=true
 OPENCLOSE.MouseButton1Click:Connect(function()
-game.CoreGui:FindFirstChild("Library").Enabled = not game.CoreGui:FindFirstChild("Library").Enabled
+game.CoreGui:FindFirstChild("redui").Enabled = not game.CoreGui:FindFirstChild("redui").Enabled
 end)
 
 -- local win = UiLib:Window("Béo HUB | Blox Fruits v17.3", giongcaikia")
@@ -7248,15 +7248,15 @@ end)
 local win = create:Win("😱 B e o H U B | v 17 .  3", Color3.fromRGB(246, 241, 28))
 local Usp = win:Taps("💫Update")
 local At = win:Taps("🎊Farming")
-local Stats = win:Taps("✨⭐Stats")
+local Statss = win:Taps("✨⭐Stats")
 local Pvps = win:Taps("🙇Players/🌺Shop")
 local RaidsTabs =  win:Taps("💀 Raids/🦸Teleport")
 local Miscs = win:Taps("🌚🌝 Misc")
 -------------
-local Up = Up:newpage()
+local Up = Usp:newpage()
 local AutoFarm = At:newpage()
 local Main = At:newpage()
-local Stat = Stats:newpage()
+local Stat = Statss:newpage()
 local Pvp = Pvps:newpage()
 local ShopTab = Pvps:newpage()
 local RaidsTab = RaidsTabs:newpage()
