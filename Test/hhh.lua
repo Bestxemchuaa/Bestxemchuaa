@@ -1133,7 +1133,8 @@ CheckQuest()
 function EquipWeapon(ToolSe) if game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe) then local tool = game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe) wait(.4)
 	game.Players.LocalPlayer.Character.Humanoid:EquipTool(tool)end end
 
-local UiLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/Bestxemchuaa/Bestxemchuaa/main/Test/GG.txt'))()
+--local UiLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/Bestxemchuaa/Bestxemchuaa/main/Test/GG.txt'))()
+local VLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Bestxemchua/agagagaq/main/Uitable/kkk.lua"))()
 local DINOHUB = Instance.new("ScreenGui")
 local OPENCLOSE = Instance.new("TextButton") DINOHUB.Name="DINOHUB"
 DINOHUB.Parent=game.CoreGui
@@ -1154,7 +1155,10 @@ OPENCLOSE.MouseButton1Click:Connect(function()
 game.CoreGui:FindFirstChild("Best Xem Chùa").Enabled = not game.CoreGui:FindFirstChild("Best Xem Chùa").Enabled
 end)
 
-local win = UiLib:Window("😱Béo HUB | Blox Fruits v17.3", Color3.fromRGB(246, 241, 28))
+-- local win = UiLib:Window("Béo HUB | Blox Fruits v17.3", giongcaikia")
+
+MAINTTL = "😱Béo HUB" 
+local win = VLib:Window("", Color3.fromRGB(246, 241, 28))
 local Up = win:Tab("💫Update")
 local AutoFarm = win:Tab("🎊Main")
 local Main = win:Tab("💪Auto Something")
