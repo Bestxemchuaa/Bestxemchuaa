@@ -7246,15 +7246,22 @@ end)
 -- local win = UiLib:Window("Béo HUB | Blox Fruits v17.3", giongcaikia")
 
 local win = create:Win("😱 B e o H U B | v 17 .  3", Color3.fromRGB(246, 241, 28))
-local Up = win:Tab("💫Update")
-local AutoFarm = win:Tab("🎊Main")
-local Main = win:Tab("💪Auto Something")
-local Stat = win:Tab("✨⭐Stats")
-local Pvp = win:Tab("🙇Players")
-local ShopTab = win:Tab("👛Shop")
-local RaidsTab =  win:Tab("💀 Raids")
-local TeleportTab = win:Tab("🦸💝Teleport")
-local Misc = win:Tab("🌚🌝 Misc")
+local Usp = win:Taps("💫Update")
+local At = win:Taps("🎊Farming")
+local Stats = win:Taps("✨⭐Stats")
+local Pvps = win:Taps("🙇Players/🌺Shop")
+local RaidsTabs =  win:Taps("💀 Raids/🦸Teleport")
+local Miscs = win:Taps("🌚🌝 Misc")
+-------------
+local Up = Up:newpage()
+local AutoFarm = At:newpage()
+local Main = At:newpage()
+local Stat = Stats:newpage()
+local Pvp = Pvps:newpage()
+local ShopTab = Pvps:newpage()
+local RaidsTab = RaidsTabs:newpage()
+local TeleportTab = RaidsTabs:newpage()
+local Misc = Miscs:newpage()
 lol = {}
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do  
     if v:IsA("Tool") then
@@ -7287,7 +7294,7 @@ spawn(function()  game:GetService("RunService").Stepped:Connect(function()  if g
    Up:Label("Check Elti/Point")
    Up:Label("Add Soru No Cooldown")
    Up:Label("Add Buy Items")
-   
+   AutoFarm:Label("Auto Farm Level")
 AutoFarm:Toggle("Auto Farm",false,function(vu)
     getgenv().AutoFarm= vu
 end)
@@ -7675,7 +7682,7 @@ local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:S
         end
     end
 end)();
-                              
+               Main:Label("Auto Something")               
                    Main:Toggle("Auto Evo Race",false,function(vu)
 		getgenv().Autorace = vu
 	end)
@@ -8445,7 +8452,7 @@ end)
 
                      
     
-
+Stat:Label("Stats")
 PlayerServer = Stat:Label("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
 	Fruit = Stat:Label("Fruit : 0")
 	Chest = Stat:Label("Chest : 0")
@@ -8537,6 +8544,7 @@ spawn(function()
 			end
 		end
 	end)
+	Pvp:Label("Players")
 	players = {}
 
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
@@ -8669,7 +8677,7 @@ end)
 
 
 
-    
+    ShopTab:Label("Shop")
 	ShopTab:Label("Abilities",true)
 	ShopTab:Button("Skyjump [ $10,000 Beli ]",function()
 		local args = {
@@ -8948,6 +8956,7 @@ ShopTab:Label("Accessories",true)
 		}
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 	end)
+	RaidsTab:Toggle("Raid")
 	RaidsTab:Toggle("Kill aura",false,function(em)
 	getgenv().killaura = em
 end)
@@ -9145,6 +9154,7 @@ spawn(function()
             chichdiem(CFrame.new(-11571.440429688, 49.172668457031, -7574.7368164062))
         end)
     end
+TeleportTab:Label("Teleport")
 TeleportTab:Button("Teleport Sea 1",function()
 	local args = {
 			[1] = "TravelMain" -- OLD WORLD to NEW WORLD
@@ -9343,6 +9353,7 @@ game:GetService("ReplicatedStorage").Remotes["CommF_"]:InvokeServer("requestEntr
                  chichdiem(CFrame.new(-1762, 38, -11878))
         end
 end)
+Misc:Label("Misc")
 Misc:Toggle("Fly",false,function(b)
 getgenv().fly = b
 end)
