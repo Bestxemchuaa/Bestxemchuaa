@@ -7244,8 +7244,16 @@ game.CoreGui:FindFirstChild("redui").Enabled = not game.CoreGui:FindFirstChild("
 end)
 
 -- local win = UiLib:Window("Béo HUB | Blox Fruits v17.3", giongcaikia")
-
+getgenv().RainbowUi = true
 local win = create:Win("😱 B e o H U B | v 17 .  3", Color3.fromRGB(246, 241, 28))
+spawn(function()
+   while wait() do
+      if getgenv().RainbowUi then
+         Red:setTheme("TextColor",Color3.fromHSV(tick() * 24 % 255/255, 1, 1))
+         Red:setTheme("Glow",Color3.fromHSV(tick() * 24 % 255/255, 1, 1))
+      end
+   end
+end)
 local Usp = win:Taps("💫Update")
 local At = win:Taps("🎊Farming")
 local Statss = win:Taps("✨⭐Stats")
