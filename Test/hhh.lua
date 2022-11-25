@@ -58,6 +58,15 @@ end
 		end
 
 	)()
+local objects = {}
+local themes = {
+	Background = Color3.fromRGB(24, 24, 24), 
+	Glow = Color3.fromRGB(0, 0, 0), 
+	Accent = Color3.fromRGB(10, 10, 10), 
+	LightContrast = Color3.fromRGB(20, 20, 20), 
+	DarkContrast = Color3.fromRGB(14, 14, 14),  
+	TextColor = Color3.fromRGB(255, 255, 255)
+}
 
 	local Reduisceen = Instance.new("ScreenGui")
 
@@ -223,7 +232,7 @@ end
 
 		ClickFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 
-		ClickFrame.BackgroundColor3 = Color3.fromRGB(255,0,0)
+		
 
 		ClickFrame.BorderSizePixel = 0
 
@@ -906,7 +915,20 @@ end
 					end)
 
 				end)
-
+function items:setTheme(theme, color3)
+		themes[theme] = color3
+		
+		for property, objects in pairs(objects[theme]) do
+			for i, object in pairs(objects) do
+				if not object.Parent or (object.Name == "Button" and object.Parent.Name == "ColorPicker") then
+					objects[i] = nil -- i can do this because weak tables :D
+				else
+					object[property] = color3
+				end
+			end
+		end
+	end
+	
 			local items = {}
 
 			function items:Toggle(text,config,callback)
@@ -7249,8 +7271,8 @@ local win = create:Win("😱 B e o H U B | v 17 .  3", Color3.fromRGB(246, 241, 
 spawn(function()
    while wait() do
       if getgenv().RainbowUi then
-         Red:setTheme("TextColor",Color3.fromHSV(tick() * 24 % 255/255, 1, 1))
-         Red:setTheme("Glow",Color3.fromHSV(tick() * 24 % 255/255, 1, 1))
+         items:setTheme("TextColor",Color3.fromHSV(tick() * 24 % 255/255, 1, 1))
+         items:setTheme("Glow",Color3.fromHSV(tick() * 24 % 255/255, 1, 1))
       end
    end
 end)
