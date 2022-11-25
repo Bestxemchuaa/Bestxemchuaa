@@ -510,8 +510,8 @@ local themes = {
 
 			txdlid.Name = "TextLabel_Tap"
 
-			txdlid.BackgroundColor3 = Color3.fromRGB(255,0,0)
-
+			txdlid.BackgroundColor3 = "TextColor",Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+             txdlid.BackgroundColor3 ="Glow",Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
 			txdlid.Size =UDim2.new(0, 160, 0,25 )
 
 			txdlid.Font = Enum.Font.GothamBold
