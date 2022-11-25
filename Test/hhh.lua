@@ -915,19 +915,7 @@ local themes = {
 					end)
 
 				end)
-function items:setTheme(theme, color3)
-		themes[theme] = color3
-		
-		for property, objects in pairs(objects[theme]) do
-			for i, object in pairs(objects) do
-				if not object.Parent or (object.Name == "Button" and object.Parent.Name == "ColorPicker") then
-					objects[i] = nil -- i can do this because weak tables :D
-				else
-					object[property] = color3
-				end
-			end
-		end
-	end
+
 	
 			local items = {}
 
@@ -7271,8 +7259,8 @@ local win = create:Win("😱 B e o H U B | v 17 .  3", Color3.fromRGB(246, 241, 
 spawn(function()
    while wait() do
       if getgenv().RainbowUi then
-         items:setTheme("TextColor",Color3.fromHSV(tick() * 24 % 255/255, 1, 1))
-         items:setTheme("Glow",Color3.fromHSV(tick() * 24 % 255/255, 1, 1))
+         create:Notifile("TextColor",Color3.fromHSV(tick() * 24 % 255/255, 1, 1))
+         create:Notifile("Glow",Color3.fromHSV(tick() * 24 % 255/255, 1, 1))
       end
    end
 end)
