@@ -5382,66 +5382,6 @@ spawn(function()
                       AutoFarm:Toggle("Fast Attack",false,function(chim)
   getgenv().fast = chim
 end)
-local concac
-if getupvalues then concac=getupvalues end
-if debug then 
-  if debug.getupvalues then concac=debug.getupvalues end
-end
-require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.CameraShaker).Shake = function() end
-local CombatFrameworkR = concac(require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework))[2]
-	spawn(function()
-		game:GetService("RunService").Stepped:Connect(function()
-			pcall(function()
-				CombatFrameworkR.activeController.hitboxMagnitude = 55
-				
-					if getgenv().fast then
-						if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") then
-							CombatFrameworkR.activeController.timeToNextAttack = 3
-						elseif game.Players.LocalPlayer.Character:FindFirstChild("Electro") then
-							CombatFrameworkR.activeController.timeToNextAttack = 2
-						else
-							CombatFrameworkR.activeController.timeToNextAttack = 0
-						end
-						CombatFrameworkR.activeController.attacking = false
-						CombatFrameworkR.activeController.increment = 3
-						CombatFrameworkR.activeController.blocking = false
-						CombatFrameworkR.activeController.timeToNextBlock = 0
-						game.Players.LocalPlayer.Character.Humanoid.Sit = false	
-					end
-			end)
-		end)
-	end)
-	
-	spawn(function()
-		game:GetService("RunService").Stepped:Connect(function()
-			pcall(function()
-					if getgenv().fast then
-						Click()
-					end
-			end)
-		end)
-	end)
-	local concac
-if getupvalues then concac=getupvalues end
-if debug then 
-  if debug.getupvalues then concac=debug.getupvalues end
-end
-require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.CameraShaker).Shake = function() end
-local ret = concac(require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework))[2]
-while wait() do
-spawn(function()
-game:GetService("RunService").RenderStepped:Connect(function()
-  pcall(function()
-  if getgenv().fast then
-    ret.activeController.hitboxMagnitude=60
-    ret.activeController.increment = 3
-    ret.activeController.timeToNextAttack = 0
-    end
-    end)
-    end)
-  end)
-end
- 
 local Module = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
 local CombatFramework = debug.getupvalues(Module)[2]
 local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
@@ -5450,7 +5390,7 @@ spawn(function()
     while true do
         if getgenv().fast then
             pcall(function()
-                CameraShakerK:Stop()
+                CameraShakerR:Stop()
                 CombatFramework.activeController.attacking = false
                 CombatFramework.activeController.timeToNextAttack = 0
                 CombatFramework.activeController.increment = 3
@@ -5476,14 +5416,13 @@ local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:S
                                  pcall(function()
                                      v.activeController.timeToNextAttack = -(math.huge^math.huge^math.huge)
                                      v.activeController.attacking = false
-                                     v.activeController.increment = 3
+                                     v.activeController.increment = 4
                                      v.activeController.blocking = false   
-                                     v.activeController.hitboxMagnitude = 50
+                                     v.activeController.hitboxMagnitude = 150
     		                         v.activeController.humanoid.AutoRotate = true
     	                      	     v.activeController.focusStart = 0
     	                      	     v.activeController.currentAttackTrack = 0
                                      sethiddenproperty(game:GetService("Players").LocalPlayer, "SimulationRaxNerous", math.huge)
- 
                                  end)
                              end
                          end)
