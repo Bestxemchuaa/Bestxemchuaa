@@ -952,7 +952,7 @@ end
 
 				TextButton_2_Toggle.BackgroundColor3 = Color3.fromRGB(155, 155, 155)
 
-		--        TextButton_2_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
+		    -- TextButton_2_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
 
 				TextButton_2_Toggle.BorderSizePixel = 0
 
@@ -1122,7 +1122,7 @@ end
 
 						TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(255,0,0)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromRGB(255, 255, 255)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1148,7 +1148,7 @@ end
 
 						TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(166, 212, 241)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromRGB(200, 200, 200)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1172,7 +1172,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromRGB(250,0,0),Color3.fromHSV(tick() * 24 % 255/255, 1, 1)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1192,7 +1192,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromRGB(153, 238, 102)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromRGB(153, 0, 102)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1386,7 +1386,7 @@ end
 
 				ButtonFrame.Parent = ScrollingFrame_Pageframe
 
-				ButtonFrame.BackgroundColor3 = Color3.fromRGB(250,0,0),Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+				ButtonFrame.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 				ButtonFrame.BorderSizePixel = 0
 
@@ -1410,7 +1410,7 @@ end
 
 				MheeFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				MheeFrameStroke.Color = Color3.fromRGB(250,0,0),Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+				MheeFrameStroke.Color = Color3.fromRGB(250,0,0)
 
 				MheeFrameStroke.Transparency = 0.7
 
@@ -1420,7 +1420,7 @@ end
 
 				Button.Name = "Button"
 
-				Button.BackgroundColor3 = Color3.fromRGB(250,0,0),Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+				Button.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 				Button.Size = UDim2.new(0,150, 0, 25)
 
@@ -1482,7 +1482,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(166, 212, 241)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromRGB(15, 15, 15)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1518,7 +1518,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(255,0,0)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromRGB(155, 155, 155)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1565,7 +1565,6 @@ end
 		)
 
 			end
-
 			function items:Slider(text,check,floor,min,max,de,lol,tog,callback)
 
 			if check then
