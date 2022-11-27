@@ -3088,7 +3088,7 @@ end
 
 			end
 
-			function items:Drop(text,use,option,callback)
+			function items:Dropdown(text,use,option,callback)
 
 			if use == false then
 
