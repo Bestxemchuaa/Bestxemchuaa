@@ -5436,7 +5436,7 @@ end
 end)
 spawn(function()
 		while wait() do
-			if Bringlon and getgenv().bringmob or  then
+			if Bringlon and getgenv().bringmob  then
 				for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
 					if Bringlon  then
 						v.HumanoidRootPart.CFrame = MainMon
