@@ -7562,7 +7562,7 @@ while wait() do
 spawn(function()
 game:GetService("RunService").RenderStepped:Connect(function()
   pcall(function()
-  if getgenv().fastattack then
+  if getgenv().fast then
     ret.activeController.hitboxMagnitude=60
     ret.activeController:attack()
     ret.activeController.timeToNextattack = 0
@@ -7735,9 +7735,9 @@ while cac() do
 	AttackNoCD()
 end
 end)
-local Faifai = 10
+getgenv().Spr = 10
 
-AutoFarm:Slider("Super Fast Attack",1,Faifai,false,function(ko)
+AutoFarm:Slider("Super Fast Attack",1,getgenv().Spr,false,function(ko)
 getgenv().Spr = ko
 end)
 AutoFarm:Toggle("Fast Attack Slider",false,function(okemmb)
