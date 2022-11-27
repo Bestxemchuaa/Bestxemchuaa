@@ -1,6 +1,3 @@
-  if game:GetService("CoreGui"):FindFirstChild("Best Xem Chùa") then 
-game:GetService("CoreGui"):FindFirstChild("Best Xem Chùa"):Destroy()
-end
 if not game:IsLoaded() then 
 
     repeat game.Loaded:wait(0.2) 
@@ -58,15 +55,6 @@ end
 		end
 
 	)()
-local objects = {}
-local themes = {
-	Background = Color3.fromRGB(24, 24, 24), 
-	Glow = Color3.fromRGB(0, 0, 0), 
-	Accent = Color3.fromRGB(10, 10, 10), 
-	LightContrast = Color3.fromRGB(20, 20, 20), 
-	DarkContrast = Color3.fromRGB(14, 14, 14),  
-	TextColor = Color3.fromRGB(255, 255, 255)
-}
 
 	local Reduisceen = Instance.new("ScreenGui")
 
@@ -126,7 +114,7 @@ local themes = {
 
 						function()
 
-							if input.UserInputstate == Enum.UserInputstate.End then
+							if input.UserInputState == Enum.UserInputState.End then
 
 								Dragging = false
 
@@ -232,13 +220,13 @@ local themes = {
 
 		ClickFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 
-		
+		ClickFrame.BackgroundColor3 = Color3.fromRGB(255,255,255)
 
 		ClickFrame.BorderSizePixel = 0
 
-		ClickFrame.Position = UDim2.new(0.5, 0, 0.025, 0)
+		ClickFrame.Position = UDim2.new(0.5, 0, 0.036, 0)
 
-		ClickFrame.Size = UDim2.new(0, 234-20, 0, 25)
+		ClickFrame.Size = UDim2.new(0, 534-20, 0, 30)
 
 		ClickFrame.ClipsDescendants = true
 
@@ -306,7 +294,7 @@ local themes = {
 
 		NameReal.Text = tostring(text)
 
-		NameReal.TextColor3 = Color3.fromRGB(250,0,0), Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+		NameReal.TextColor3 = Color3.fromRGB(255,0,0),Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
 
 		NameReal.TextSize = 14.000
 
@@ -502,7 +490,7 @@ local themes = {
 
 			imagenoti.Size = UDim2.new(0, 50, 0, 50)
 
-		 imagenoti.Image = "https://www.roblox.com/asset-thumbnail/image?assetId=7578496318&width=0&height=0&format=png"
+		--  imagenoti.Image = "https://www.roblox.com/asset-thumbnail/image?assetId=7578496318&width=0&height=0&format=png"
 
 			local txdlid = Instance.new("TextLabel")
 
@@ -510,14 +498,15 @@ local themes = {
 
 			txdlid.Name = "TextLabel_Tap"
 
-			txdlid.BackgroundColor3 = Color3.fromRGB(255, 255, 255),Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+			txdlid.BackgroundColor3 = Color3.fromRGB(250,0,0)
+
 			txdlid.Size =UDim2.new(0, 160, 0,25 )
 
 			txdlid.Font = Enum.Font.GothamBold
 
 			txdlid.Text = titel
 
-			txdlid.TextColor3 = Color3.fromRGB(250,0,0), Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+			txdlid.TextColor3 = Color3.fromRGB(255,0,0),Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
 
 			txdlid.TextSize = 13.000
 
@@ -749,7 +738,7 @@ local themes = {
 
 							v.TextButton_Tap,
 
-							TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+							TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
 							{TextColor3 = Color3.fromRGB(155, 155, 155)}
 
@@ -761,7 +750,7 @@ local themes = {
 
 						TextButton_Tap,
 
-						TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+						TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
 						{TextColor3 = Color3.fromRGB(250,0,0)}
 
@@ -807,7 +796,7 @@ local themes = {
 
 			ScrollingFrame_Pagefrist.Active = true
 
-			ScrollingFrame_Pagefrist.BackgroundColor3 = Color3.fromRGB(0,0,0), Color3.fromHSV(tick() * 24 % 255/255, 1, 1) -- 250,0,0
+			ScrollingFrame_Pagefrist.BackgroundColor3 = Color3.fromRGB(23, 23, 23) -- 250,0,0
 
 			ScrollingFrame_Pagefrist.BorderSizePixel = 0
 
@@ -845,7 +834,7 @@ local themes = {
 
 				Pageframe.Parent = ScrollingFrame_Pagefrist
 
-				Pageframe.BackgroundColor3 = Color3.fromRGB(0,0,0), Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+				Pageframe.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 
 				Pageframe.BorderSizePixel = 1
 
@@ -871,7 +860,7 @@ local themes = {
 
 				ScrollingFrame_Pageframe.ScrollBarThickness = 4
 
-				ScrollingFrame_Pageframe.ScrollBarImageColor3 = Color3.fromRGB(205, 222, 222)
+				ScrollingFrame_Pageframe.ScrollBarImageColor3 = Color3.fromRGB(222, 222, 222)
 
 				local UIPadding_Pageframe = Instance.new("UIPadding")
 
@@ -915,7 +904,6 @@ local themes = {
 
 				end)
 
-	
 			local items = {}
 
 			function items:Toggle(text,config,callback)
@@ -924,7 +912,7 @@ local themes = {
 
 				Toggle.Parent = ScrollingFrame_Pageframe
 
-				Toggle.BackgroundColor3 = Color3.fromRGB(15, 255,255)
+				Toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 
 				Toggle.BorderSizePixel = 0
 
@@ -942,7 +930,7 @@ local themes = {
 
 				TextButton_Toggle.BackgroundTransparency =1
 
-				TextButton_Toggle.BackgroundColor3 = Color3.fromRGB(0,0,0), Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+				TextButton_Toggle.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
 
 				TextButton_Toggle.BorderSizePixel = 0
 
@@ -962,7 +950,7 @@ local themes = {
 
 				TextButton_2_Toggle.Parent = TextButton_Toggle
 
-				TextButton_2_Toggle.BackgroundColor3 = Color3.fromRGB(0,0,0), Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+				TextButton_2_Toggle.BackgroundColor3 = Color3.fromRGB(155, 155, 155)
 
 		--        TextButton_2_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
 
@@ -996,7 +984,7 @@ local themes = {
 
 				TextButton_3_Toggle.Parent = TextButton_2_Toggle
 
-				TextButton_3_Toggle.BackgroundColor3 = Color3.fromRGB(0,0,0), Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+				TextButton_3_Toggle.BackgroundColor3 = Color3.fromRGB(255, 255,255)
 
 		--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
 
@@ -1030,7 +1018,7 @@ local themes = {
 
 				TextButton_4_Toggle.Parent = TextButton_3_Toggle
 
-				TextButton_4_Toggle.BackgroundColor3 = Color3.fromRGB(0,0,0), Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+				TextButton_4_Toggle.BackgroundColor3 = Color3.fromRGB(155, 155,155)
 
 		--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
 
@@ -1046,7 +1034,7 @@ local themes = {
 
 				TextButton_4_Toggle.Text = " "
 
-				TextButton_4_Toggle.TextColor3 = Color3.fromRGB(0,0,0), Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+				TextButton_4_Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
 
 				TextButton_4_Toggle.TextSize = 12.000
 
@@ -1068,7 +1056,7 @@ local themes = {
 
 				TextLabel_Toggle.Parent = Toggle
 
-				TextLabel_Toggle.BackgroundColor3 = Color3.fromRGB(0,0,0), Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+				TextLabel_Toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 
 				TextLabel_Toggle.BackgroundTransparency = 1
 
@@ -1084,7 +1072,7 @@ local themes = {
 
 				TextLabel_Toggle.Text = text
 
-				TextLabel_Toggle.TextColor3 = Color3.fromRGB(250,0,0), Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+				TextLabel_Toggle.TextColor3 = Color3.fromRGB(200, 200, 200)
 
 				TextLabel_Toggle.TextSize = 13.000
 
@@ -1100,7 +1088,7 @@ local themes = {
 
 				TextButton_Toggle2.BackgroundTransparency =1
 
-				TextButton_Toggle2.BackgroundColor3 = Color3.fromRGB(0,0,0), Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+				TextButton_Toggle2.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
 
 				TextButton_Toggle2.BorderSizePixel = 0
 
@@ -1134,7 +1122,7 @@ local themes = {
 
 						TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(0,0,0), Color3.fromHSV(tick() * 24 % 255/255, 1, 1)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromRGB(255,0,0)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1160,7 +1148,7 @@ local themes = {
 
 						TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(253, 272, 171)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromRGB(166, 212, 241)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1184,7 +1172,7 @@ local themes = {
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromRGB(250,0,0),Color3.fromHSV(tick() * 24 % 255/255, 1, 1)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1204,7 +1192,7 @@ local themes = {
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromRGB(153, 0, 102)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromRGB(153, 238, 102)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1218,7 +1206,7 @@ local themes = {
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromRGB(0,0,0), Color3.fromHSV(tick() * 24 % 255/255, 1, 1)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromRGB(155, 155, 155)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1228,7 +1216,7 @@ local themes = {
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromRGB(0,0,0), Color3.fromHSV(tick() * 24 % 255/255, 1, 1)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromRGB(255, 255, 255)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1398,7 +1386,7 @@ local themes = {
 
 				ButtonFrame.Parent = ScrollingFrame_Pageframe
 
-				ButtonFrame.BackgroundColor3 = Color3.fromRGB(250,0,0)
+				ButtonFrame.BackgroundColor3 = Color3.fromRGB(250,0,0),Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
 
 				ButtonFrame.BorderSizePixel = 0
 
@@ -1422,7 +1410,7 @@ local themes = {
 
 				MheeFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				MheeFrameStroke.Color = Color3.fromRGB(250,0,0)
+				MheeFrameStroke.Color = Color3.fromRGB(250,0,0),Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
 
 				MheeFrameStroke.Transparency = 0.7
 
@@ -1432,7 +1420,7 @@ local themes = {
 
 				Button.Name = "Button"
 
-				Button.BackgroundColor3 = Color3.fromRGB(250,0,0)
+				Button.BackgroundColor3 = Color3.fromRGB(250,0,0),Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
 
 				Button.Size = UDim2.new(0,150, 0, 25)
 
@@ -1494,7 +1482,7 @@ local themes = {
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(15, 15, 15)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromRGB(166, 212, 241)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1530,7 +1518,7 @@ local themes = {
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(155, 155, 155)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromRGB(255,0,0)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -3100,7 +3088,7 @@ local themes = {
 
 			end
 
-			function items:Dropdown(text,use,option,callback)
+			function items:Drop(text,use,option,callback)
 
 			if use == false then
 
@@ -3322,7 +3310,7 @@ local themes = {
 
 					ListFrame.Parent = ScolDown
 
-					ListFrame.BackgroundColor3 =  Color3.fromRGB(155,255,255)-- Color3.fromRGB(250,0,0)
+					ListFrame.BackgroundColor3 =  Color3.fromRGB(22553, 23, 23)-- Color3.fromRGB(250,0,0)
 
 					ListFrame.BorderSizePixel = 0
 
@@ -5938,7 +5926,7 @@ local themes = {
 
 				LabelFrame.Position = UDim2.new(0.498, 0, 0.5, 0)
 
-				LabelFrame.Size = UDim2.new(0, 203, 0, 37)
+				LabelFrame.Size = UDim2.new(0, 213, 0, 28)
 
 				local LabelFarm2 = Instance.new("TextLabel")
 
@@ -5990,7 +5978,7 @@ local themes = {
 
 				noticore55.CornerRadius = UDim.new(0, 4)
 
-				noticore55.Name = "Beo"
+				noticore55.Name = ""
 
 				noticore55.Parent = LabelFarm2
 
@@ -5998,7 +5986,7 @@ local themes = {
 
 				noticore2777.CornerRadius = UDim.new(0, 4)
 
-				noticore2777.Name = "Beo"
+				noticore2777.Name = ""
 
 				noticore2777.Parent = LabelFrame
 
@@ -6006,7 +5994,7 @@ local themes = {
 
 				LabelStroke.Thickness = 1
 
-				LabelStroke.Name = "Oke"
+				LabelStroke.Name = ""
 
 				LabelStroke.Parent = LabelFrame
 
@@ -7226,16 +7214,9 @@ game.CoreGui:FindFirstChild("redui").Enabled = not game.CoreGui:FindFirstChild("
 end)
 
 -- local win = UiLib:Window("Béo HUB | Blox Fruits v17.3", giongcaikia")
-getgenv().RainbowUi = true
+
 local win = create:Win("W A I F U H U B | v 1 . 0", Color3.fromRGB(246, 241, 28))
-spawn(function()
-   while wait() do
-      if getgenv().RainbowUi then
-         create:Win(Color3.fromRGB(255,255,255),Color3.fromHSV(tick() * 24 % 255/255, 1, 1))
-         create:Win(Color3.fromRGB(0,0,0),Color3.fromHSV(tick() * 24 % 255/255, 1, 1))
-      end
-   end
-end)
+
 local Usp = win:Taps("Update")
 local At = win:Taps("Farming")
 local Statss = win:Taps("Stats")
