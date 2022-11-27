@@ -6071,34 +6071,7 @@ local themes = {
 	end
 
 
-	local Window = create:Win("N P T H U B")
-
-	local Tap2 = Window:Taps("Main")
-   local Tap1 = Window:Taps("Stats")
 	
-
-    
-
-    
-	
-	local page1 = Tap2:newpage()
-	local page3 = Tap2:newpage()
-    local page2 = Tap1:newpage()
-
-
-	
-
-	
-
-	
-	
-	
-	
-       page1:Label("Auto Farm")
-       
-       
-
-     	
 
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local VirtualUser = game:GetService('VirtualUser')
