@@ -5250,7 +5250,7 @@ end
 end
 
 
-local SelectToolWeapona = AutoFarm:Dropdown("SelectWeapon",false,lol,function(Select)
+local SelectToolWeapona = AutoFarm:Dropdown("SelectWeapon",lol,function(Select)
     getgenv().tool = Select
 end)
 
@@ -5959,7 +5959,7 @@ local Boss = {}
             end
         end
     end
-    local BossName = Main:Dropdown("Select Boss",false,Boss,function(value)
+    local BossName = Main:Dropdown("Select Boss",Boss,function(value)
         getgenv().SelectBoss = value
     end)
 Main:Button("Refresh Boss",function()
@@ -6020,7 +6020,7 @@ for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
        table.insert(K, v.Name)
     end
 end
-local dropdowntoolo =Main:Dropdown("Selectweapon Auto Bone/Boss",false,K, function(daubuoi)
+local dropdowntoolo =Main:Dropdown("Selectweapon Auto Bone/Boss",K, function(daubuoi)
     getgenv().toolo = daubuoi
 end)
 
@@ -6359,7 +6359,7 @@ spawn(function()
 for i,v in pairs(game:GetService("Players"):GetChildren()) do
     table.insert(players,v.Name)
 end
-Pvp:Dropdown("Select Players",false,players,function(plr)
+Pvp:Dropdown("Select Players",players,function(plr)
 getgenv().pla = plr end)
 Pvp:Button("Refresh Players",function()
 table.clear(players)
@@ -6837,7 +6837,7 @@ spawn(function()
         end)
     end)
     
-    RaidsTab:Dropdown("Select Chips",false, {"Flame","Ice","Quake","Light","Dark","String","Rumble","Magma","Human: Buddha","Sand","Bird: Phoenix"},function(value)
+    RaidsTab:Dropdown("Select Chips", {"Flame","Ice","Quake","Light","Dark","String","Rumble","Magma","Human: Buddha","Sand","Bird: Phoenix"},function(value)
         getgenv().SelectChip = value
     end)
     
@@ -7046,7 +7046,7 @@ getgenv().TELEPORTISLAND = Value
 end)
 end
 if ThreeWorld then
-        TeleportTab:Dropdown("SelectIsland",false,{"Mansion", "Port Town", "Great Tree", "Castle On The Sea", "MiniSky", "Hydra Island", "Floating Turtle","Room Enma/Yama & Secret Temple","House Hydar Island","Haunted Castle","Peanut Island","Ice Cream Island","CakeLoaf"},function(Value)
+        TeleportTab:Dropdown("SelectIsland",{"Mansion", "Port Town", "Great Tree", "Castle On The Sea", "MiniSky", "Hydra Island", "Floating Turtle","Room Enma/Yama & Secret Temple","House Hydar Island","Haunted Castle","Peanut Island","Ice Cream Island","CakeLoaf"},function(Value)
 getgenv().TELEPORTISLAND = Value
 end)
 end
@@ -7501,14 +7501,14 @@ local x2Code = {
         end
     end)
     
-    Misc:Dropdown("Selected Codes Reset stat",false,{"RESET_5B","SUB2GAMERROBOT_RESET1","Sub2UncleKizaru"},function(value)
+    Misc:Dropdown("Selected Codes Reset stat",{"RESET_5B","SUB2GAMERROBOT_RESET1","Sub2UncleKizaru"},function(value)
         getgenv().CodeSelect = value
     end)
     
     Misc:Button("Redeem Code (Selected Codes)",function()
         game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(getgenv().CodeSelect)
     end)
-    Misc:Dropdown("Select Haki State",false,{"State 0","State 1","State 2","State 3","State 4","State 5"},function(value)
+    Misc:Dropdown("Select Haki State",{"State 0","State 1","State 2","State 3","State 4","State 5"},function(value)
         getgenv().SelectStateHaki = value
     end)
     
