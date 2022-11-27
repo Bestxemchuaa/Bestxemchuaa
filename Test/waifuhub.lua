@@ -7564,7 +7564,6 @@ game:GetService("RunService").RenderStepped:Connect(function()
   pcall(function()
   if getgenv().fast then
     ret.activeController.hitboxMagnitude=60
-    ret.activeController:attack()
     ret.activeController.timeToNextattack = 0
     end
     end)
@@ -7663,9 +7662,12 @@ local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:S
 end)();
 AutoFarm:Toggle("Super Fast Attack[rick]",false,function(c)
 getgenv().superfastmode = c
-if not getgenv().superfastmode then return end
+end)
 
-
+spawn(function()
+while wait() do
+if getgenv().superfastmode then
+pcall(function()
 local plr = game.Players.LocalPlayer
 
 local CbFw = debug.getupvalues(require(plr.PlayerScripts.CombatFramework))
@@ -7735,6 +7737,9 @@ while cac() do
 	AttackNoCD()
 end
 end)
+end
+end
+end)
 getgenv().Spr = 10
 
 AutoFarm:Slider("Super Fast Attack",1,getgenv().Spr,false,function(ko)
@@ -7746,7 +7751,6 @@ end)
 spawn(function()
 		while wait(.1) do
 			if getgenv().jj then
-				if game.Players.localPlayer.Data.Level.Value >= getgenv().Spr then
 					local SuperFastMode = false -- Change to true if you want Super Super Super Fast attack (Like instant kill) but it will make the game kick you more than normal mode
 
 local plr = game.Players.LocalPlayer
@@ -7817,7 +7821,6 @@ end
 while cac() do 
 	AttackNoCD()
 end
-				end
 			end
 		end
 	end)
