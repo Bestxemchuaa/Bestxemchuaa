@@ -510,8 +510,7 @@ local themes = {
 
 			txdlid.Name = "TextLabel_Tap"
 
-			txdlid.BackgroundColor3 = "TextColor",Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
-             txdlid.BackgroundColor3 ="Glow",Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+			txdlid.BackgroundColor3 = Color3.fromRGB(255, 255, 255),Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
 			txdlid.Size =UDim2.new(0, 160, 0,25 )
 
 			txdlid.Font = Enum.Font.GothamBold
@@ -7255,21 +7254,21 @@ end)
 
 -- local win = UiLib:Window("Béo HUB | Blox Fruits v17.3", giongcaikia")
 getgenv().RainbowUi = true
-local win = create:Win("😱 B e o H U B | v 17 .  3", Color3.fromRGB(246, 241, 28))
+local win = create:Win("W A I F U H U B | v 1 . 0", Color3.fromRGB(246, 241, 28))
 spawn(function()
    while wait() do
       if getgenv().RainbowUi then
-         create:Notifile("TextColor",Color3.fromHSV(tick() * 24 % 255/255, 1, 1))
-         create:Notifile("Glow",Color3.fromHSV(tick() * 24 % 255/255, 1, 1))
+         create:Notifile(Color3.fromRGB(255,255,255),Color3.fromHSV(tick() * 24 % 255/255, 1, 1))
+         create:Notifile(Color3.fromRGB(0,0,0),Color3.fromHSV(tick() * 24 % 255/255, 1, 1))
       end
    end
 end)
-local Usp = win:Taps("💫Update")
-local At = win:Taps("🎊Farming")
-local Statss = win:Taps("✨⭐Stats")
-local Pvps = win:Taps("🙇Players/🌺Shop")
-local RaidsTabs =  win:Taps("💀 Raids/🦸Teleport")
-local Miscs = win:Taps("🌚🌝 Misc")
+local Usp = win:Taps("Update")
+local At = win:Taps("Farming")
+local Statss = win:Taps("Stats")
+local Pvps = win:Taps("Players/Shop")
+local RaidsTabs =  win:Taps("Raids/Teleport")
+local Miscs = win:Taps("Misc")
 -------------
 local Up = Usp:newpage()
 local AutoFarm = At:newpage()
@@ -7701,7 +7700,61 @@ local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:S
     end
 end)();
                Main:Label("Auto Something")               
-                   Main:Toggle("Auto Evo Race",false,function(vu)
+                   
+	Main:Toggle("Auto Chest[TP]",false,function(jiee)
+	getgenv().f = jiee
+end)
+spawn(function()
+while wait() do
+if getgenv().f then
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+      if string.find(v.Name, "Chest") then
+          print(v.Name)
+          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+          wait(.15)
+      end
+  end
+  game.Players.LocalPlayer.Character.Head:Destroy()
+  for _,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+   if string.find(v.Name, "Chest") and v:IsA("TouchTransmitter") then
+   firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) --0 is touch
+   wait()
+   firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1) -- 1 is untouch
+   end
+   end
+  end)
+      end
+  end
+end)
+
+Main:Toggle("Auto Chest[Tween]",false,function(jie)
+	getgenv().k = jie
+end)
+spawn(function()
+while wait() do
+if getgenv().k then
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+				if string.find(v.Name, "Chest") then
+					print(v.Name)
+					chichdiem(v.CFrame)
+					wait(.15)
+end
+			end
+for _,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+   if string.find(v.Name, "Chest") and v:IsA("TouchTransmitter") then
+   firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) --0 is touch
+   wait()
+   firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1) -- 1 is untouch 
+   end
+   end 
+end)
+		end
+end
+end)
+
+Main:Toggle("Auto Evo Race",false,function(vu)
 		getgenv().Autorace = vu
 	end)
 
@@ -7751,63 +7804,6 @@ end)();
 			end
 		end
 	end)
-	Main:Toggle("Auto Chest[TP]",false,function(jiee)
-	getgenv().f = jiee
-end)
-spawn(function()
-while wait() do
-if getgenv().f then
-pcall(function()
-for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-      if string.find(v.Name, "Chest") then
-          print(v.Name)
-          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
-          wait(.15)
-      end
-  end
-  game.Players.LocalPlayer.Character.Head:Destroy()
-  for _,v in pairs(game:GetService("Workspace"):GetDescendants()) do
-   if string.find(v.Name, "Chest") and v:IsA("TouchTransmitter") then
-   firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) --0 is touch
-   wait()
-   firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1) -- 1 is untouch
-   end
-   end
-  end)
-      end
-  end
-end)
-
-Main:Toggle("Auto Chest[Tween]",false,function(jie)
-	getgenv().k = jie
-end)
-spawn(function()
-while wait() do
-if getgenv().k then
-pcall(function()
-for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-				if string.find(v.Name, "Chest") then
-					print(v.Name)
-					chichdiem(v.CFrame)
-					wait(.15)
-end
-			end
-for _,v in pairs(game:GetService("Workspace"):GetDescendants()) do
-   if string.find(v.Name, "Chest") and v:IsA("TouchTransmitter") then
-   firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) --0 is touch
-   wait()
-   firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1) -- 1 is untouch
-   end
-   end 
-end)
-		end
-end
-end)
-function chichdiem(CFgo) local Distance = (CFgo.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude local tween_s = game:service"TweenService"
-  local info = TweenInfo.new((game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.Position - CFgo.Position).Magnitude/360, Enum.EasingStyle.Linear)
-   if Distance < 50 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFgo    end
-   local tween, err = pcall(function()  tween = tween_s:Create(game.Players.LocalPlayer.Character["HumanoidRootPart"], info, {CFrame = CFgo})
-    tween:Play()  end) end
 Main:Toggle("Auto Rengoku",false,function(vu)
     getgenv().AutoRengoku = vu
 end)	
@@ -8512,7 +8508,7 @@ end)
 Stat:Toggle("Gun",false,function(val)
 	getgenv().gun = val
 end)
-Stat:Toggle("Fruit",false,function(val)
+Stat:Toggle("Devil Fruit",false,function(val)
 	getgenv().df = val
 end)
 
@@ -8582,7 +8578,7 @@ spawn(function()
 pcall(function()
 while wait() do
 if getgenv().killplr then
-chichdiem(game.Players[getgenv().pla].Character.HumanoidRootPart.CFrame * CFrame.new(0,20,0))
+chichdiem(game.Players[getgenv().pla].Character.HumanoidRootPart.CFrame * CFrame.new(0,0,4))
 end
 end
 end)
@@ -8986,12 +8982,12 @@ end
 end
 end)
 RaidsTab:Toggle("Auto Next Island",false,function(next)
-getgenv().Auto_RaidsTab=next
+getgenv().Auto_Raids=next
 end)
 spawn(function()
         pcall(function() 
             while wait() do
-                if getgenv().Auto_RaidsTab then
+                if getgenv().Auto_Raids then
                     if game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Timer.Visible == true then
                         for i,v in pairs(game:GetService("Workspace").Enemies:GetDescendants()) do
                             if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
@@ -9013,7 +9009,7 @@ spawn(function()
     spawn(function()
         pcall(function()
             while wait() do
-                if getgenv().Auto_RaidsTab then
+                if getgenv().Auto_Raids then
                     if game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Timer.Visible == true then
                         if game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 5") then
                             chichdiem(game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 5").CFrame*CFrame.new(0,25,0))
