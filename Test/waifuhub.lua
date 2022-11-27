@@ -7534,24 +7534,7 @@ local CombatFrameworkR = concac(require(game:GetService("Players").LocalPlayer.P
 			end)
 		end)
 	end)
-	spawn(function()
-    game:GetService("RunService").RenderStepped:Connect(function()
-        if getgenv().fast == true then
-            game.Players.LocalPlayer.Character.Stun.Value = 0
-            game.Players.LocalPlayer.Character.Humanoid.Sit = false
-            game.Players.LocalPlayer.Character.Busy.Value = false        
-        end
-    end)
-end)
-spawn(function()
-while wait() do
-        if setscriptable then
-            setscriptable(game.Players.LocalPlayer, "SimulationRadius", true)
-            game.Players.LocalPlayer.SimulationRadius = math.huge * math.huge, math.huge * math.huge * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0
-        end
-    end
-end)
-local concac
+	local concac
 if getupvalues then concac=getupvalues end
 if debug then 
   if debug.getupvalues then concac=debug.getupvalues end
@@ -7564,63 +7547,23 @@ game:GetService("RunService").RenderStepped:Connect(function()
   pcall(function()
   if getgenv().fast then
     ret.activeController.hitboxMagnitude=60
-    ret.activeController.timeToNextattack = 0
+    ret.activeController.increment = 3
+    ret.activeController.timeToNextAttack = 0
     end
     end)
     end)
   end)
 end
-spawn(function()
-	game:GetService("RunService").Stepped:Connect(function()
-		pcall(function()
-			local yedkuy112 = require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.CameraShaker)
-			local VirtualUser = game:GetService('VirtualUser')
-			local yedhee = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
-            yedkuy112.CameraShakeInstance.CameraShakeState.Inactive = 0
-            yedhee.activeController.hitboxMagnitude = 55
-			if getgenv().fast then
-                
-                    if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") then
-                        yedhee.activeController.timeToNextAttack = 3
-                    else
-                        yedhee.activeController.timeToNextAttack = -(math.huge^math.huge)
-                    end
-                    yedhee.activeController.attacking = false
-                    yedhee.activeController.increment = 3
-                    if yedhee.activeController:attack() then
-                        yedhee.activeController:attack()
-                    end
-                    yedhee.activeController.blocking = false
-                    yedhee.activeController.timeToNextBlock = 0
-                    game.Players.LocalPlayer.Character.Stun.Value = 0
-                    game.Players.LocalPlayer.Character.Humanoid.Sit = false
-                    yedhee.activeController.timeToNextAttack = 0
-                    yedhee.activeController.attacking = false
-                    yedhee.activeController.blocking = false
-                    yedhee.activeController.timeToNextAttack = 0
-                    yedhee.activeController.timeToNextBlock = 0
-                    yedhee.activeController.increment = 3
-                    yedhee.activeController.hitboxMagnitude = 55
-                    yedhee.activeController.focusStart = 0
-                    
-                   
-                end
-			
-		end)
-	end)
-end)
-	local concac
-if getupvalues then concac=getupvalues end
-if debug then 
-  if debug.getupvalues then concac=debug.getupvalues end
-end
-require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.CameraShaker).Shake = function() end
-local CombatFramework = concac(require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework))[2]
+ 
+local Module = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
+local CombatFramework = debug.getupvalues(Module)[2]
+local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
+
 spawn(function()
     while true do
         if getgenv().fast then
             pcall(function()
-                
+                CameraShakerK:Stop()
                 CombatFramework.activeController.attacking = false
                 CombatFramework.activeController.timeToNextAttack = 0
                 CombatFramework.activeController.increment = 3
@@ -7663,170 +7606,7 @@ local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:S
         end
     end
 end)();
-AutoFarm:Toggle("Super Fast Attack[rick]",false,function(c)
-getgenv().superfastmode = c
-end)
 
-spawn(function()
-while wait() do
-if getgenv().superfastmode then
-pcall(function()
-local plr = game.Players.LocalPlayer
-
-local CbFw = debug.getupvalues(require(plr.PlayerScripts.CombatFramework))
-local CbFw2 = CbFw[2]
-
-function GetCurrentBlade() 
-    local p13 = CbFw2.activeController
-    local ret = p13.blades[1]
-    if not ret then return end
-    while ret.Parent~=game.Players.LocalPlayer.Character do ret=ret.Parent end
-    return ret
-end
-function AttackNoCD() 
-    local AC = CbFw2.activeController
-    for i = 1, 1 do 
-        local bladehit = require(game.ReplicatedStorage.CombatFramework.RigLib).getBladeHits(
-            plr.Character,
-            {plr.Character.HumanoidRootPart},
-            60
-        )
-        local cac = {}
-        local hash = {}
-        for k, v in pairs(bladehit) do
-            if v.Parent:FindFirstChild("HumanoidRootPart") and not hash[v.Parent] then
-                table.insert(cac, v.Parent.HumanoidRootPart)
-                hash[v.Parent] = true
-            end
-        end
-        bladehit = cac
-        if #bladehit > 0 then
-            local u8 = debug.getupvalue(AC.attack, 5)
-            local u9 = debug.getupvalue(AC.attack, 6)
-            local u7 = debug.getupvalue(AC.attack, 4)
-            local u10 = debug.getupvalue(AC.attack, 7)
-            local u12 = (u8 * 798405 + u7 * 727595) % u9
-            local u13 = u7 * 798405
-            (function()
-                u12 = (u12 * u9 + u13) % 1099511627776
-                u8 = math.floor(u12 / u9)
-                u7 = u12 - u8 * u9
-            end)()
-            u10 = u10 + 1
-            debug.setupvalue(AC.attack, 5, u8)
-            debug.setupvalue(AC.attack, 6, u9)
-            debug.setupvalue(AC.attack, 4, u7)
-            debug.setupvalue(AC.attack, 7, u10)
-            pcall(function()
-                for k, v in pairs(AC.animator.anims.basic) do
-                    v:Play()
-                end                  
-            end)
-            if plr.Character:FindFirstChildOfClass("Tool") and AC.blades and AC.blades[1] then 
-                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(GetCurrentBlade()))
-                game.ReplicatedStorage.Remotes.Validator:FireServer(math.floor(u12 / 1099511627776 * 16777215), u10)
-                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, i, "") 
-            end
-        end
-    end
-end
-local cac
-if getgenv().superfastmode then 
-	cac=task.wait
-else
-	cac=wait
-end
-while cac() do 
-	AttackNoCD()
-end
-end)
-end
-end
-end)
-getgenv().Spr = 10
-
-AutoFarm:Slider("Super Fast Attack",1,getgenv().Spr,false,function(ko)
-getgenv().Spr = ko
-end)
-AutoFarm:Toggle("Fast Attack Slider",false,function(okemmb)
-getgenv().jj = okemmb
-end)
-spawn(function()
-		while wait(.1) do
-			if getgenv().jj then
-					local SuperFastMode = false -- Change to true if you want Super Super Super Fast attack (Like instant kill) but it will make the game kick you more than normal mode
-
-local plr = game.Players.LocalPlayer
-
-local CbFw = debug.getupvalues(require(plr.PlayerScripts.CombatFramework))
-local CbFw2 = CbFw[2]
-
-function GetCurrentBlade() 
-    local p13 = CbFw2.activeController
-    local ret = p13.blades[1]
-    if not ret then return end
-    while ret.Parent~=game.Players.LocalPlayer.Character do ret=ret.Parent end
-    return ret
-end
-function AttackNoCD() 
-    local AC = CbFw2.activeController
-    for i = 1, 1 do 
-        local bladehit = require(game.ReplicatedStorage.CombatFramework.RigLib).getBladeHits(
-            plr.Character,
-            {plr.Character.HumanoidRootPart},
-            60
-        )
-        local cac = {}
-        local hash = {}
-        for k, v in pairs(bladehit) do
-            if v.Parent:FindFirstChild("HumanoidRootPart") and not hash[v.Parent] then
-                table.insert(cac, v.Parent.HumanoidRootPart)
-                hash[v.Parent] = true
-            end
-        end
-        bladehit = cac
-        if #bladehit > 0 then
-            local u8 = debug.getupvalue(AC.attack, 5)
-            local u9 = debug.getupvalue(AC.attack, 4)
-            local u7 = debug.getupvalue(AC.attack, 2)
-            local u10 = debug.getupvalue(AC.attack, 5)
-            local u12 = (u8 * 798405 + u7 * 727595) % u9
-            local u13 = u7 * 798405
-            (function()
-                u12 = (u12 * u9 + u13) % 1099511627776
-                u8 = math.floor(u12 / u9)
-                u7 = u12 - u8 * u9
-            end)()
-            u10 = u10 + 1
-            debug.setupvalue(AC.attack, getgenv().Sp, u8)
-            debug.setupvalue(AC.attack, getgenv().Sp, u9)
-            debug.setupvalue(AC.attack, getgenv().Sp, u7)
-            debug.setupvalue(AC.attack, getgenv().Sp, u10)
-            pcall(function()
-                for k, v in pairs(AC.animator.anims.basic) do
-                    v:Play()
-                end                  
-            end)
-            if plr.Character:FindFirstChildOfClass("Tool") and AC.blades and AC.blades[1] then 
-                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(GetCurrentBlade()))
-                game.ReplicatedStorage.Remotes.Validator:FireServer(math.floor(u12 / 1099511627776 * 16777215), u10)
-                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, i, "") 
-            end
-        end
-    end
-end
-local cac
-if SuperFastMode then 
-	cac=task.wait
-else
-	cac=wait
-end
-while cac() do 
-	AttackNoCD()
-end
-			end
-		end
-	end)
                Main:Label("Auto Something")               
                    
 	Main:Toggle("Auto Chest[TP]",false,function(jiee)
