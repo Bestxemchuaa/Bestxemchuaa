@@ -7609,15 +7609,18 @@ spawn(function()
 		end)
 	end)
 end)
-	local Module = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
-local CombatFramework = debug.getupvalues(Module)[2]
-local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
-
+	local concac
+if getupvalues then concac=getupvalues end
+if debug then 
+  if debug.getupvalues then concac=debug.getupvalues end
+end
+require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.CameraShaker).Shake = function() end
+local CombatFramework = concac(require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework))[2]
 spawn(function()
     while true do
         if getgenv().fast then
             pcall(function()
-                CameraShakerK:Stop()
+                
                 CombatFramework.activeController.attacking = false
                 CombatFramework.activeController.timeToNextAttack = 0
                 CombatFramework.activeController.increment = 3
