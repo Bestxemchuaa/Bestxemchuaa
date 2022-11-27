@@ -7495,10 +7495,13 @@ spawn(function()
                       AutoFarm:Toggle("Fast Attack",false,function(chim)
   getgenv().fast = chim
 end)
-local CombatFrameworkROld = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework) 
-
-	local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
-	CameraShakerR:Stop()
+local concac
+if getupvalues then concac=getupvalues end
+if debug then 
+  if debug.getupvalues then concac=debug.getupvalues end
+end
+require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.CameraShaker).Shake = function() end
+local CombatFrameworkR = concac(require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework))[2]
 	spawn(function()
 		game:GetService("RunService").Stepped:Connect(function()
 			pcall(function()
@@ -8711,7 +8714,7 @@ spawn(function()
 					game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(getgenv().pla).Character.HumanoidRootPart.CFrame * CFrame.new(0,25,0)
 					game.Players:FindFirstChild(getgenv().pla).Character.HumanoidRootPart.CanCollide = false
 					game.Players:FindFirstChild(getgenv().pla).Character.HumanoidRootPart.Size = Vector3.new(50,50,50)
-					EquipWeapon(SelectToolWeaponGun)
+					
 					if game.Players.LocalPlayer.Character:FindFirstChild(SelectToolWeaponGun) then
 						spawn(function()
 							pcall(function()
@@ -8719,7 +8722,7 @@ spawn(function()
 									[1] = v.HumanoidRootPart.Position,
 									[2] = v.HumanoidRootPart
 								}
-								game:GetService("Players").LocalPlayer.Character[SelectToolWeaponGun].RemoteFunctionShoot:InvokeServer(unpack(args))
+								game:GetService("Players").LocalPlayer.Character.RemoteFunctionShoot:InvokeServer(unpack(args))
 							end)
 						end)
 					end 
