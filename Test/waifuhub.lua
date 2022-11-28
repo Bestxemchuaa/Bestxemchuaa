@@ -5642,7 +5642,7 @@ while cac() do
 end
 end)
 getgenv().fase = 9
-AutoFarm:Slider("Super Fast Attack Mode",true,1,10,getgenv().fase,5,function(flo)
+AutoFarm:Slider("Super Fast Attack Mode",false,1,10,getgenv().fase,5,function(flo)
 getgenv().fase = flo
 end)
 AutoFarm:Toggle("Fast On Slider",false,function(oxi)
@@ -5664,6 +5664,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
   pcall(function()
   if getgenv().oxi then
            pcall(function()
+           setfpscap(9999999)
                 Click()
                 for k, v in pairs(AC.animator.anims.basic) do
                     v:Play()
