@@ -5648,7 +5648,9 @@ end)
 AutoFarm:Toggle("Fast On Slider",false,function(oxi)
 getgenv().oxi = oxi
 end)
-
+spawn(function()
+while wait() do
+if getgenv().oxi then
 local concac
 if getupvalues then concac=getupvalues end
 if debug then 
@@ -5684,7 +5686,9 @@ end)
     end)
   end)
 end
-
+end
+end
+end)
               Main:Label("Auto Something")               
                    
 	Main:Toggle("Auto Chest[TP]",false,function(jiee)
