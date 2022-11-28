@@ -1956,7 +1956,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 
 				Button.Name = "Button"
 				Button.Parent = ScrollingFrame_Pageframe
-				Button.BackgroundColor3 = Color3.fromRGB(42,42,42)
+				Button.BackgroundColor3 = Color3.fromRGB(0, 216, 8)
 				Button.BackgroundTransparency = 1
 				Button.BorderSizePixel = 0
 				Button.Size = UDim2.new(0, 210, 0, 25)
@@ -1969,7 +1969,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				local  Labelxd = Instance.new("TextLabel")
 
 				Labelxd.Parent = Button
-				Labelxd.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				Labelxd.BackgroundColor3 = Color3.fromRGB(0, 216, 8)
 				Labelxd.BackgroundTransparency = 1
 				Labelxd.AnchorPoint = Vector2.new(0.5, 0.5)
 				Labelxd.Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -1977,7 +1977,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				Labelxd.Size = UDim2.new(0, 210, 0, 13)
 				Labelxd.Font = Enum.Font.Gotham
 				Labelxd.Text = tostring(text)
-				Labelxd.TextColor3 = Color3.fromRGB(255, 255, 255)
+				Labelxd.TextColor3 = Color3.fromRGB(124, 5, 232)
 				Labelxd.TextSize = 12.000
 				Labelxd.TextTransparency = 0.5
 				Labelxd.TextXAlignment = Enum.TextXAlignment.Left
@@ -5222,14 +5222,18 @@ function TP()
 									repeat game:GetService("RunService").Heartbeat:wait()
 										if game:GetService("Workspace").Enemies:FindFirstChild(Ms) then
 											if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
-                                                EquipWeapon(getgenv().tool)
+                                                
                                                 AutoHaki()
 												v.HumanoidRootPart.CanCollide = false
-												v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
-                                                chichdiem(v.HumanoidRootPart.CFrame * CFrame.new(0,30,0))
-												game:GetService("VirtualUser"):CaptureController()
-												game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 670),workspace.CurrentCamera.CFrame)
-												MagnetActive = true
+												
+                                                
+												
+												game.Players.LocalPlayer.Character.HumanoidRootPart.Size = Vector3.new(2, 2.02, 1)
+			   v.HumanoidRootPart.Size = Vector3.new(60,60,60)
+			   chichdiem(v.HumanoidRootPart.CFrame * CFrame.new(0,30,0))
+			   EquipWeapon(getgenv().tool)
+			   game:GetService'VirtualUser':CaptureController()
+			   game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
 												PosMon = v.HumanoidRootPart.CFrame
 											else
 												
@@ -5488,6 +5492,9 @@ local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:S
                         game:GetService("RunService").RenderStepped:Connect(function()
                             if getgenv().fast then
                                  pcall(function()
+                                 if v.activeController:attack() then
+v.activeController:attack()
+end
                                      v.activeController.timeToNextAttack = -(math.huge^math.huge^math.huge)
                                      v.activeController.attacking = false
                                      v.activeController.increment = 4
