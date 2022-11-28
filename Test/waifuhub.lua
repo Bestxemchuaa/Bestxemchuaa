@@ -5664,9 +5664,12 @@ game:GetService("RunService").RenderStepped:Connect(function()
   pcall(function()
   if getgenv().oxi then
            pcall(function()
-                if ret.activeController:attack() then
-                    ret.activeController:attack()
-                    end
+                Click()
+                for k, v in pairs(AC.animator.anims.basic) do
+                    v:Play()
+                end        
+                spawn(function()local dj=game.Players.LocalPlayer;local dk=require(dj.PlayerScripts.CombatFramework.Particle)local dl=require(game:GetService("ReplicatedStorage").CombatFramework.RigLib)if not shared.orl then shared.orl=dl.wrapAttackAnimationAsync end;if not shared.cpc then shared.cpc=dk.play end;while wait()do pcall(function()dl.wrapAttackAnimationAsync=function(dm,dn,dp,dq,dr)local ds=dl.getBladeHits(dn,dp,dq)if ds then dk.play=function()end;dm:Play(0.1,0.1,0.1)dr(ds)dk.play=shared.cpc;wait(.1)dm:Stop()end end end)end end)
+                 ret.activeController.humanoid.AutoRotate = true
                 ret.activeController.attacking = false
                 ret.activeController.timeToNextAttack = getgenv().fase
                 ret.activeController.increment = getgenv().fase
@@ -5675,6 +5678,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
                 ret.activeController.timeToNextBlock = getgenv().fase
                 ret.activeController.focusStart = getgenv().fase
                 ret.activeController.humanoid.AutoRotate = true
+                ret.activeController.currentAttackTrack = getgenv().fase
 end)
     end
     end)
