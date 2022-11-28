@@ -5642,15 +5642,13 @@ while cac() do
 end
 end)
 getgenv().fase = 9
-AutoFarm:Slider("Super Fast Attack Mode",false,1,10,getgenv().fase,5,function(flo)
+AutoFarm:Slider("Super Fast Attack Mode",true,1,10,getgenv().fase,5,function(flo)
 getgenv().fase = flo
 end)
 AutoFarm:Toggle("Fast On Slider",false,function(oxi)
 getgenv().oxi = oxi
 end)
-spawn(function()
-while wait() do
-if getgenv().oxi then
+
 local concac
 if getupvalues then concac=getupvalues end
 if debug then 
@@ -5686,9 +5684,7 @@ end)
     end)
   end)
 end
-end
-end
-end)
+
               Main:Label("Auto Something")               
                    
 	Main:Toggle("Auto Chest[TP]",false,function(jiee)
