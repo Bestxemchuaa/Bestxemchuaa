@@ -5662,7 +5662,7 @@ while wait() do
 spawn(function()
 game:GetService("RunService").RenderStepped:Connect(function()
   pcall(function()
-  if getgenv().fase then
+  if getgenv().oxi then
            pcall(function()
                 if ret.activeController:attack() then
                     ret.activeController:attack()
