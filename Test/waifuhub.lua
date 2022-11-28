@@ -156,7 +156,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 	NameReal.Position = UDim2.new(0.145454541, 0, 0.0610294119, 0)
 	NameReal.Size = UDim2.new(0, 136, 0, 34)
 	NameReal.Font = Enum.Font.GothamSemibold
-	NameReal.TextColor3 = Color3.fromRGB(255, 255, 255)
+	NameReal.TextColor3 = Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
 	NameReal.TextSize = 13.000
 	NameReal.TextTransparency = 0.590
 	NameReal.Text = tostring(text)
