@@ -5642,7 +5642,7 @@ while cac() do
 end
 end)
 getgenv().fase = 9
-AutoFarm:Slider("Super Fast Attack Mode",1,getgenv().fase,false,function(flo)
+AutoFarm:Slider("Super Fast Attack Mode",true,1,10,getgenv().fase,5,function(flo)
 getgenv().fase = flo
 end)
 AutoFarm:Toggle("Fast On Slider",false,function(oxi)
