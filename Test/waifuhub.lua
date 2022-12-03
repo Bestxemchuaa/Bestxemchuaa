@@ -28,8 +28,6 @@ coroutine.wrap(
 	end
 )()
 
-
-
 local Testui = Instance.new("ScreenGui")
 Testui.Name = "Testui"
 Testui.Parent = game.CoreGui
@@ -119,7 +117,6 @@ function ui:W1n(text,text2,text2Pos,toclose)
 	MainSceen.ClipsDescendants = true
 	MainSceen.Position = UDim2.new(0.5, 0, 0.5, 0)
 	MainSceen.Size = UDim2.new(0, 550, 0, 300)
-
 
 	local Main_UiConner = Instance.new("UICorner")
 	Main_UiConner.Name = "Main_UiConner"
@@ -697,6 +694,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				ImageButton.AutoButtonColor = false
 				ImageButton.Position = UDim2.new(0.5, 0, 0.5, 0)
 				ImageButton.Size = UDim2.new(0, 0, 0, 0)
+
 				local UICorner6 = Instance.new("UICorner")
 
 				UICorner6.CornerRadius = UDim.new(0, 6)
@@ -1891,7 +1889,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 
 				LineFrame.Name = "LineFrame"
 				LineFrame.Parent = ScrollingFrame_Pageframe
-				LineFrame.BackgroundColor3 =  Color3.fromRGB(0, 0, 0)
+				LineFrame.BackgroundColor3 =  Color3.fromRGB(250,0,0)
 				LineFrame.BorderSizePixel = 0
 				LineFrame.Position = UDim2.new(0.5, 0, 0.7, 0)
 				LineFrame.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -3967,6 +3965,7 @@ repeat wait() until game:GetService("Players").LocalPlayer.PlayerGui:FindFirstCh
 end
 -----
 -- Function
+
 function isnil(thing)
 		return (thing == nil)
 	end
@@ -3974,7 +3973,6 @@ function isnil(thing)
 		return math.floor(tonumber(n) + 0.5)
 	end
 	Number = math.random(1, 1000000)
-	
 function InfAb()
         if getgenv().InfAbility then
             if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("Agility") then
@@ -4334,24 +4332,7 @@ Player.Character.Humanoid:LoadAnimation(ReplicatedStorage.Util.Anims.Storage["2"
 	return old(self, ...)
 end))
 end
-local numpos = 0
-  function bypasstp(x)
-      spawn(function()
-          while task.wait() do
-              game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = x
-              if game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame == x then
-                  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetHomePoint")
-              end
-              numpos = numpos + 1
-              if numpos == 5 then
-                  game.Players.LocalPlayer.Character.Head:Destroy()
-                  numpos=0
-                  break
-              end
-              task.wait()
-          end
-      end)
-  end
+
 function NoDodgeCool()
 		if nododgecool then
 			for i,v in next, getgc() do
@@ -5118,20 +5099,14 @@ OPENCLOSE.Position=UDim2.new(0.120833337, 0, 0.0952890813, 0)
 OPENCLOSE.Size=UDim2.new(0.0447916649, 0, 0.0845824406, 0)
 OPENCLOSE.Font=Enum.Font.DenkOne
 OPENCLOSE.Text="Open"
-OPENCLOSE.TextColor3=Color3.fromHSV(ue,1,1)
+OPENCLOSE.TextColor3=Color3.fromRGB(255, 0, 0)
 OPENCLOSE.TextScaled=true
 OPENCLOSE.TextSize=14.000
 OPENCLOSE.TextWrapped=true
 OPENCLOSE.MouseButton1Click:Connect(function()
 game.CoreGui:FindFirstChild("Testui").Enabled = not game.CoreGui:FindFirstChild("Testui").Enabled
 end)
-while true do
-task.wait()
-local t = 5
- local ue = tick() % t / t
-OPENCLOSE.TextColor3 = Color3.fromHSV(ue,1,1)
-OPENCLOSE.Parent.Color = OPENCLOSE.TextColor3
-end
+
 -- local win = UiLib:Window("Béo HUB | Blox Fruits v17.3", giongcaikia")
 
 local win = ui:W1n("Waifu HUB | V 1.0","Blox Fruits",0.50,Enum.KeyCode.RightControl)
@@ -5186,12 +5161,13 @@ spawn(function()
 			if getgenv().AutoFarm then
 				AutoQuest()
 				TP()
+				 
 			end
 		end
 	end)
 	game:GetService("RunService").Heartbeat:Connect(
 	function()
-		if getgenv().NoClip or getgenv().AutoFarm or getgenv().Observation or getgenv().AutoNew or getgenv().Factory or getgenv().GunMastery or getgenv().Mastery or FramBoss or FramAllBoss or getgenv().getgenv().AutoBartilo or getgenv().MobAura or getgenv().AutoRengoku or getgenv().AutoSharkman or getgenv().Ectoplasm or getgenv().PoleHop or getgenv().SwanHop or getgenv().BlackBeardHop or getgenv().Chest or getgenv().Electro or rainbowhaki or Hunter or observationv2 or getgenv().ElitehuntHop or getgenv().EliteHunt or getgenv().Pole or getgenv().Tushitahop or getgenv().YamaHop or getgenv().StoreFruit or getgenv().HolyTorch then
+		if getgenv().NoClip or getgenv().AutoFarm or getgenv().AutoFarmt or getgenv().Observation or getgenv().AutoNew or getgenv().Factory or getgenv().GunMastery or getgenv().Mastery or FramBoss or FramAllBoss or getgenv().getgenv().AutoBartilo or getgenv().MobAura or getgenv().AutoRengoku or getgenv().AutoSharkman or getgenv().Ectoplasm or getgenv().PoleHop or getgenv().SwanHop or getgenv().BlackBeardHop or getgenv().Chest or getgenv().Electro or rainbowhaki or Hunter or observationv2 or getgenv().ElitehuntHop or getgenv().EliteHunt or getgenv().Pole or getgenv().Tushitahop or getgenv().YamaHop or getgenv().StoreFruit or getgenv().HolyTorch then
 			if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid") then
 				game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(11)
 			end
@@ -5229,13 +5205,11 @@ spawn(function()
         end
     end
 end)
-
 function AutoQuest()     if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false then
         CheckQuest()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetHomePoint")
-wait(1)
+        repeat wait()
             chichdiem(CFrameQuest)
-           
+        until (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQuest.Position).Magnitude <= 4
         wait(0.4)
         local args = {
             [1] = "StartQuest",
@@ -5262,9 +5236,9 @@ function TP()
 												v.HumanoidRootPart.CanCollide = false
 												
                                                 
-												EquipWeapon(getgenv().tool)
+												
 												game.Players.LocalPlayer.Character.HumanoidRootPart.Size = Vector3.new(2, 2.02, 1)
-			   v.HumanoidRootPart.Size = Vector3.new(70,70,70)
+			   v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 			 chichdiem(v.HumanoidRootPart.CFrame * CFrame.new(0,30,0))
 			   
 			   game:GetService'VirtualUser':CaptureController()
@@ -5289,25 +5263,65 @@ end
 end
 
 
-
-local SelectToolWeapona = AutoFarm:Dropdown("SelectWeapon",lol,function(Select)
-    getgenv().tool = Select
+AutoFarm:Line()
+AutoFarm:Label("Select Weapon")
+AutoFarm:Toggle("Auto Select Melee",false,function(cc)
+  getgenv().farmmelee = cc
 end)
-
-AutoFarm:Button("Refresh Weapon", function()
-	SelectToolWeapona:Clear()
-	for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do  
-		if v:IsA("Tool") then
-			SelectToolWeapona:Add(v.Name)
-		end
-	end
-	for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do  
-		if v:IsA("Tool") then
-			SelectToolWeapona:Add(v.Name)
-		end
-	end
+spawn(function()
+while wait() do
+if getgenv().farmmelee then
+dit()
+end
+end
 end)
+function dit()
+getgenv().type = "Melee" -- "Blox Fruit" ,"Sword" ,"Gun" ,"Wear"
+for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if v.ToolTip == getgenv().type then
+        game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+    end
+end
+end
+AutoFarm:Toggle("Auto Select Sword",false,function(cc)
+  getgenv().farmsw = cc
+end)
+spawn(function()
+while wait() do
+if getgenv().farmsw then
+co()
+end
+end
+end)
+function co()
+getgenv().type = "Sword" -- "Blox Fruit" ,"Sword" ,"Gun" ,"Wear"
+for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if v.ToolTip == getgenv().type then
+        game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+    end
+end
 
+end
+AutoFarm:Toggle("Auto Select Fruits",false,function(cc)
+  getgenv().farmsw = cc
+end)
+spawn(function()
+while wait() do
+if getgenv().farmsw then
+lonn()
+end
+end
+end)
+function lonn()
+getgenv().type = "Blox Fruit" -- "Blox Fruit" ,"Sword" ,"Gun" ,"Wear"
+for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if v.ToolTip == getgenv().type then
+        game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+    end
+end
+
+end
+AutoFarm:Line()
     AutoFarm:Toggle("Lock Mob",false,function(lm)
   getgenv().lockmob=lm 
 end)
@@ -5607,7 +5621,6 @@ while cac() do
 	AttackNoCD()
 end
     end)
-
 getgenv().fase = 9
 AutoFarm:Slider("Super Fast Attack Mode",true,1,10,getgenv().fase,5,function(flo)
 getgenv().fase = flo
@@ -5683,6 +5696,16 @@ for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
       end
   end
 end)
+spawn(function()
+while wait() do
+if getgenv().f then
+        local ohString1 = "SetTeam"
+        local ohString2 = "Pirates"
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(ohString1, ohString2)
+     end
+end
+end)
+
 Main:Toggle("Auto Chest[Tween]",false,function(jie)
 	getgenv().k = jie
 end)
@@ -5728,12 +5751,7 @@ Main:Toggle("Auto Evo Race",false,function(vu)
 									for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
 										if v.Name == "Swan Pirate [Lv. 775]" then
 											repeat game:GetService("RunService").Heartbeat:wait()
-												getgenv().type = "Melee" -- "Blox Fruit" ,"Sword" ,"Gun" ,"Wear"
-for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-    if v.ToolTip == getgenv().type then
-        game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
-    end
-end
+												EquipWeapon(SelectWeapon)
 												chichdiem(v.HumanoidRootPart.CFrame * CFrame.new(0,30,0))
 												v.HumanoidRootPart.CanCollide = false
 												v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
@@ -5857,13 +5875,7 @@ end
 					for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
 						if v.Name == "Jeremy [Lv. 850] [Boss]" then
 							repeat wait(.1)
-								getgenv().type = "Melee" -- "Blox Fruit" ,"Sword" ,"Gun" ,"Wear"
-for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-    if v.ToolTip == getgenv().type then
-        game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
-    end
-end
-
+								EquipWeapon(SelectWeapon)
 								v.HumanoidRootPart.Size = Vector3.new(50,50,50)
 								chichdiem(v.HumanoidRootPart.CFrame * CFrame.new(0,15,6))
 								game:GetService'VirtualUser':CaptureController()
@@ -5913,13 +5925,7 @@ spawn(function()
 					for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
 						if string.find(v.Name, "Ship") then
 							repeat game:GetService("RunService").Heartbeat:wait()
-								getgenv().type = "Melee" -- "Blox Fruit" ,"Sword" ,"Gun" ,"Wear"
-for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-    if v.ToolTip == getgenv().type then
-        game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
-    end
-end
-
+								EquipWeapon(SelectWeapon)
 								if string.find(v.Name, "Ship") then
 									chichdiem(v.HumanoidRootPart.CFrame * CFrame.new(0,20,0))
 									game:GetService'VirtualUser':CaptureController()
@@ -6152,7 +6158,13 @@ Main:Button("Refresh Boss",function()
                                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                     repeat task.wait()
                                         AutoHaki()
-                                        EquipWeapon(getgenv().toolo)
+                                        getgenv().type = "Melee" -- "Blox Fruit" ,"Sword" ,"Gun" ,"Wear"
+for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if v.ToolTip == getgenv().type then
+        game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+    end
+end
+
                                         v.HumanoidRootPart.CanCollide = false
                                         v.Humanoid.WalkSpeed = 0
                                         v.HumanoidRootPart.Size = Vector3.new(80,80,80)                             
@@ -6173,36 +6185,7 @@ Main:Button("Refresh Boss",function()
             end
         end
     end)
-function EquipWeapon(ToolSe) if game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe) then local tool = game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe) wait(.4) 
-	game.Players.LocalPlayer.Character.Humanoid:EquipTool(tool)end end
-K = {}
-for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do  
-    if v:IsA("Tool") then
-       table.insert(K ,v.Name)
-    end
-end
-for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do  
-    if v:IsA("Tool") then
-       table.insert(K, v.Name)
-    end
-end
-local dropdowntoolo =Main:Dropdown("Selectweapon Auto Bone/Boss",K, function(daubuoi)
-    getgenv().toolo = daubuoi
-end)
 
-Main:Button("Refresh",function()
-    dropdowntoolo:Clear()
-	for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do  
-		if v:IsA("Tool") then
-			dropdowntoolo:Add(v.Name)
-		end
-	end
-	for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do  
-		if v:IsA("Tool") then
-			dropdowntoolo:Add(v.Name)
-		end
-	end
-end)
 Main:Toggle("Auto Farm Bone",false,function(vu)
 	getgenv().getgenv().Auto_Bone = vu
 	
@@ -6219,7 +6202,13 @@ for x,y in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
 								repeat game:GetService("RunService").Heartbeat:wait()
 									chichdiem(v.HumanoidRootPart.CFrame * CFrame.new(0,30,0))
 AutoHaki()
-EquipWeapon(getgenv().toolo)
+getgenv().type = "Melee" -- "Blox Fruit" ,"Sword" ,"Gun" ,"Wear"
+for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if v.ToolTip == getgenv().type then
+        game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+    end
+end
+
 v.HumanoidRootPart.Transparency = 1
                                                                        
 									v.HumanoidRootPart.CanCollide = false 
@@ -6428,7 +6417,7 @@ end)
                      
     
 Stat:Label("Stats")
-
+Stat:Label("Waifu HUB On Top")
 Stat:Toggle("Melee",false,function(val)
 	getgenv().melee = val
 end)
@@ -7800,7 +7789,7 @@ local x2Code = {
     game.Players.LocalPlayer.Character.Pants:Destroy()
     game.Players.LocalPlayer.Character.Animate.Disabled = true 
 end)
-Misc:Toggle("Auto Click",autoclick,function(value)
+Misc:Toggle("Auto Click",false,function(value)
 		getgenv().AuctoClick = value
 	end)
 	spawn(function()
