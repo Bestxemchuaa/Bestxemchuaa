@@ -555,7 +555,7 @@ end
 
 			TextNoti.Text = text
 
-			TextNoti.TextColor3 = Color3.fromRGB(255, 255, 255)
+			TextNoti.TextColor3 = Color3.fromRGB(255, 0, 0)
 
 			TextNoti.TextSize = 13.000
 
@@ -1089,7 +1089,7 @@ end
 
 				TextButton_Toggle2.BackgroundTransparency =1
 
-				TextButton_Toggle2.BackgroundColor3 = Color3.fromHSV(e,1,1)
+				TextButton_Toggle2.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 				TextButton_Toggle2.BorderSizePixel = 0
 
@@ -1104,13 +1104,7 @@ end
 				TextButton_Toggle2.TextColor3 = Color3.fromRGB(0, 0, 0)
 
 				TextButton_Toggle2.TextSize = 12.000
-while true do
-task.wait()
-local t = 5
- local e = tick() % t / t
-TextButton_Toggle2.BackgroundColor3 = Color3.fromHSV(e,1,1)
-TextButton_Toggle2.Parent.Color = TextButton_Toggle2.BackgroundColor3
-end
+
 				TextButton_Toggle2.MouseEnter:Connect(function()
 
 					TweenService:Create(
@@ -1129,7 +1123,7 @@ end
 
 						TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(255, 255, 255)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromRGB(255, 0, 0)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1189,7 +1183,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromRGB(250,250,250)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1199,7 +1193,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromRGB(153, 0, 102)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromRGB(82, 250, 144)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1281,7 +1275,7 @@ end
 
 					TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-					{BackgroundColor3 =  Color3.fromRGB(153, 0, 102)} -- UDim2.new(0, 128, 0, 25)
+					{BackgroundColor3 =  Color3.fromRGB(82, 250, 144)} -- UDim2.new(0, 128, 0, 25)
 
 				):Play()
 
@@ -1427,7 +1421,7 @@ end
 
 				Button.Name = "Button"
 
-				Button.BackgroundColor3 = Color3.fromHSV(vb,1,1)
+				Button.BackgroundColor3 = Color3.fromRGB(255,0,0)
 
 				Button.Size = UDim2.new(0,150, 0, 25)
 
@@ -1452,13 +1446,7 @@ end
 				Button.AutoButtonColor = false
 
 				Button.ClipsDescendants = true
-      while true do
-task.wait()
-local t = 5
- local vb = tick() % t / t
-Button.BackgroundColor3 = Color3.fromHSV(vb,1,1)
-Button.Parent.Color = Button.BackgroundColor3
-end
+
 				local ConnerPageMhee = Instance.new("UICorner")
 
 				ConnerPageMhee.CornerRadius = UDim.new(0, 4)
@@ -1677,7 +1665,7 @@ end
 
 				LabelNameSliderxd.Text = tostring(text)
 
-				LabelNameSliderxd.TextColor3 = Color3.fromRGB(255, 255, 255)
+				LabelNameSliderxd.TextColor3 = Color3.fromRGB(255, 0, 0)
 
 				LabelNameSliderxd.TextSize = 11.000
 
@@ -1737,7 +1725,7 @@ end
 
 				end
 
-				CustomValue.TextColor3 = Color3.fromRGB(255, 255, 255)
+				CustomValue.TextColor3 = Color3.fromRGB(255, 0, 0)
 
 				CustomValue.TextSize = 8.000
 
@@ -2417,7 +2405,7 @@ end
 
 							TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-							{BackgroundColor3 =  Color3.fromRGB(153, 0, 102)} -- UDim2.new(0, 128, 0, 25)
+							{BackgroundColor3 =  Color3.fromRGB(82, 250, 144)} -- UDim2.new(0, 128, 0, 25)
 
 						):Play()
 
@@ -2503,7 +2491,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromRGB(153, 0, 102)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromRGB(82, 250, 144)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -2621,7 +2609,7 @@ end
 
 				LabelNameSliderxd.Text = tostring(text)
 
-				LabelNameSliderxd.TextColor3 = Color3.fromRGB(255, 255, 255)
+				LabelNameSliderxd.TextColor3 = Color3.fromRGB(255, 0, 0)
 
 				LabelNameSliderxd.TextSize = 11.000
 
@@ -2681,7 +2669,7 @@ end
 
 				end
 
-				CustomValue.TextColor3 = Color3.fromRGB(255, 255, 255)
+				CustomValue.TextColor3 = Color3.fromRGB(255, 0, 0)
 
 				CustomValue.TextSize = 8.000
 
@@ -3403,7 +3391,7 @@ end
 
 							TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-							{TextColor3 = Color3.fromRGB(255, 255, 255)} -- UDim2.new(0, 128, 0, 25)
+							{TextColor3 = Color3.fromRGB(255, 0, 0)} -- UDim2.new(0, 128, 0, 25)
 
 						):Play()
 
@@ -3477,7 +3465,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(255, 255, 255)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromRGB(255, 0, 0)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -3699,7 +3687,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(255, 255, 255)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromRGB(255, 0, 0)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -4119,7 +4107,7 @@ end
 
 				textlist.Text = tostring(v.Name)
 
-				textlist.TextColor3 = Color3.fromRGB(255, 255, 255)
+				textlist.TextColor3 = Color3.fromRGB(255, 0, 0)
 
 				textlist.TextSize = 13.000
 
@@ -4201,7 +4189,7 @@ end
 
 					TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-					{TextColor3 = Color3.fromRGB(255, 255, 255)} -- UDim2.new(0, 128, 0, 25)
+					{TextColor3 = Color3.fromRGB(255, 0, 0)} -- UDim2.new(0, 128, 0, 25)
 
 				):Play()
 
@@ -4487,7 +4475,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(255, 255, 255)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromRGB(255, 0, 0)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -4497,7 +4485,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(255, 255, 255)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromRGB(255, 0, 0)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -4739,7 +4727,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(255, 255, 255)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromRGB(255, 0, 0)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -4749,7 +4737,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(255, 255, 255)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromRGB(255, 0, 0)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -4759,7 +4747,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(255, 255, 255)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromRGB(255, 0, 0)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -4887,7 +4875,6 @@ task.wait()
 local t = 5
  local ne = tick() % t / t
 LineFrame.BackgroundColor3 = Color3.fromHSV(ne,1,1)
-LineFrame.Parent.Color = LineFrame.BackgroundColor3
 end
                 
 
@@ -5247,7 +5234,7 @@ end
 
 			TextButton_3_Toggle2.Text = "Rainbow"
 
-			TextButton_3_Toggle2.TextColor3 = Color3.fromRGB(255, 255, 255)
+			TextButton_3_Toggle2.TextColor3 = Color3.fromRGB(255, 0, 0)
 
 			TextButton_3_Toggle2.TextSize = 13.000
 
@@ -5419,7 +5406,7 @@ end
 
 			BTN_XD.Text = "Confirm"
 
-			BTN_XD.TextColor3 = Color3.fromRGB(255, 255, 255)
+			BTN_XD.TextColor3 = Color3.fromRGB(255, 0, 0)
 
 			BTN_XD.TextSize = 11.000
 
@@ -5479,7 +5466,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromRGB(153, 0, 102)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromRGB(82, 250, 144)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -5961,7 +5948,7 @@ end
 
 				LabelFarm2.Text = text
 
-				LabelFarm2.TextColor3 = Color3.fromRGB(255, 255, 255)
+				LabelFarm2.TextColor3 = Color3.fromRGB(255, 0, 0)
 
 				LabelFarm2.TextSize = 12.000
 
@@ -6248,7 +6235,7 @@ function UpdateEspPlayer()
 									name.Text = ("Chest 2" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
 								end
 								if v.Name == "Chest3" then
-									name.TextColor3 = Color3.fromRGB(255, 255, 255)
+									name.TextColor3 = Color3.fromRGB(255, 0, 0)
 									name.Text = ("Chest 3" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
 								end
 							else
@@ -6285,7 +6272,7 @@ function UpdateEspPlayer()
 							name.TextYAlignment = 'Top'
 							name.BackgroundTransparency = 1
 							name.TextStrokeTransparency = 0.5
-							name.TextColor3 = Color3.fromRGB(255, 255, 255)
+							name.TextColor3 = Color3.fromRGB(255, 0, 0)
 							name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' M')
 						else
 							v.Handle['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' M')
@@ -6319,14 +6306,14 @@ function UpdateEspPlayer()
 							name.TextYAlignment = 'Top'
 							name.BackgroundTransparency = 1
 							name.TextStrokeTransparency = 0.5
-							name.TextColor3 = Color3.fromRGB(255, 255, 255)
+							name.TextColor3 = Color3.fromRGB(255, 0, 0)
 							if v.Name == "Flower1" then 
 								name.Text = ("Blue Flower" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
 								name.TextColor3 = Color3.fromRGB(0, 0, 255)
 							end
 							if v.Name == "Flower2" then
 								name.Text = ("Red Flower" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
-								name.TextColor3 = Color3.fromRGB(255, 255, 255)
+								name.TextColor3 = Color3.fromRGB(255, 0, 0)
 							end
 						else
 							v['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
@@ -7243,13 +7230,13 @@ DINOHUB.Parent=game.CoreGui
 DINOHUB.ZIndexBehavior=Enum.ZIndexBehavior.Sibling
 OPENCLOSE.Name="OPENCLOSE"
 OPENCLOSE.Parent=DINOHUB
-OPENCLOSE.BackgroundColor3=Color3.fromRGB(255, 52, 0)
+OPENCLOSE.BackgroundColor3=Color3.fromHSV(ue,1,1)
 OPENCLOSE.BorderSizePixel=0
 OPENCLOSE.Position=UDim2.new(0.120833337, 0, 0.0952890813, 0)
 OPENCLOSE.Size=UDim2.new(0.0447916649, 0, 0.0845824406, 0)
 OPENCLOSE.Font=Enum.Font.DenkOne
 OPENCLOSE.Text="Open"
-OPENCLOSE.TextColor3=Color3.fromHSV(ue,1,1)
+OPENCLOSE.TextColor3=Color3.fromRGB(255,0,0)
 OPENCLOSE.TextScaled=true
 OPENCLOSE.TextSize=14.000
 OPENCLOSE.TextWrapped=true
@@ -7260,7 +7247,7 @@ while true do
 task.wait()
 local t = 5
  local ue = tick() % t / t
-OPENCLOSE.TextColor3 = Color3.fromHSV(ue,1,1)
+OPENCLOSE.BackgroundColor3 = Color3.fromHSV(ue,1,1)
 end
 -- local win = UiLib:Window("Béo HUB | Blox Fruits v17.3", giongcaikia")
 local win = create:Win("W A I F U H U B")
