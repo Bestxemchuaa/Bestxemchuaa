@@ -7427,7 +7427,8 @@ AutoFarm:Button("Refresh Weapon", function()
 		end
 	end
 end)
-
+AutoFarm:Line()
+AutoFarm:Label("Setting Farm")
     AutoFarm:Toggle("Lock Mob",false,function(lm)
   getgenv().lockmob=lm 
 end)
