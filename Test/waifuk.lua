@@ -7241,7 +7241,7 @@ OPENCLOSE.TextScaled=true
 OPENCLOSE.TextSize=14.000
 OPENCLOSE.TextWrapped=true
 OPENCLOSE.MouseButton1Click:Connect(function()
-game.CoreGui:FindFirstChild("Testui").Enabled = not game.CoreGui:FindFirstChild("Testui").Enabled
+game.CoreGui:FindFirstChild("redui").Enabled = not game.CoreGui:FindFirstChild("redui").Enabled
 end)
 while true do
 task.wait()
