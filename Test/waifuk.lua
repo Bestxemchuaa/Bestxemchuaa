@@ -4857,7 +4857,7 @@ end
 
 				LineFrame.Parent = ScrollingFrame_Pageframe
 
-				LineFrame.BackgroundColor3 =  Color3.fromRGB(127,255,212)
+				LineFrame.BackgroundColor3 =  Color3.fromHSV(ne,1,1)
 
 				LineFrame.BorderSizePixel = 0
 
