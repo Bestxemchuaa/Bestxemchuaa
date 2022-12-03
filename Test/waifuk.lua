@@ -4857,7 +4857,7 @@ end
 
 				LineFrame.Parent = ScrollingFrame_Pageframe
 
-				LineFrame.BackgroundColor3 =  Color3.fromHSV(ne,1,1)
+				LineFrame.BackgroundColor3 =  Color3.fromRGB(250,0,0)
 
 				LineFrame.BorderSizePixel = 0
 
@@ -4870,13 +4870,7 @@ end
 				LineFrame.BackgroundTransparency  = 0
 
 				LineFrame.ClipsDescendants = true
-while true do
-task.wait()
-local k = 5
- local ne = tick() % k / k
-LineFrame.BackgroundColor3 = Color3.fromHSV(ne,1,1)
-end
-                
+
 
                 
 
