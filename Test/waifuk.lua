@@ -4872,8 +4872,8 @@ end
 				LineFrame.ClipsDescendants = true
 while true do
 task.wait()
-local t = 5
- local ne = tick() % t / t
+local k = 5
+ local ne = tick() % k / k
 LineFrame.BackgroundColor3 = Color3.fromHSV(ne,1,1)
 end
                 
