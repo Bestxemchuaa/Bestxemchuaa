@@ -4876,12 +4876,7 @@ end
 				LineFrame.BackgroundTransparency  = 0
 
 				LineFrame.ClipsDescendants = true
-while true do
-task.wait()
-local k = 5
- local e = tick() % k / k
-LineFrame.BackgroundColor3 = Color3.fromHSV(e,1,1)
-end
+
                 
 
 				local LineFrame_BindConner = Instance.new("UICorner")
@@ -10090,5 +10085,13 @@ if getgenv().WalkWater then
 	platform.Anchored = true 
 	platform.Parent = game.workspace
 	end
+end
+end)
+spawn(function()
+while true do
+task.wait()
+local k = 5
+ local e = tick() % k / k
+LineFrame.BackgroundColor3 = Color3.fromHSV(e,1,1)
 end
 end)
