@@ -220,7 +220,7 @@ end
 
 		ClickFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 
-		ClickFrame.BackgroundColor3 = Color3.fromRGB(255,0,0)
+		ClickFrame.BackgroundColor3 = Color3.fromHSV(uhe,1,1)
 
 		ClickFrame.BorderSizePixel = 0
 
@@ -231,7 +231,13 @@ end
 		ClickFrame.ClipsDescendants = true
 
 		ClickFrame.BackgroundTransparency = 1
-
+  while true do
+task.wait()
+local kt = 5
+ local uhe = tick() % kt / kt
+ClickFrame.BackgroundColor3 = Color3.fromHSV(uhe,1,1)
+ClickFrame.Parent.Color = ClickFrame.BackgroundColor3
+end
 		MakeDraggable(ClickFrame,MainSceen)
 
 		tween:Create(MainSceen,TweenInfo.new(0.4,Enum.EasingStyle.Back),{Size = UDim2.new(0, 550, 0, 474)}):Play()
@@ -362,10 +368,10 @@ end
 
 		ScrollingFrame_Menubar.CanvasSize = UDim2.new(2, 0, 0, 0)
 
-		ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromHSV(tick() % 5 / 5,1,1)﻿ 
+		ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromRGB(255,0,0)
 
 		ScrollingFrame_Menubar.ScrollBarThickness = 3
-
+   
 		local UIListLayout_Menubar = Instance.new("UIListLayout")
 
 		UIListLayout_Menubar.Parent = ScrollingFrame_Menubar
@@ -498,7 +504,7 @@ end
 
 			txdlid.Name = "TextLabel_Tap"
 
-			txdlid.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5,1,1)﻿ 
+			txdlid.BackgroundColor3 = Color3.fromRGB(255,0,0)
 
 			txdlid.Size =UDim2.new(0, 160, 0,25 )
 
@@ -912,7 +918,7 @@ end
 
 				Toggle.Parent = ScrollingFrame_Pageframe
 
-				Toggle.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5,1,1)﻿ 
+				Toggle.BackgroundColor3 = Color3.fromRGB(255,0,0)
 
 				Toggle.BorderSizePixel = 0
 
@@ -930,7 +936,7 @@ end
 
 				TextButton_Toggle.BackgroundTransparency =1
 
-				TextButton_Toggle.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5,1,1)﻿ 
+				TextButton_Toggle.BackgroundColor3 = Color3.fromRGB(255,0,0)
 
 				TextButton_Toggle.BorderSizePixel = 0
 
@@ -950,7 +956,7 @@ end
 
 				TextButton_2_Toggle.Parent = TextButton_Toggle
 
-				TextButton_2_Toggle.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5,1,1)﻿ 
+				TextButton_2_Toggle.BackgroundColor3 = Color3.fromRGB(255,0,0)
 
 		--        TextButton_2_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
 
@@ -984,7 +990,7 @@ end
 
 				TextButton_3_Toggle.Parent = TextButton_2_Toggle
 
-				TextButton_3_Toggle.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5,1,1)﻿ 
+				TextButton_3_Toggle.BackgroundColor3 = Color3.fromRGB(255,0,0)
 
 		--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
 
@@ -1018,7 +1024,7 @@ end
 
 				TextButton_4_Toggle.Parent = TextButton_3_Toggle
 
-				TextButton_4_Toggle.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5,1,1)﻿ 
+				TextButton_4_Toggle.BackgroundColor3 = Color3.fromRGB(255,0,0)
 
 		--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
 
@@ -1056,7 +1062,7 @@ end
 
 				TextLabel_Toggle.Parent = Toggle
 
-				TextLabel_Toggle.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5,1,1)﻿ 
+				TextLabel_Toggle.BackgroundColor3 = Color3.fromRGB(255,0,0)
 
 				TextLabel_Toggle.BackgroundTransparency = 1
 
@@ -1072,7 +1078,7 @@ end
 
 				TextLabel_Toggle.Text = text
 
-				TextLabel_Toggle.TextColor3 = Color3.fromHSV(tick() % 5 / 5,1,1)﻿ 
+				TextLabel_Toggle.TextColor3 = Color3.fromRGB(255,0,0)
 
 				TextLabel_Toggle.TextSize = 13.000
 
@@ -1088,7 +1094,7 @@ end
 
 				TextButton_Toggle2.BackgroundTransparency =1
 
-				TextButton_Toggle2.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5,1,1)﻿ 
+				TextButton_Toggle2.BackgroundColor3 = Color3.fromRGB(255,0,0)
 
 				TextButton_Toggle2.BorderSizePixel = 0
 
@@ -1192,7 +1198,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromHSV(tick() % 5 / 5,1,1)﻿ } -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromRGB(255, 0, 0)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1386,7 +1392,7 @@ end
 
 				ButtonFrame.Parent = ScrollingFrame_Pageframe
 
-				ButtonFrame.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5,1,1)﻿ 
+				ButtonFrame.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 				ButtonFrame.BorderSizePixel = 0
 
@@ -1420,7 +1426,7 @@ end
 
 				Button.Name = "Button"
 
-				Button.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5,1,1)﻿ 
+				Button.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 				Button.Size = UDim2.new(0,150, 0, 25)
 
@@ -4856,7 +4862,7 @@ end
 
 				LineFrame.Parent = ScrollingFrame_Pageframe
 
-				LineFrame.BackgroundColor3 =  Color3.fromHSV(tick() % 5 / 5,1,1)﻿ 
+				LineFrame.BackgroundColor3 =  Color3.fromHSV(ujie,1,1)
 
 				LineFrame.BorderSizePixel = 0
 
@@ -4869,7 +4875,13 @@ end
 				LineFrame.BackgroundTransparency  = 0
 
 				LineFrame.ClipsDescendants = true
-
+       while true do
+task.wait()
+local tko = 5
+ local ujie = tick() % tko / tko
+LineFrame.BackgroundColor3 = Color3.fromHSV(ujie,1,1)
+LineFrame.Parent.Color = LineFrame.BackgroundColor3
+end
                 
 
                 
