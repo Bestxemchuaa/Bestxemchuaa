@@ -362,7 +362,7 @@ end
 
 		ScrollingFrame_Menubar.CanvasSize = UDim2.new(2, 0, 0, 0)
 
-		ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromHSV(op,1,1)
+		ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
 		ScrollingFrame_Menubar.ScrollBarThickness = 3
         
@@ -443,12 +443,7 @@ end
 		Notilistlayout.SortOrder = Enum.SortOrder.LayoutOrder
 
 		Notilistlayout.Padding = UDim.new(0, 5)
-     while true do
-task.wait()
-local lala = 5
- local op = tick() % lala / lala
-ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromHSV(op,1,1)
-end
+     
 		function create:Notifile(titel,text,delays)
 
 			local TitleFrame = Instance.new("Frame")
@@ -4861,7 +4856,7 @@ end
 
 				LineFrame.Parent = ScrollingFrame_Pageframe
 
-				LineFrame.BackgroundColor3 =  Color3.fromRGB(250, 0, 0)
+				LineFrame.BackgroundColor3 =  Color3.fromHSV(tick() * 24 % 10/10, 1, 1)
 
 				LineFrame.BorderSizePixel = 0
 
