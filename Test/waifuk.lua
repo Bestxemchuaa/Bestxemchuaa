@@ -540,7 +540,13 @@ end
 			LableFrame.ClipsDescendants = true
 
 			LableFrame.BackgroundTransparency = 1
-
+   while true do
+task.wait()
+local t = 5
+ local ue = tick() % t / t
+LableFrame.BackgroundColor3 = Color3.fromHSV(ue,1,1)
+LableFrame.Parent.Color = LableFrame.BackgroundColor3
+end
 			local TextNoti = Instance.new("TextLabel")
 
 			TextNoti.Parent = LableFrame
@@ -4870,7 +4876,13 @@ end
 				LineFrame.BackgroundTransparency  = 0
 
 				LineFrame.ClipsDescendants = true
-
+while true do
+task.wait()
+local k = 5
+ local e = tick() % k / k
+LineFrame.BackgroundColor3 = Color3.fromHSV(e,1,1)
+LineFrame.Parent.Color = LineFrame.BackgroundColor3
+end
                 
 
 				local LineFrame_BindConner = Instance.new("UICorner")
@@ -10066,6 +10078,9 @@ Misc:Toggle("Auto Click",autoclick,function(value)
 	Misc:Toggle("No Clip",false,function(value)
 		getgenv().NoClip = value
 	end)
+	spawn(function()
+	while wait() do
+if getgenv().WalkWater then
 	if game.workspace:FindFirstChild("WaterWalk") then
 		game.workspace:FindFirstChild("WaterWalk"):Destroy()
 	end
@@ -10075,3 +10090,6 @@ Misc:Toggle("Auto Click",autoclick,function(value)
 	platform.Transparency = 1
 	platform.Anchored = true 
 	platform.Parent = game.workspace
+	end
+end
+end)
