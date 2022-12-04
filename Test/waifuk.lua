@@ -6441,11 +6441,43 @@ Player.Character.Humanoid:LoadAnimation(ReplicatedStorage.Util.Anims.Storage["2"
          
           
 			coroutine.wrap (function() wait(1) require(ReplicatedStorage.Effect.Container.RaceTransformation.Main)(ArgsDash) end)()
-            
+            wait(6)
+                        if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("Agility") then
+                local inf = Instance.new("ParticleEmitter")
+                inf.Acceleration = Vector3.new(0,0,0)
+                inf.Archivable = true
+                inf.Drag = 20
+                inf.EmissionDirection = Enum.NormalId.Top
+                inf.Enabled = true
+                inf.Lifetime = NumberRange.new(0,0)
+                inf.LightInfluence = 0
+                inf.LockedToPart = true
+                inf.Name = "Agility"
+                inf.Rate = 500
+                local numberKeypoints2 = {
+                    NumberSequenceKeypoint.new(0, 0);
+                    NumberSequenceKeypoint.new(1, 4); 
+                }
+                inf.Size = NumberSequence.new(numberKeypoints2)
+                inf.RotSpeed = NumberRange.new(9999, 99999)
+                inf.Rotation = NumberRange.new(0, 0)
+                inf.Speed = NumberRange.new(30, 30)
+                inf.SpreadAngle = Vector2.new(0,0,0,0)
+                inf.Texture = ""
+                inf.VelocityInheritance = 0
+                inf.ZOffset = 2
+                inf.Transparency = NumberSequence.new(0)
+                inf.Color = ColorSequence.new(Color3.fromRGB(0,0,0),Color3.fromRGB(0,0,0))
+                inf.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+            end
+        else
+            if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("Agility") then
+                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("Agility"):Destroy()
+            end
 				end
 	end
 	
-	return old(self, ...)
+	
 end))
 end
 local numpos = 0
@@ -7255,6 +7287,7 @@ local ShopTab = Pvps:newpage()
 local RaidsTab = RaidsTabs:newpage()
 local TeleportTab = RaidsTabs:newpage()
 local Misc = Miscs:newpage()
+local Misc2 = Miscs:newpage()
 lol = {}
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do  
     if v:IsA("Tool") then
@@ -7277,8 +7310,10 @@ spawn(function()  game:GetService("RunService").Heartbeat:Connect(function() if 
 else  if game:GetService("Workspace"):FindFirstChild("LOL") then  game:GetService("Workspace"):FindFirstChild("LOL"):Destroy() end end end) end)
 spawn(function()  game:GetService("RunService").Stepped:Connect(function()  if getgenv().NoClip or getgenv().AutoFarm or getgenv().Observation or getgenv().AutoNew or getgenv().Factory or getgenv().GunMastery or getgenv().k or getgenv().Mastery or FramBoss or FramAllBoss or getgenv().getgenv().AutoBartilo or getgenv().MobAura or getgenv().AutoRengoku or getgenv().AutoSharkman or getgenv().Ectoplasm or getgenv().PoleHop or getgenv().SwanHop or getgenv().BlackBeardHop or getgenv().Chest or getgenv().Electro or rainbowhaki or Hunter or observationv2 or getgenv().ElitehuntHop or getgenv().EliteHunt or getgenv().Pole or getgenv().Tushitahop or getgenv().YamaHop or getgenv().StoreFruit or getgenv().HolyTorch then  for _, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do  if v:IsA("BasePart") then
    v.CanCollide = false end     end    end end) end)
-   Up:Label("Update 1.0")
-   
+   Up:Label("Update 1.1")
+   Up:Label("Add Auto Electric Claw")
+   Up:Label("Fix Auto Something Not Work")
+   Up:Label("New Misc")
    
    AutoFarm:Label("Auto Farm Level")
 AutoFarm:Toggle("Auto Farm",false,function(vu)
@@ -7640,7 +7675,24 @@ spawn(function()
 		end)
 	end)
 end)
-AutoFarm:Toggle(" Super Fast Attack[Rick]",false,function(chm)
+
+local  dh=require(game.ReplicatedStorage.Util.CameraShaker)dh:Stop()local di=getupvalues(require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework))[2]while wait()do if getgenv().fast then pcall(function()if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg")then di.activeController.timeToNextAttack=3 elseif game.Players.LocalPlayer.Character:FindFirstChild("Electro")then di.activeController.timeToNextAttack=2 else di.activeController.timeToNextAttack=0 end;di.activeController.timeToNextAttack=0;di.activeController.attacking=false;di.activeController.increment=3;di.activeController.blocking=false;di.activeController.timeToNextBlock=0;game.Players.LocalPlayer.Character.Humanoid.Sit=false
+ end)
+end 
+end
+spawn(function()
+while wait() do
+if getgenv().fast then
+local dj=game.Players.LocalPlayer;local dk=require(dj.PlayerScripts.CombatFramework.Particle)local dl=require(game:GetService("ReplicatedStorage").CombatFramework.RigLib)if not shared.orl then shared.orl=dl.wrapAttackAnimationAsync 
+end;if not shared.cpc then shared.cpc=dk.play end;while wait()do pcall(function()dl.wrapAttackAnimationAsync=function(dm,dn,dp,dq,dr)local ds=dl.getBladeHits(dn,dp,dq)if ds then dk.play=function()end;dm:Play(0.1,0.1,0.1)dr(ds)dk.play=shared.cpc;wait(.1)dm:Stop()
+end 
+end 
+end)
+end 
+end
+end
+end)
+AutoFarm:Toggle("Super Fast Attack[Rick]",false,function(chm)
 getgenv().spf = chm 
 local plr = game.Players.LocalPlayer
 
@@ -7713,7 +7765,7 @@ end
     end)
 
 getgenv().fase = 9
-AutoFarm:Slider("Super Fast Attack Mode",true,1,10,getgenv().fase,5,function(flo)
+AutoFarm:Slider("Super Fast Attack Mode",false,1,10,getgenv().fase,5,function(flo)
 getgenv().fase = flo
 end)
 AutoFarm:Toggle("Fast On Slider",false,function(oxi)
@@ -7735,15 +7787,15 @@ game:GetService("RunService").RenderStepped:Connect(function()
   pcall(function()
   if getgenv().oxi then
            pcall(function()
-           setfpscap(9999999)
                 for k, v in pairs(AC.animator.anims.basic) do
                     v:Play()
                 end        
-                spawn(function()local dj=game.Players.LocalPlayer;local dk=require(dj.PlayerScripts.CombatFramework.Particle)local dl=require(game:GetService("ReplicatedStorage").CombatFramework.RigLib)if not shared.orl then shared.orl=dl.wrapAttackAnimationAsync end;if not shared.cpc then shared.cpc=dk.play end;while wait()do pcall(function()dl.wrapAttackAnimationAsync=function(dm,dn,dp,dq,dr)local ds=dl.getBladeHits(dn,dp,dq)if ds then dk.play=function()end;dm:Play(0.1,0.1,0.1)dr(ds)dk.play=shared.cpc;wait(.1)dm:Stop()end end end)end end)
+                
+                local dj=game.Players.LocalPlayer;local dk=require(dj.PlayerScripts.CombatFramework.Particle)local dl=require(game:GetService("ReplicatedStorage").CombatFramework.RigLib)if not shared.orl then shared.orl=dl.wrapAttackAnimationAsync end;if not shared.cpc then shared.cpc=dk.play end;while wait()do pcall(function()dl.wrapAttackAnimationAsync=function(dm,dn,dp,dq,dr)local ds=dl.getBladeHits(dn,dp,dq)if ds then dk.play=function()end;dm:Play(0.1,0.1,0.1)dr(ds)dk.play=shared.cpc;wait(.1)dm:Stop()end end end)end 
                  ret.activeController.humanoid.AutoRotate = true
                 ret.activeController.attacking = false
                 ret.activeController.timeToNextAttack = -(math.huge^math.huge^math.huge)
-                ret.activeController.increment = 3
+                ret.activeController.increment = getgenv().fase
                 ret.activeController.hitboxMagnitude = 100
                 ret.activeController.blocking = false
                 ret.activeController.timeToNextBlock = 0
@@ -8107,7 +8159,9 @@ end)
 	
 
 
-
+Main:Toggle("Auto ElectricClaw V2",false, function(coc)
+getgenv().AutoElectricClawV2 = coc
+end)
 spawn(function()
 	while wait() do wait()
 		if getgenv().AutoElectricClawV2 then
@@ -9008,7 +9062,7 @@ ShopTab:Label("Accessories",true)
 		}
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 	end)
-	RaidsTab:Toggle("Raid")
+	RaidsTab:Label("Raid")
 	RaidsTab:Toggle("Kill aura",false,function(em)
 	getgenv().killaura = em
 end)
@@ -9084,7 +9138,7 @@ spawn(function()
         getgenv().SelectChip = value
     end)
     
-    RaidsTab:Toggle("Auto Select RaidsTab",false,function(value)
+    RaidsTab:Toggle("Auto Select Raid",false,function(value)
         getgenv().AutoSelectRaidsTab = value
     end)
     
@@ -10087,4 +10141,26 @@ if getgenv().WalkWater then
 	end
 end
 end)
-
+Misc2:Toggle("White Screen",false,function(kop)
+getgenv().WhiteScreen= kop
+end)
+spawn(function()
+while wait() do
+if getgenv().WhiteScreen == true then
+    game:GetService("RunService"):Set3dRenderingEnabled(false)
+elseif getgenv().WhiteScreen == false then
+    game:GetService("RunService"):Set3dRenderingEnabled(true)
+end
+end
+end)
+spawn(function()
+      while wait() do
+      if getgenv().WhiteScreen then
+        for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
+            if v.Name == "CurvedRing" or v.Name == "SlashHit" or v.Name == "DamageCounter" or v.Name == "SwordSlash" or v.Name == "SlashTail" or v.Name == "Sounds" then
+                v:Destroy() 
+            end
+        end
+    end
+    end
+end) 
