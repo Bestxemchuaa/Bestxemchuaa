@@ -10087,7 +10087,7 @@ if getgenv().WalkWater then
 	end
 end
 end)
-spawn(function()
+
 while true do
 task.wait()
 local k = 5
