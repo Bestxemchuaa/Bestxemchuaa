@@ -7224,7 +7224,7 @@ function EquipWeapon(ToolSe) if game.Players.LocalPlayer.Backpack:FindFirstChild
 	game.Players.LocalPlayer.Character.Humanoid:EquipTool(tool)end end
 
 --local UiLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/Bestxemchuaa/Bestxemchuaa/main/Test/GG.txt'))()
-
+local Window = create:Win("W A I F U H U B")
 local DINOHUB = Instance.new("ScreenGui")
 local OPENCLOSE = Instance.new("TextButton") DINOHUB.Name="DINOHUB"
 DINOHUB.Parent=game.CoreGui
@@ -7251,18 +7251,18 @@ local t = 5
 OPENCLOSE.BackgroundColor3 = Color3.fromHSV(ue,1,1)
 end
 -- local win = UiLib:Window("Béo HUB | Blox Fruits v17.3", giongcaikia")
-local win = create:Win("W A I F U H U B")
+
 
 	
 
 
 
-local Usp = win:Taps("Update")
-local At = win:Taps("Farming")
-local Statss = win:Taps("Stats")
-local Pvps = win:Taps("Players/Shop")
-local RaidsTabs =  win:Taps("Raid/Teleport")
-local Miscs = win:Taps("Misc")
+local Usp = Window:Taps("Update")
+local At = Window:Taps("Farming")
+local Statss = Window:Taps("Stats")
+local Pvps = Window:Taps("Players/Shop")
+local RaidsTabs =  Window:Taps("Raid/Teleport")
+local Miscs = Window:Taps("Misc")
 -------------
 local Up = Usp:newpage()
 local AutoFarm = At:newpage()
