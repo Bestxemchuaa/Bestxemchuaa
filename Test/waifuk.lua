@@ -295,7 +295,7 @@ end
 
 		NameReal.Text = tostring(text)
 
-		NameReal.TextColor3 = Color3.fromRGB(250,0,0)
+		NameReal.TextColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 		NameReal.TextSize = 14.000
 
@@ -4857,7 +4857,7 @@ end
 
 				LineFrame.Parent = ScrollingFrame_Pageframe
 
-				LineFrame.BackgroundColor3 =  Color3.fromHSV(hhue,1,1)
+				LineFrame.BackgroundColor3 =  Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				LineFrame.BorderSizePixel = 0
 
@@ -4870,14 +4870,6 @@ end
 				LineFrame.BackgroundTransparency  = 0
 
 				LineFrame.ClipsDescendants = true
-while true do
-task.wait()
-local ut = 5
- local hhue = tick() % ut / ut
-LineFrame.BackgroundColor3 = Color3.fromHSV(hhue,1,1)
-
-end
-                
 
                 
 
@@ -7221,7 +7213,7 @@ function EquipWeapon(ToolSe) if game.Players.LocalPlayer.Backpack:FindFirstChild
 	game.Players.LocalPlayer.Character.Humanoid:EquipTool(tool)end end
 
 --local UiLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/Bestxemchuaa/Bestxemchuaa/main/Test/GG.txt'))()
-local Window = create:Win("W A I F U H U B")
+local Window = create:Win("W A I F U H U B",Color3.fromHSV(tick() % 5 / 5 ,1,1))
 local DINOHUB = Instance.new("ScreenGui")
 local OPENCLOSE = Instance.new("TextButton") DINOHUB.Name="DINOHUB"
 DINOHUB.Parent=game.CoreGui
