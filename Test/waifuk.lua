@@ -362,7 +362,7 @@ end
 
 		ScrollingFrame_Menubar.CanvasSize = UDim2.new(2, 0, 0, 0)
 
-		ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromHSV(ue,1,1)
+		ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromHSV(op,1,1)
 
 		ScrollingFrame_Menubar.ScrollBarThickness = 3
         
@@ -443,7 +443,12 @@ end
 		Notilistlayout.SortOrder = Enum.SortOrder.LayoutOrder
 
 		Notilistlayout.Padding = UDim.new(0, 5)
-
+     while true do
+task.wait()
+local lala = 5
+ local op = tick() % lala / lala
+ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromHSV(op,1,1)
+end
 		function create:Notifile(titel,text,delays)
 
 			local TitleFrame = Instance.new("Frame")
@@ -4856,7 +4861,7 @@ end
 
 				LineFrame.Parent = ScrollingFrame_Pageframe
 
-				LineFrame.BackgroundColor3 =  Color3.fromHSV(ue,1,1)
+				LineFrame.BackgroundColor3 =  Color3.fromHSV(e,1,1)
 
 				LineFrame.BorderSizePixel = 0
 
@@ -4869,7 +4874,7 @@ end
 				LineFrame.BackgroundTransparency  = 0
 
 				LineFrame.ClipsDescendants = true
-
+                 
                 
 
                 
@@ -4883,7 +4888,12 @@ end
 				LineFrame_BindConner.Parent = LineFrame
 
 			end
-
+        while true do
+task.wait()
+local ko = 5
+ local e = tick() % ko / ko
+LineFrame.BackgroundColor3 = Color3.fromHSV(e,1,1)
+end
 			function items:Color(text,preset,callback)
 
 				local Pixker = Instance.new("Frame")
@@ -7242,8 +7252,6 @@ task.wait()
 local t = 5
  local ue = tick() % t / t
 OPENCLOSE.BackgroundColor3 = Color3.fromHSV(ue,1,1)
-ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromHSV(ue,1,1)
-LineFrame.BackgroundColor3 = Color3.fromHSV(ue,1,1)
 end
 -- local win = UiLib:Window("Béo HUB | Blox Fruits v17.3", giongcaikia")
 local win = create:Win("W A I F U H U B")
