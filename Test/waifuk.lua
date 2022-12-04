@@ -363,7 +363,7 @@ end
 
 		ScrollingFrame_Menubar.CanvasSize = UDim2.new(2, 0, 0, 0)
 
-		ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromRGB(250,0,0)
+		ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 		ScrollingFrame_Menubar.ScrollBarThickness = 3
 
@@ -507,7 +507,7 @@ end
 
 			txdlid.Text = titel
 
-			txdlid.TextColor3 = Color3.fromRGB(250,0,0)
+			txdlid.TextColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 			txdlid.TextSize = 13.000
 
@@ -529,7 +529,7 @@ end
 
 			LableFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 
-			LableFrame.BackgroundColor3 = Color3.fromRGB(250,0,0)
+			LableFrame.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 			LableFrame.BorderSizePixel = 0
 
@@ -547,7 +547,7 @@ end
 
 			TextNoti.Name = "TextLabel_Tap"
 
-			TextNoti.BackgroundColor3 = Color3.fromRGB(250,0,0)
+			TextNoti.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 			TextNoti.Size =UDim2.new(0, 260, 0,25 )
 
@@ -579,7 +579,7 @@ end
 
 	--Time.AnchorPoint = Vector2.new(0.5, 0.5)
 
-			Time.BackgroundColor3 =  Color3.fromRGB(250,0,0)
+			Time.BackgroundColor3 =  Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 			Time.BorderSizePixel = 0
 
@@ -663,7 +663,7 @@ end
 
 			TextLabel_Tap.Name = "TextLabel_Tap"
 
-			TextLabel_Tap.BackgroundColor3 = Color3.fromRGB(250,0,0)
+			TextLabel_Tap.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 			TextLabel_Tap.Position = UDim2.new(0.5, 0, 0.8, 0)
 
@@ -753,7 +753,7 @@ end
 
 						TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(250,0,0)}
+						{TextColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)}
 
 					):Play()
 
@@ -779,7 +779,7 @@ end
 
 					TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-					{TextColor3 = Color3.fromRGB(250,0,0)}
+					{TextColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)}
 
 				):Play()
 
@@ -805,7 +805,7 @@ end
 
 			ScrollingFrame_Pagefrist.ScrollBarThickness = 4
 
-			ScrollingFrame_Pagefrist.ScrollBarImageColor3 = Color3.fromRGB(250,0,0) -- 250,0,0
+			ScrollingFrame_Pagefrist.ScrollBarImageColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1) -- 250,0,0
 
 			local UIGridLayout_Pagefrist = Instance.new("UIGridLayout")
 
@@ -851,7 +851,7 @@ end
 
 				ScrollingFrame_Pageframe.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 
-				ScrollingFrame_Pageframe.BorderColor3 = Color3.fromRGB(250,0,0)
+				ScrollingFrame_Pageframe.BorderColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				ScrollingFrame_Pageframe.BorderSizePixel = 1
 
@@ -953,7 +953,7 @@ end
 
 				TextButton_2_Toggle.BackgroundColor3 = Color3.fromRGB(253, 172, 171)
 
-		--        TextButton_2_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
+		--        TextButton_2_Toggle.BorderColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				TextButton_2_Toggle.BorderSizePixel = 0
 
@@ -987,7 +987,7 @@ end
 
 				TextButton_3_Toggle.BackgroundColor3 = Color3.fromRGB(253, 172, 171)
 
-		--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
+		--        TextButton_3_Toggle.BorderColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				TextButton_3_Toggle.BorderSizePixel = 0
 
@@ -1021,7 +1021,7 @@ end
 
 				TextButton_4_Toggle.BackgroundColor3 = Color3.fromRGB(253, 172, 171)
 
-		--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
+		--        TextButton_3_Toggle.BorderColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				TextButton_4_Toggle.BorderSizePixel = 0
 
@@ -1173,7 +1173,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromHSV(tick() % 5 / 5 ,1,1)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1183,7 +1183,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromHSV(tick() % 5 / 5 ,1,1)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1255,7 +1255,7 @@ end
 
 					TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-					{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
+					{BackgroundColor3 =  Color3.fromHSV(tick() % 5 / 5 ,1,1)} -- UDim2.new(0, 128, 0, 25)
 
 				):Play()
 
@@ -1265,7 +1265,7 @@ end
 
 					TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-					{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
+					{BackgroundColor3 =  Color3.fromHSV(tick() % 5 / 5 ,1,1)} -- UDim2.new(0, 128, 0, 25)
 
 				):Play()
 
@@ -1387,7 +1387,7 @@ end
 
 				ButtonFrame.Parent = ScrollingFrame_Pageframe
 
-				ButtonFrame.BackgroundColor3 = Color3.fromRGB(250,0,0)
+				ButtonFrame.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				ButtonFrame.BorderSizePixel = 0
 
@@ -1411,7 +1411,7 @@ end
 
 				MheeFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				MheeFrameStroke.Color = Color3.fromRGB(250,0,0)
+				MheeFrameStroke.Color = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				MheeFrameStroke.Transparency = 0.7
 
@@ -1421,7 +1421,7 @@ end
 
 				Button.Name = "Button"
 
-				Button.BackgroundColor3 = Color3.fromRGB(250,0,0)
+				Button.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				Button.Size = UDim2.new(0,150, 0, 25)
 
@@ -1577,7 +1577,7 @@ end
 
 				SliderFrame.Parent = ScrollingFrame_Pageframe
 
-				SliderFrame.BackgroundColor3 =  Color3.fromRGB(28, 28, 28)-- Color3.fromRGB(250,0,0)
+				SliderFrame.BackgroundColor3 =  Color3.fromRGB(28, 28, 28)-- Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				SliderFrame.BorderSizePixel = 0
 
@@ -1609,7 +1609,7 @@ end
 
 				SliderFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				SliderFrameStroke.Color = Color3.fromRGB(250,0,0)
+				SliderFrameStroke.Color = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				SliderFrameStroke.Transparency = 0.7
 
@@ -1781,7 +1781,7 @@ end
 
 				MainValue.Parent = PartValue
 
-				MainValue.BackgroundColor3 = Color3.fromRGB(250,0,0)
+				MainValue.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				MainValue.Size = UDim2.new((de or 0) / max, 0, 0, 5)
 
@@ -1855,7 +1855,7 @@ end
 
 				Addvalue.Image = "http://www.roblox.com/asset/?id=6035067836"
 
-				Addvalue.ImageColor3 =  Color3.fromRGB(250,0,0)
+				Addvalue.ImageColor3 =  Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				local Deletevalue = Instance.new("ImageButton")
 
@@ -1873,7 +1873,7 @@ end
 
 				Deletevalue.Image = "http://www.roblox.com/asset/?id=6035047377"
 
-				Deletevalue.ImageColor3 =  Color3.fromRGB(250,0,0)
+				Deletevalue.ImageColor3 =  Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				local TextButton_2_Toggle = Instance.new("TextButton")
 
@@ -1881,7 +1881,7 @@ end
 
 				TextButton_2_Toggle.BackgroundColor3 = Color3.fromRGB(155, 155, 155)
 
-		--        TextButton_2_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
+		--        TextButton_2_Toggle.BorderColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				TextButton_2_Toggle.BorderSizePixel = 0
 
@@ -1915,7 +1915,7 @@ end
 
 				TextButton_3_Toggle.BackgroundColor3 = Color3.fromRGB(255, 255,255)
 
-		--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
+		--        TextButton_3_Toggle.BorderColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				TextButton_3_Toggle.BorderSizePixel = 0
 
@@ -1949,7 +1949,7 @@ end
 
 				TextButton_4_Toggle.BackgroundColor3 = Color3.fromRGB(155, 155,155)
 
-		--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
+		--        TextButton_3_Toggle.BorderColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				TextButton_4_Toggle.BorderSizePixel = 0
 
@@ -2385,7 +2385,7 @@ end
 
 							TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-							{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
+							{BackgroundColor3 =  Color3.fromHSV(tick() % 5 / 5 ,1,1)} -- UDim2.new(0, 128, 0, 25)
 
 						):Play()
 
@@ -2395,7 +2395,7 @@ end
 
 							TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-							{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
+							{BackgroundColor3 =  Color3.fromHSV(tick() % 5 / 5 ,1,1)} -- UDim2.new(0, 128, 0, 25)
 
 						):Play()
 
@@ -2471,7 +2471,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromHSV(tick() % 5 / 5 ,1,1)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -2481,7 +2481,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromHSV(tick() % 5 / 5 ,1,1)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -2521,7 +2521,7 @@ end
 
 				SliderFrame.Parent = ScrollingFrame_Pageframe
 
-				SliderFrame.BackgroundColor3 =  Color3.fromRGB(28, 28, 28)-- Color3.fromRGB(250,0,0)
+				SliderFrame.BackgroundColor3 =  Color3.fromRGB(28, 28, 28)-- Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				SliderFrame.BorderSizePixel = 0
 
@@ -2553,7 +2553,7 @@ end
 
 				SliderFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				SliderFrameStroke.Color = Color3.fromRGB(250,0,0)
+				SliderFrameStroke.Color = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				SliderFrameStroke.Transparency = 0.7
 
@@ -2725,7 +2725,7 @@ end
 
 				MainValue.Parent = PartValue
 
-				MainValue.BackgroundColor3 = Color3.fromRGB(250,0,0)
+				MainValue.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				MainValue.Size = UDim2.new((de or 0) / max, 0, 0, 5)
 
@@ -2799,7 +2799,7 @@ end
 
 				Addvalue.Image = "http://www.roblox.com/asset/?id=6035067836"
 
-				Addvalue.ImageColor3 =  Color3.fromRGB(250,0,0)
+				Addvalue.ImageColor3 =  Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				local Deletevalue = Instance.new("ImageButton")
 
@@ -2817,7 +2817,7 @@ end
 
 				Deletevalue.Image = "http://www.roblox.com/asset/?id=6035047377"
 
-				Deletevalue.ImageColor3 =  Color3.fromRGB(250,0,0)
+				Deletevalue.ImageColor3 =  Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				local function move(input)
 
@@ -3099,7 +3099,7 @@ end
 
 				DropFrame.Parent = ScrollingFrame_Pageframe
 
-				DropFrame.BackgroundColor3 =  Color3.fromRGB(23, 23, 23)-- Color3.fromRGB(250,0,0)
+				DropFrame.BackgroundColor3 =  Color3.fromRGB(23, 23, 23)-- Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				DropFrame.BorderSizePixel = 0
 
@@ -3131,7 +3131,7 @@ end
 
 				DropFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				DropFrameStroke.Color = Color3.fromRGB(250,0,0)
+				DropFrameStroke.Color = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				DropFrameStroke.Transparency = 0.7
 
@@ -3141,7 +3141,7 @@ end
 
 				LabelFrameDrop.Name = "LabelFrameDrop"
 
-				LabelFrameDrop.BackgroundColor3 = Color3.fromRGB(250,0,0)
+				LabelFrameDrop.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				LabelFrameDrop.Position = UDim2.new(0., 0, 0., 0)
 
@@ -3167,7 +3167,7 @@ end
 
 				TextLabel_TapDrop.Name = "TextLabel_TapDrop"
 
-				TextLabel_TapDrop.BackgroundColor3 = Color3.fromRGB(250,0,0)
+				TextLabel_TapDrop.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				TextLabel_TapDrop.Position = UDim2.new(0.04, 0, 0.14, 0)
 
@@ -3255,7 +3255,7 @@ end
 
 				ButtonDrop.Name = "ButtonDrop"
 
-				ButtonDrop.BackgroundColor3 = Color3.fromRGB(250,0,0)
+				ButtonDrop.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				ButtonDrop.Size = UDim2.new(0, 213, 0, 30)
 
@@ -3311,7 +3311,7 @@ end
 
 					ListFrame.Parent = ScolDown
 
-					ListFrame.BackgroundColor3 =  Color3.fromRGB(155,255,255)-- Color3.fromRGB(250,0,0)
+					ListFrame.BackgroundColor3 =  Color3.fromRGB(155,255,255)-- Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 					ListFrame.BorderSizePixel = 0
 
@@ -3331,7 +3331,7 @@ end
 
 					TextLabel_TapDro2p.Name =  tostring(v).."Dropdown"
 
-					TextLabel_TapDro2p.BackgroundColor3 = Color3.fromRGB(250,0,0)
+					TextLabel_TapDro2p.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 					TextLabel_TapDro2p.Position = UDim2.new(0.5, 0, 0.5, 0)
 
@@ -3357,7 +3357,7 @@ end
 
 					ButtonDrop2.Name = "ButtonDrop2"
 
-					ButtonDrop2.BackgroundColor3 = Color3.fromRGB(250,0,0)
+					ButtonDrop2.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 					ButtonDrop2.Size = UDim2.new(0, 213, 0, 30)
 
@@ -3607,7 +3607,7 @@ end
 
 				ListFrame.Parent = ScolDown
 
-				ListFrame.BackgroundColor3 =  Color3.fromRGB(22553, 23, 23)-- Color3.fromRGB(250,0,0)
+				ListFrame.BackgroundColor3 =  Color3.fromRGB(22553, 23, 23)-- Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				ListFrame.BorderSizePixel = 0
 
@@ -3627,7 +3627,7 @@ end
 
 				TextLabel_TapDro2p.Name =  tostring(t).."Dropdown"
 
-				TextLabel_TapDro2p.BackgroundColor3 = Color3.fromRGB(250,0,0)
+				TextLabel_TapDro2p.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				TextLabel_TapDro2p.Position = UDim2.new(0.5, 0, 0.5, 0)
 
@@ -3653,7 +3653,7 @@ end
 
 				ButtonDrop2.Name = "ButtonDrop2"
 
-				ButtonDrop2.BackgroundColor3 = Color3.fromRGB(250,0,0)
+				ButtonDrop2.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				ButtonDrop2.Size = UDim2.new(0, 213, 0, 30)
 
@@ -3769,7 +3769,7 @@ end
 
 			DropFrame.Parent = ScrollingFrame_Pageframe
 
-			DropFrame.BackgroundColor3 =  Color3.fromRGB(23, 23, 23)-- Color3.fromRGB(250,0,0)
+			DropFrame.BackgroundColor3 =  Color3.fromRGB(23, 23, 23)-- Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 			DropFrame.BorderSizePixel = 0
 
@@ -3801,7 +3801,7 @@ end
 
 			DropFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-			DropFrameStroke.Color = Color3.fromRGB(250,0,0)
+			DropFrameStroke.Color = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 			DropFrameStroke.Transparency = 0.7
 
@@ -3811,7 +3811,7 @@ end
 
 			LabelFrameDrop.Name = "LabelFrameDrop"
 
-			LabelFrameDrop.BackgroundColor3 = Color3.fromRGB(250,0,0)
+			LabelFrameDrop.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 			LabelFrameDrop.Position = UDim2.new(0., 0, 0., 0)
 
@@ -3837,7 +3837,7 @@ end
 
 			TextLabel_TapDrop.Name = "TextLabel_TapDrop"
 
-			TextLabel_TapDrop.BackgroundColor3 = Color3.fromRGB(250,0,0)
+			TextLabel_TapDrop.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 			TextLabel_TapDrop.Position = UDim2.new(0.04, 0, 0.14, 0)
 
@@ -3925,7 +3925,7 @@ end
 
 			ButtonDrop.Name = "ButtonDrop"
 
-			ButtonDrop.BackgroundColor3 = Color3.fromRGB(250,0,0)
+			ButtonDrop.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 			ButtonDrop.Size = UDim2.new(0, 213, 0, 30)
 
@@ -4021,9 +4021,9 @@ end
 
 				farmtoglist.Parent = listtextbutton
 
-				farmtoglist.BackgroundColor3 = Color3.fromRGB(250,0,0)
+				farmtoglist.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
-				farmtoglist.BorderColor3 = Color3.fromRGB(250,0,0)
+				farmtoglist.BorderColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				farmtoglist.BorderSizePixel = 0
 
@@ -4049,7 +4049,7 @@ end
 
 				farmtoglist2.BackgroundColor3 = Color3.fromRGB(32, 32,32)
 
-				farmtoglist2.BorderColor3 = Color3.fromRGB(250,0,0)
+				farmtoglist2.BorderColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				farmtoglist2.BorderSizePixel = 0
 
@@ -4389,7 +4389,7 @@ end
 
 				TextFrame2.Parent = FrameBox
 
-				TextFrame2.BackgroundColor3 = Color3.fromRGB(250,0,0)
+				TextFrame2.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				TextFrame2.BorderSizePixel = 0
 
@@ -4433,7 +4433,7 @@ end
 
 				TextBoxStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				TextBoxStroke.Color = Color3.fromRGB(250,0,0)
+				TextBoxStroke.Color = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				TextBoxStroke.Transparency = 0.7
 
@@ -4455,7 +4455,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 = Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -4621,7 +4621,7 @@ end
 
 				BindStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				BindStroke.Color = Color3.fromRGB(250,0,0)
+				BindStroke.Color = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				BindStroke.Transparency = 0.7
 
@@ -4925,7 +4925,7 @@ end
 
 				MheeFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				MheeFrameStroke.Color = Color3.fromRGB(250,0,0)
+				MheeFrameStroke.Color = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				MheeFrameStroke.Transparency = 0.7
 
@@ -5081,7 +5081,7 @@ end
 
 			TextButton_2_Toggle.BackgroundColor3 = Color3.fromRGB(155, 155, 155)
 
-	--        TextButton_2_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
+	--        TextButton_2_Toggle.BorderColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 			TextButton_2_Toggle.BorderSizePixel = 0
 
@@ -5115,7 +5115,7 @@ end
 
 			TextButton_3_Toggle.BackgroundColor3 = Color3.fromRGB(255, 255,255)
 
-	--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
+	--        TextButton_3_Toggle.BorderColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 			TextButton_3_Toggle.BorderSizePixel = 0
 
@@ -5149,7 +5149,7 @@ end
 
 			TextButton_4_Toggle.BackgroundColor3 = Color3.fromRGB(155, 155,155)
 
-	--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
+	--        TextButton_3_Toggle.BorderColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 			TextButton_4_Toggle.BorderSizePixel = 0
 
@@ -5213,7 +5213,7 @@ end
 
 			TextButton_3_Toggle2.BackgroundColor3 = Color3.fromRGB(32, 32,32)
 
-			TextButton_3_Toggle2.BorderColor3 = Color3.fromRGB(250,0,0)
+			TextButton_3_Toggle2.BorderColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 			TextButton_3_Toggle2.BorderSizePixel = 0
 
@@ -5383,9 +5383,9 @@ end
 
 			BTN_XD.Parent = TextFrameColor
 
-			BTN_XD.BackgroundColor3 = Color3.fromRGB(250,0,0)
+			BTN_XD.BackgroundColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
-			BTN_XD.BorderColor3 = Color3.fromRGB(250,0,0)
+			BTN_XD.BorderColor3 = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 			BTN_XD.BorderSizePixel = 0
 
@@ -5423,7 +5423,7 @@ end
 
 			MheeFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-			MheeFrameStroke.Color = Color3.fromRGB(250,0,0)
+			MheeFrameStroke.Color = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 			MheeFrameStroke.Transparency = 0.7
 
@@ -5439,7 +5439,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromHSV(tick() % 5 / 5 ,1,1)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -5449,7 +5449,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromHSV(tick() % 5 / 5 ,1,1)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -5999,7 +5999,7 @@ end
 
 				LabelStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				LabelStroke.Color = Color3.fromRGB(250,0,0)
+				LabelStroke.Color = Color3.fromHSV(tick() % 5 / 5 ,1,1)
 
 				LabelStroke.Transparency = 0.7
 
@@ -7220,7 +7220,7 @@ DINOHUB.Parent=game.CoreGui
 DINOHUB.ZIndexBehavior=Enum.ZIndexBehavior.Sibling
 OPENCLOSE.Name="OPENCLOSE"
 OPENCLOSE.Parent=DINOHUB
-OPENCLOSE.BackgroundColor3=Color3.fromHSV(ue,1,1)
+OPENCLOSE.BackgroundColor3=Color3.fromHSV(tick() % 5 / 5 ,1,1)
 OPENCLOSE.BorderSizePixel=0
 OPENCLOSE.Position=UDim2.new(0.120833337, 0, 0.0952890813, 0)
 OPENCLOSE.Size=UDim2.new(0.0447916649, 0, 0.0845824406, 0)
@@ -7233,19 +7233,6 @@ OPENCLOSE.TextWrapped=true
 OPENCLOSE.MouseButton1Click:Connect(function()
 game.CoreGui:FindFirstChild("redui").Enabled = not game.CoreGui:FindFirstChild("redui").Enabled
 end)
-while true do
-task.wait()
-local t = 5
- local ue = tick() % t / t
-OPENCLOSE.BackgroundColor3 = Color3.fromHSV(ue,1,1)
-end
--- local win = UiLib:Window("Béo HUB | Blox Fruits v17.3", giongcaikia")
-
-
-	
-
-
-
 local Usp = Window:Taps("Update")
 local At = Window:Taps("Farming")
 local Statss = Window:Taps("Stats")
