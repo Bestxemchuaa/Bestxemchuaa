@@ -220,7 +220,7 @@ end
 
 		ClickFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 
-		ClickFrame.BackgroundColor3 = Color3.fromRGB(250,0,0)
+		ClickFrame.BackgroundColor3 = Color3.fromHSV(uke,1,1)
 
 		ClickFrame.BorderSizePixel = 0
 
@@ -231,7 +231,12 @@ end
 		ClickFrame.ClipsDescendants = true
 
 		ClickFrame.BackgroundTransparency = 1
-  
+  while true do
+task.wait()
+local ty = 5
+ local uke = tick() % ty / ty
+ClickFrame.BackgroundColor3 = Color3.fromHSV(uke,1,1)
+end
 		MakeDraggable(ClickFrame,MainSceen)
 
 		tween:Create(MainSceen,TweenInfo.new(0.4,Enum.EasingStyle.Back),{Size = UDim2.new(0, 550, 0, 474)}):Play()
@@ -4856,7 +4861,7 @@ end
 
 				LineFrame.Parent = ScrollingFrame_Pageframe
 
-				LineFrame.BackgroundColor3 =  Color3.fromRGB(250,0,0)
+				LineFrame.BackgroundColor3 =  Color3.fromHSV(jue,1,1)
 
 				LineFrame.BorderSizePixel = 0
 
@@ -4870,7 +4875,12 @@ end
 
 				LineFrame.ClipsDescendants = true
        
-
+       while true do
+task.wait()
+local tk = 5
+ local jue = tick() % tk / tk
+LineFrame.BackgroundColor3 = Color3.fromHSV(jue,1,1)
+end
                 
 
 				local LineFrame_BindConner = Instance.new("UICorner")
@@ -7247,12 +7257,12 @@ local win = create:Win("W A I F U H U B")
 
 
 
-local Usp = win:Tap("Update")
-local At = win:Tap("Farming")
-local Statss = win:Tap("Stats")
-local Pvps = win:Tap("Players/Shop")
-local RaidsTabs =  win:Tap("Raid/Teleport")
-local Miscs = win:Tap("Misc")
+local Usp = win:Taps("Update")
+local At = win:Taps("Farming")
+local Statss = win:Taps("Stats")
+local Pvps = win:Taps("Players/Shop")
+local RaidsTabs =  win:Taps("Raid/Teleport")
+local Miscs = win:Taps("Misc")
 -------------
 local Up = Usp:newpage()
 local AutoFarm = At:newpage()
