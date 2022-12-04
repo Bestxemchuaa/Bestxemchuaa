@@ -4881,7 +4881,6 @@ task.wait()
 local k = 5
  local e = tick() % k / k
 LineFrame.BackgroundColor3 = Color3.fromHSV(e,1,1)
-LineFrame.Parent.Color = LineFrame.BackgroundColor3
 end
                 
 
