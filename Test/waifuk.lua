@@ -4863,7 +4863,7 @@ end
 
 				LineFrame.Parent = ScrollingFrame_Pageframe
 
-				LineFrame.BackgroundColor3 =  Color3.fromHSV(e,1,1)
+				LineFrame.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
 
 				LineFrame.BorderSizePixel = 0
 
@@ -4877,7 +4877,7 @@ end
 
 				LineFrame.ClipsDescendants = true
 
-                
+
 
 				local LineFrame_BindConner = Instance.new("UICorner")
 
@@ -4887,7 +4887,7 @@ end
 
 				LineFrame_BindConner.Parent = LineFrame
 
-			end
+end
 
 			function items:Color(text,preset,callback)
 
@@ -10088,9 +10088,3 @@ if getgenv().WalkWater then
 end
 end)
 
-while true do
-task.wait()
-local k = 5
- local e = tick() % k / k
-LineFrame.BackgroundColor3 = Color3.fromHSV(e,1,1)
-end
