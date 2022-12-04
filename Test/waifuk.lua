@@ -362,15 +362,10 @@ end
 
 		ScrollingFrame_Menubar.CanvasSize = UDim2.new(2, 0, 0, 0)
 
-		ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromHSV(ccnhe,1,1)
+		ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromHSV(ue,1,1)
 
 		ScrollingFrame_Menubar.ScrollBarThickness = 3
-        while true do
-task.wait()
-local memay = 5
- local ccnhe = tick() % memay / memay
-ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromHSV(ccnhe,1,1)
-end
+        
 		local UIListLayout_Menubar = Instance.new("UIListLayout")
 
 		UIListLayout_Menubar.Parent = ScrollingFrame_Menubar
@@ -4861,7 +4856,7 @@ end
 
 				LineFrame.Parent = ScrollingFrame_Pageframe
 
-				LineFrame.BackgroundColor3 =  Color3.fromHSV(di,1,1)
+				LineFrame.BackgroundColor3 =  Color3.fromHSV(ue,1,1)
 
 				LineFrame.BorderSizePixel = 0
 
@@ -4874,12 +4869,7 @@ end
 				LineFrame.BackgroundTransparency  = 0
 
 				LineFrame.ClipsDescendants = true
-while true do
-task.wait()
-local concho = 5
- local di = tick() % concho / concho
-LineFrame.BackgroundColor3 = Color3.fromHSV(di,1,1)
-end
+
                 
 
                 
@@ -7252,6 +7242,8 @@ task.wait()
 local t = 5
  local ue = tick() % t / t
 OPENCLOSE.BackgroundColor3 = Color3.fromHSV(ue,1,1)
+ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromHSV(ue,1,1)
+LineFrame.BackgroundColor3 = Color3.fromHSV(ue,1,1)
 end
 -- local win = UiLib:Window("Béo HUB | Blox Fruits v17.3", giongcaikia")
 local win = create:Win("W A I F U H U B")
