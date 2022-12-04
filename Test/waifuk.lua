@@ -7676,22 +7676,14 @@ spawn(function()
 	end)
 end)
 
-local  dh=require(game.ReplicatedStorage.Util.CameraShaker)dh:Stop()local di=getupvalues(require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework))[2]while wait()do if getgenv().fast then pcall(function()if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg")then di.activeController.timeToNextAttack=3 elseif game.Players.LocalPlayer.Character:FindFirstChild("Electro")then di.activeController.timeToNextAttack=2 else di.activeController.timeToNextAttack=0 end;di.activeController.timeToNextAttack=0;di.activeController.attacking=false;di.activeController.increment=3;di.activeController.blocking=false;di.activeController.timeToNextBlock=0;game.Players.LocalPlayer.Character.Humanoid.Sit=false
- end)
-end 
-end
 spawn(function()
 while wait() do
 if getgenv().fast then
-local dj=game.Players.LocalPlayer;local dk=require(dj.PlayerScripts.CombatFramework.Particle)local dl=require(game:GetService("ReplicatedStorage").CombatFramework.RigLib)if not shared.orl then shared.orl=dl.wrapAttackAnimationAsync 
-end;if not shared.cpc then shared.cpc=dk.play end;while wait()do pcall(function()dl.wrapAttackAnimationAsync=function(dm,dn,dp,dq,dr)local ds=dl.getBladeHits(dn,dp,dq)if ds then dk.play=function()end;dm:Play(0.1,0.1,0.1)dr(ds)dk.play=shared.cpc;wait(.1)dm:Stop()
-end 
-end 
-end)
-end 
-end
-end
-end)
+local dj=game.Players.LocalPlayer;local dk=require(dj.PlayerScripts.CombatFramework.Particle)local dl=require(game:GetService("ReplicatedStorage").CombatFramework.RigLib)if not shared.orl then shared.orl=dl.wrapAttackAnimationAsync end;if not shared.cpc then shared.cpc=dk.play end;while wait()do pcall(function()dl.wrapAttackAnimationAsync=function(dm,dn,dp,dq,dr)local ds=dl.getBladeHits(dn,dp,dq)if ds then dk.play=function()end;dm:Play(0.1,0.1,0.1)dr(ds)dk.play=shared.cpc;wait(.1)dm:Stop()
+end end end)end end
+
+end end)
+
 AutoFarm:Toggle("Super Fast Attack[Rick]",false,function(chm)
 getgenv().spf = chm 
 local plr = game.Players.LocalPlayer
