@@ -4863,7 +4863,7 @@ end
 
 				LineFrame.Parent = ScrollingFrame_Pageframe
 
-				LineFrame.BackgroundColor3 =  Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				LineFrame.BackgroundColor3 =  Color3.fromHSV(e,1,1)
 
 				LineFrame.BorderSizePixel = 0
 
