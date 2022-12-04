@@ -4861,7 +4861,7 @@ end
 
 				LineFrame.Parent = ScrollingFrame_Pageframe
 
-				LineFrame.BackgroundColor3 =  Color3.fromHSV(e,1,1)
+				LineFrame.BackgroundColor3 =  Color3.fromRGB(250, 0, 0)
 
 				LineFrame.BorderSizePixel = 0
 
@@ -4888,12 +4888,7 @@ end
 				LineFrame_BindConner.Parent = LineFrame
 
 			end
-        while true do
-task.wait()
-local ko = 5
- local e = tick() % ko / ko
-LineFrame.BackgroundColor3 = Color3.fromHSV(e,1,1)
-end
+        
 			function items:Color(text,preset,callback)
 
 				local Pixker = Instance.new("Frame")
