@@ -7213,7 +7213,7 @@ function EquipWeapon(ToolSe) if game.Players.LocalPlayer.Backpack:FindFirstChild
 	game.Players.LocalPlayer.Character.Humanoid:EquipTool(tool)end end
 
 --local UiLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/Bestxemchuaa/Bestxemchuaa/main/Test/GG.txt'))()
-local Window = create:Win("W A I F U H U B",Color3.fromHSV(tick() % 5 / 5 ,1,1))
+local Window = create:Win("W A I F U H U B")
 local DINOHUB = Instance.new("ScreenGui")
 local OPENCLOSE = Instance.new("TextButton") DINOHUB.Name="DINOHUB"
 DINOHUB.Parent=game.CoreGui
