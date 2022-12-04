@@ -1,4 +1,5 @@
-if not game:IsLoaded() then 
+
+	if not game:IsLoaded() then 
 
     repeat game.Loaded:wait(0.2) 
 
@@ -220,7 +221,7 @@ end
 
 		ClickFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 
-		ClickFrame.BackgroundColor3 = Color3.fromHSV(uke,1,1)
+		ClickFrame.BackgroundColor3 = Color3.fromHSV(kue,1,1)
 
 		ClickFrame.BorderSizePixel = 0
 
@@ -231,11 +232,11 @@ end
 		ClickFrame.ClipsDescendants = true
 
 		ClickFrame.BackgroundTransparency = 1
-  while true do
+     while true do
 task.wait()
-local ty = 5
- local uke = tick() % ty / ty
-ClickFrame.BackgroundColor3 = Color3.fromHSV(uke,1,1)
+local okt = 5
+ local kue = tick() % okt / okt
+ClickFrame.BackgroundColor3 = Color3.fromHSV(kue,1,1)
 end
 		MakeDraggable(ClickFrame,MainSceen)
 
@@ -367,10 +368,10 @@ end
 
 		ScrollingFrame_Menubar.CanvasSize = UDim2.new(2, 0, 0, 0)
 
-		ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromRGB(255,0,0)
+		ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromRGB(250,0,0)
 
 		ScrollingFrame_Menubar.ScrollBarThickness = 3
-   
+
 		local UIListLayout_Menubar = Instance.new("UIListLayout")
 
 		UIListLayout_Menubar.Parent = ScrollingFrame_Menubar
@@ -917,7 +918,7 @@ end
 
 				Toggle.Parent = ScrollingFrame_Pageframe
 
-				Toggle.BackgroundColor3 = Color3.fromRGB(255,0,0)
+				Toggle.BackgroundColor3 = Color3.fromRGB(15, 255,255)
 
 				Toggle.BorderSizePixel = 0
 
@@ -935,7 +936,7 @@ end
 
 				TextButton_Toggle.BackgroundTransparency =1
 
-				TextButton_Toggle.BackgroundColor3 = Color3.fromRGB(255,0,0)
+				TextButton_Toggle.BackgroundColor3 = Color3.fromRGB(253, 172, 251)
 
 				TextButton_Toggle.BorderSizePixel = 0
 
@@ -955,7 +956,7 @@ end
 
 				TextButton_2_Toggle.Parent = TextButton_Toggle
 
-				TextButton_2_Toggle.BackgroundColor3 = Color3.fromRGB(255,0,0)
+				TextButton_2_Toggle.BackgroundColor3 = Color3.fromRGB(253, 172, 171)
 
 		--        TextButton_2_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
 
@@ -989,7 +990,7 @@ end
 
 				TextButton_3_Toggle.Parent = TextButton_2_Toggle
 
-				TextButton_3_Toggle.BackgroundColor3 = Color3.fromRGB(255,0,0)
+				TextButton_3_Toggle.BackgroundColor3 = Color3.fromRGB(253, 172, 171)
 
 		--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
 
@@ -1023,7 +1024,7 @@ end
 
 				TextButton_4_Toggle.Parent = TextButton_3_Toggle
 
-				TextButton_4_Toggle.BackgroundColor3 = Color3.fromRGB(255,0,0)
+				TextButton_4_Toggle.BackgroundColor3 = Color3.fromRGB(253, 172, 171)
 
 		--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
 
@@ -1061,7 +1062,7 @@ end
 
 				TextLabel_Toggle.Parent = Toggle
 
-				TextLabel_Toggle.BackgroundColor3 = Color3.fromRGB(255,0,0)
+				TextLabel_Toggle.BackgroundColor3 = Color3.fromRGB(253, 172, 171)
 
 				TextLabel_Toggle.BackgroundTransparency = 1
 
@@ -1077,7 +1078,7 @@ end
 
 				TextLabel_Toggle.Text = text
 
-				TextLabel_Toggle.TextColor3 = Color3.fromRGB(255,0,0)
+				TextLabel_Toggle.TextColor3 = Color3.fromRGB(200, 240, 200)
 
 				TextLabel_Toggle.TextSize = 13.000
 
@@ -1093,7 +1094,7 @@ end
 
 				TextButton_Toggle2.BackgroundTransparency =1
 
-				TextButton_Toggle2.BackgroundColor3 = Color3.fromRGB(255,0,0)
+				TextButton_Toggle2.BackgroundColor3 = Color3.fromRGB(253, 172, 171)
 
 				TextButton_Toggle2.BorderSizePixel = 0
 
@@ -1153,7 +1154,7 @@ end
 
 						TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(35,35,35)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromRGB(253, 272, 171)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1187,7 +1188,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromRGB(35,35,35)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1197,7 +1198,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromRGB(255, 0, 0)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromRGB(153, 0, 102)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1581,7 +1582,7 @@ end
 
 				SliderFrame.Parent = ScrollingFrame_Pageframe
 
-				SliderFrame.BackgroundColor3 =  Color3.fromRGB(250,0,0)-- Color3.fromRGB(250,0,0)
+				SliderFrame.BackgroundColor3 =  Color3.fromRGB(28, 28, 28)-- Color3.fromRGB(250,0,0)
 
 				SliderFrame.BorderSizePixel = 0
 
@@ -4861,7 +4862,7 @@ end
 
 				LineFrame.Parent = ScrollingFrame_Pageframe
 
-				LineFrame.BackgroundColor3 =  Color3.fromHSV(jue,1,1)
+				LineFrame.BackgroundColor3 =  Color3.fromHSV(hhue,1,1)
 
 				LineFrame.BorderSizePixel = 0
 
@@ -4874,13 +4875,15 @@ end
 				LineFrame.BackgroundTransparency  = 0
 
 				LineFrame.ClipsDescendants = true
-       
-       while true do
+while true do
 task.wait()
-local tk = 5
- local jue = tick() % tk / tk
-LineFrame.BackgroundColor3 = Color3.fromHSV(jue,1,1)
+local ut = 5
+ local hhue = tick() % ut / ut
+LineFrame.BackgroundColor3 = Color3.fromHSV(hhue,1,1)
+
 end
+                
+
                 
 
 				local LineFrame_BindConner = Instance.new("UICorner")
@@ -6066,7 +6069,6 @@ end
 	return top
 
 	end
-	
 
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local VirtualUser = game:GetService('VirtualUser')
