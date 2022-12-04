@@ -220,7 +220,7 @@ end
 
 		ClickFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 
-		ClickFrame.BackgroundColor3 = Color3.fromHSV(uhe,1,1)
+		ClickFrame.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 		ClickFrame.BorderSizePixel = 0
 
@@ -231,13 +231,7 @@ end
 		ClickFrame.ClipsDescendants = true
 
 		ClickFrame.BackgroundTransparency = 1
-  while true do
-task.wait()
-local kt = 5
- local uhe = tick() % kt / kt
-ClickFrame.BackgroundColor3 = Color3.fromHSV(uhe,1,1)
-ClickFrame.Parent.Color = ClickFrame.BackgroundColor3
-end
+  
 		MakeDraggable(ClickFrame,MainSceen)
 
 		tween:Create(MainSceen,TweenInfo.new(0.4,Enum.EasingStyle.Back),{Size = UDim2.new(0, 550, 0, 474)}):Play()
