@@ -294,7 +294,8 @@ end
 
 		NameReal.Text = tostring(text)
 
-		NameReal.TextColor3 = Color3.fromRGB(255, 0,0)
+		NameReal.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 		NameReal.TextSize = 14.000
 
@@ -498,7 +499,8 @@ end
 
 			txdlid.Name = "TextLabel_Tap"
 
-			txdlid.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+			txdlid.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 			txdlid.Size =UDim2.new(0, 160, 0,25 )
 
@@ -506,7 +508,8 @@ end
 
 			txdlid.Text = titel
 
-			txdlid.TextColor3 = Color3.fromRGB(255, 0,0)
+			txdlid.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 			txdlid.TextSize = 13.000
 
@@ -528,7 +531,8 @@ end
 
 			LableFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 
-			LableFrame.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+			LableFrame.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 			LableFrame.BorderSizePixel = 0
 
@@ -546,7 +550,8 @@ end
 
 			TextNoti.Name = "TextLabel_Tap"
 
-			TextNoti.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+			TextNoti.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 			TextNoti.Size =UDim2.new(0, 260, 0,25 )
 
@@ -554,7 +559,8 @@ end
 
 			TextNoti.Text = text
 
-			TextNoti.TextColor3 = Color3.fromRGB(255, 0,0)
+			TextNoti.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 			TextNoti.TextSize = 13.000
 
@@ -578,7 +584,8 @@ end
 
 	--Time.AnchorPoint = Vector2.new(0.5, 0.5)
 
-			Time.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+			Time.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 			Time.BorderSizePixel = 0
 
@@ -662,7 +669,8 @@ end
 
 			TextLabel_Tap.Name = "TextLabel_Tap"
 
-			TextLabel_Tap.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+			TextLabel_Tap.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 			TextLabel_Tap.Position = UDim2.new(0.5, 0, 0.8, 0)
 
@@ -672,7 +680,7 @@ end
 
 			TextLabel_Tap.Text = " "
 
-			TextLabel_Tap.TextColor3 = Color3.fromRGB(0, 0, 0)
+			TextLabel_Tap.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
 			TextLabel_Tap.TextSize = 14.000
 
@@ -752,7 +760,8 @@ end
 
 						TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(255, 0,0)}
+						{TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+}
 
 					):Play()
 
@@ -778,7 +787,8 @@ end
 
 					TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-					{TextColor3 = Color3.fromRGB(255, 0,0)}
+					{TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+}
 
 				):Play()
 
@@ -804,7 +814,8 @@ end
 
 			ScrollingFrame_Pagefrist.ScrollBarThickness = 4
 
-			ScrollingFrame_Pagefrist.ScrollBarImageColor3 = Color3.fromRGB(255, 0,0) -- 0,250,154
+			ScrollingFrame_Pagefrist.ScrollBarImageColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+ -- 0,250,154
 
 			local UIGridLayout_Pagefrist = Instance.new("UIGridLayout")
 
@@ -850,7 +861,8 @@ end
 
 				ScrollingFrame_Pageframe.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 
-				ScrollingFrame_Pageframe.BorderColor3 = Color3.fromRGB(255, 0,0)
+				ScrollingFrame_Pageframe.BorderColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				ScrollingFrame_Pageframe.BorderSizePixel = 1
 
@@ -942,7 +954,7 @@ end
 
 				TextButton_Toggle.Text = " "
 
-				TextButton_Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+				TextButton_Toggle.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
 				TextButton_Toggle.TextSize = 12.000
 
@@ -952,7 +964,8 @@ end
 
 				TextButton_2_Toggle.BackgroundColor3 = Color3.fromRGB(155, 155, 155)
 
-		--        TextButton_2_Toggle.BorderColor3 = Color3.fromRGB(255, 0,0)
+		--        TextButton_2_Toggle.BorderColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				TextButton_2_Toggle.BorderSizePixel = 0
 
@@ -966,7 +979,7 @@ end
 
 				TextButton_2_Toggle.Text = " "
 
-				TextButton_2_Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+				TextButton_2_Toggle.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
 				TextButton_2_Toggle.TextSize = 12.000
 
@@ -986,7 +999,8 @@ end
 
 				TextButton_3_Toggle.BackgroundColor3 = Color3.fromRGB(255, 255,255)
 
-		--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(255, 0,0)
+		--        TextButton_3_Toggle.BorderColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				TextButton_3_Toggle.BorderSizePixel = 0
 
@@ -1000,7 +1014,7 @@ end
 
 				TextButton_3_Toggle.Text = " "
 
-				TextButton_3_Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+				TextButton_3_Toggle.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
 				TextButton_3_Toggle.TextSize = 12.000
 
@@ -1020,7 +1034,8 @@ end
 
 				TextButton_4_Toggle.BackgroundColor3 = Color3.fromRGB(155, 155,155)
 
-		--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(255, 0,0)
+		--        TextButton_3_Toggle.BorderColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				TextButton_4_Toggle.BorderSizePixel = 0
 
@@ -1034,7 +1049,7 @@ end
 
 				TextButton_4_Toggle.Text = " "
 
-				TextButton_4_Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+				TextButton_4_Toggle.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
 				TextButton_4_Toggle.TextSize = 12.000
 
@@ -1072,7 +1087,8 @@ end
 
 				TextLabel_Toggle.Text = text
 
-				TextLabel_Toggle.TextColor3 = Color3.fromRGB(255, 0,0)
+				TextLabel_Toggle.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				TextLabel_Toggle.TextSize = 13.000
 
@@ -1100,7 +1116,7 @@ end
 
 				TextButton_Toggle2.Text = " "
 
-				TextButton_Toggle2.TextColor3 = Color3.fromRGB(0, 0, 0)
+				TextButton_Toggle2.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
 				TextButton_Toggle2.TextSize = 12.000
 
@@ -1122,7 +1138,8 @@ end
 
 						TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(255, 0,0)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1172,7 +1189,8 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 = Color3.fromRGB(255, 0,0)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1182,7 +1200,8 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 = Color3.fromRGB(255, 0,0)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1254,7 +1273,8 @@ end
 
 					TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-					{BackgroundColor3 = Color3.fromRGB(255, 0,0)} -- UDim2.new(0, 128, 0, 25)
+					{BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+} -- UDim2.new(0, 128, 0, 25)
 
 				):Play()
 
@@ -1386,7 +1406,8 @@ end
 
 				ButtonFrame.Parent = ScrollingFrame_Pageframe
 
-				ButtonFrame.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+				ButtonFrame.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				ButtonFrame.BorderSizePixel = 0
 
@@ -1410,7 +1431,8 @@ end
 
 				MheeFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				MheeFrameStroke.Color = Color3.fromRGB(255, 0,0)
+				MheeFrameStroke.Color = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				MheeFrameStroke.Transparency = 0.7
 
@@ -1420,7 +1442,8 @@ end
 
 				Button.Name = "Button"
 
-				Button.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+				Button.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				Button.Size = UDim2.new(0,150, 0, 25)
 
@@ -1576,7 +1599,8 @@ end
 
 				SliderFrame.Parent = ScrollingFrame_Pageframe
 
-				SliderFrame.BackgroundColor3 =  Color3.fromRGB(28, 28, 28)-- Color3.fromRGB(255, 0,0)
+				SliderFrame.BackgroundColor3 =  Color3.fromRGB(28, 28, 28)-- Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				SliderFrame.BorderSizePixel = 0
 
@@ -1608,7 +1632,8 @@ end
 
 				SliderFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				SliderFrameStroke.Color = Color3.fromRGB(255, 0,0)
+				SliderFrameStroke.Color = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				SliderFrameStroke.Transparency = 0.7
 
@@ -1664,7 +1689,8 @@ end
 
 				LabelNameSliderxd.Text = tostring(text)
 
-				LabelNameSliderxd.TextColor3 = Color3.fromRGB(255, 0,0)
+				LabelNameSliderxd.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				LabelNameSliderxd.TextSize = 11.000
 
@@ -1724,7 +1750,8 @@ end
 
 				end
 
-				CustomValue.TextColor3 = Color3.fromRGB(255, 0,0)
+				CustomValue.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				CustomValue.TextSize = 8.000
 
@@ -1780,7 +1807,8 @@ end
 
 				MainValue.Parent = PartValue
 
-				MainValue.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+				MainValue.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				MainValue.Size = UDim2.new((de or 0) / max, 0, 0, 5)
 
@@ -1854,7 +1882,8 @@ end
 
 				Addvalue.Image = "http://www.roblox.com/asset/?id=6035067836"
 
-				Addvalue.ImageColor3 =  Color3.fromRGB(255, 0,0)
+				Addvalue.ImageColor3 =  Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				local Deletevalue = Instance.new("ImageButton")
 
@@ -1872,7 +1901,8 @@ end
 
 				Deletevalue.Image = "http://www.roblox.com/asset/?id=6035047377"
 
-				Deletevalue.ImageColor3 =  Color3.fromRGB(255, 0,0)
+				Deletevalue.ImageColor3 =  Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				local TextButton_2_Toggle = Instance.new("TextButton")
 
@@ -1880,7 +1910,8 @@ end
 
 				TextButton_2_Toggle.BackgroundColor3 = Color3.fromRGB(155, 155, 155)
 
-		--        TextButton_2_Toggle.BorderColor3 = Color3.fromRGB(255, 0,0)
+		--        TextButton_2_Toggle.BorderColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				TextButton_2_Toggle.BorderSizePixel = 0
 
@@ -1894,7 +1925,7 @@ end
 
 				TextButton_2_Toggle.Text = " "
 
-				TextButton_2_Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+				TextButton_2_Toggle.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
 				TextButton_2_Toggle.TextSize = 12.000
 
@@ -1914,7 +1945,8 @@ end
 
 				TextButton_3_Toggle.BackgroundColor3 = Color3.fromRGB(255, 255,255)
 
-		--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(255, 0,0)
+		--        TextButton_3_Toggle.BorderColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				TextButton_3_Toggle.BorderSizePixel = 0
 
@@ -1928,7 +1960,7 @@ end
 
 				TextButton_3_Toggle.Text = " "
 
-				TextButton_3_Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+				TextButton_3_Toggle.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
 				TextButton_3_Toggle.TextSize = 12.000
 
@@ -1948,7 +1980,8 @@ end
 
 				TextButton_4_Toggle.BackgroundColor3 = Color3.fromRGB(155, 155,155)
 
-		--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(255, 0,0)
+		--        TextButton_3_Toggle.BorderColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				TextButton_4_Toggle.BorderSizePixel = 0
 
@@ -1962,7 +1995,7 @@ end
 
 				TextButton_4_Toggle.Text = " "
 
-				TextButton_4_Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+				TextButton_4_Toggle.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
 				TextButton_4_Toggle.TextSize = 12.000
 
@@ -1998,7 +2031,7 @@ end
 
 				TextButton_Toggle.Text = " "
 
-				TextButton_Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+				TextButton_Toggle.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
 				TextButton_Toggle.TextSize = 12.000
 
@@ -2384,7 +2417,8 @@ end
 
 							TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-							{BackgroundColor3 = Color3.fromRGB(255, 0,0)} -- UDim2.new(0, 128, 0, 25)
+							{BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+} -- UDim2.new(0, 128, 0, 25)
 
 						):Play()
 
@@ -2394,7 +2428,8 @@ end
 
 							TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-							{BackgroundColor3 = Color3.fromRGB(255, 0,0)} -- UDim2.new(0, 128, 0, 25)
+							{BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+} -- UDim2.new(0, 128, 0, 25)
 
 						):Play()
 
@@ -2470,7 +2505,8 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 = Color3.fromRGB(255, 0,0)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -2480,7 +2516,8 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 = Color3.fromRGB(255, 0,0)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -2520,7 +2557,8 @@ end
 
 				SliderFrame.Parent = ScrollingFrame_Pageframe
 
-				SliderFrame.BackgroundColor3 =  Color3.fromRGB(28, 28, 28)-- Color3.fromRGB(255, 0,0)
+				SliderFrame.BackgroundColor3 =  Color3.fromRGB(28, 28, 28)-- Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				SliderFrame.BorderSizePixel = 0
 
@@ -2552,7 +2590,8 @@ end
 
 				SliderFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				SliderFrameStroke.Color = Color3.fromRGB(255, 0,0)
+				SliderFrameStroke.Color = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				SliderFrameStroke.Transparency = 0.7
 
@@ -2608,7 +2647,8 @@ end
 
 				LabelNameSliderxd.Text = tostring(text)
 
-				LabelNameSliderxd.TextColor3 = Color3.fromRGB(255, 0,0)
+				LabelNameSliderxd.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				LabelNameSliderxd.TextSize = 11.000
 
@@ -2668,7 +2708,8 @@ end
 
 				end
 
-				CustomValue.TextColor3 = Color3.fromRGB(255, 0,0)
+				CustomValue.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				CustomValue.TextSize = 8.000
 
@@ -2724,7 +2765,8 @@ end
 
 				MainValue.Parent = PartValue
 
-				MainValue.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+				MainValue.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				MainValue.Size = UDim2.new((de or 0) / max, 0, 0, 5)
 
@@ -2798,7 +2840,8 @@ end
 
 				Addvalue.Image = "http://www.roblox.com/asset/?id=6035067836"
 
-				Addvalue.ImageColor3 =  Color3.fromRGB(255, 0,0)
+				Addvalue.ImageColor3 =  Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				local Deletevalue = Instance.new("ImageButton")
 
@@ -2816,7 +2859,8 @@ end
 
 				Deletevalue.Image = "http://www.roblox.com/asset/?id=6035047377"
 
-				Deletevalue.ImageColor3 =  Color3.fromRGB(255, 0,0)
+				Deletevalue.ImageColor3 =  Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				local function move(input)
 
@@ -3098,7 +3142,8 @@ end
 
 				DropFrame.Parent = ScrollingFrame_Pageframe
 
-				DropFrame.BackgroundColor3 =  Color3.fromRGB(23, 23, 23)-- Color3.fromRGB(255, 0,0)
+				DropFrame.BackgroundColor3 =  Color3.fromRGB(23, 23, 23)-- Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				DropFrame.BorderSizePixel = 0
 
@@ -3130,7 +3175,8 @@ end
 
 				DropFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				DropFrameStroke.Color = Color3.fromRGB(255, 0,0)
+				DropFrameStroke.Color = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				DropFrameStroke.Transparency = 0.7
 
@@ -3140,7 +3186,8 @@ end
 
 				LabelFrameDrop.Name = "LabelFrameDrop"
 
-				LabelFrameDrop.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+				LabelFrameDrop.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				LabelFrameDrop.Position = UDim2.new(0., 0, 0., 0)
 
@@ -3166,7 +3213,8 @@ end
 
 				TextLabel_TapDrop.Name = "TextLabel_TapDrop"
 
-				TextLabel_TapDrop.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+				TextLabel_TapDrop.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				TextLabel_TapDrop.Position = UDim2.new(0.04, 0, 0.14, 0)
 
@@ -3254,7 +3302,8 @@ end
 
 				ButtonDrop.Name = "ButtonDrop"
 
-				ButtonDrop.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+				ButtonDrop.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				ButtonDrop.Size = UDim2.new(0, 213, 0, 30)
 
@@ -3310,7 +3359,8 @@ end
 
 					ListFrame.Parent = ScolDown
 
-					ListFrame.BackgroundColor3 =  Color3.fromRGB(22553, 23, 23)-- Color3.fromRGB(255, 0,0)
+					ListFrame.BackgroundColor3 =  Color3.fromRGB(22553, 23, 23)-- Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 					ListFrame.BorderSizePixel = 0
 
@@ -3330,7 +3380,8 @@ end
 
 					TextLabel_TapDro2p.Name =  tostring(v).."Dropdown"
 
-					TextLabel_TapDro2p.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+					TextLabel_TapDro2p.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 					TextLabel_TapDro2p.Position = UDim2.new(0.5, 0, 0.5, 0)
 
@@ -3356,7 +3407,8 @@ end
 
 					ButtonDrop2.Name = "ButtonDrop2"
 
-					ButtonDrop2.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+					ButtonDrop2.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 					ButtonDrop2.Size = UDim2.new(0, 213, 0, 30)
 
@@ -3390,7 +3442,8 @@ end
 
 							TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-							{TextColor3 = Color3.fromRGB(255, 0,0)} -- UDim2.new(0, 128, 0, 25)
+							{TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+} -- UDim2.new(0, 128, 0, 25)
 
 						):Play()
 
@@ -3464,7 +3517,8 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(255, 0,0)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -3606,7 +3660,8 @@ end
 
 				ListFrame.Parent = ScolDown
 
-				ListFrame.BackgroundColor3 =  Color3.fromRGB(22553, 23, 23)-- Color3.fromRGB(255, 0,0)
+				ListFrame.BackgroundColor3 =  Color3.fromRGB(22553, 23, 23)-- Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				ListFrame.BorderSizePixel = 0
 
@@ -3626,7 +3681,8 @@ end
 
 				TextLabel_TapDro2p.Name =  tostring(t).."Dropdown"
 
-				TextLabel_TapDro2p.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+				TextLabel_TapDro2p.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				TextLabel_TapDro2p.Position = UDim2.new(0.5, 0, 0.5, 0)
 
@@ -3652,7 +3708,8 @@ end
 
 				ButtonDrop2.Name = "ButtonDrop2"
 
-				ButtonDrop2.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+				ButtonDrop2.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				ButtonDrop2.Size = UDim2.new(0, 213, 0, 30)
 
@@ -3686,7 +3743,8 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(255, 0,0)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -3768,7 +3826,8 @@ end
 
 			DropFrame.Parent = ScrollingFrame_Pageframe
 
-			DropFrame.BackgroundColor3 =  Color3.fromRGB(23, 23, 23)-- Color3.fromRGB(255, 0,0)
+			DropFrame.BackgroundColor3 =  Color3.fromRGB(23, 23, 23)-- Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 			DropFrame.BorderSizePixel = 0
 
@@ -3800,7 +3859,8 @@ end
 
 			DropFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-			DropFrameStroke.Color = Color3.fromRGB(255, 0,0)
+			DropFrameStroke.Color = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 			DropFrameStroke.Transparency = 0.7
 
@@ -3810,7 +3870,8 @@ end
 
 			LabelFrameDrop.Name = "LabelFrameDrop"
 
-			LabelFrameDrop.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+			LabelFrameDrop.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 			LabelFrameDrop.Position = UDim2.new(0., 0, 0., 0)
 
@@ -3836,7 +3897,8 @@ end
 
 			TextLabel_TapDrop.Name = "TextLabel_TapDrop"
 
-			TextLabel_TapDrop.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+			TextLabel_TapDrop.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 			TextLabel_TapDrop.Position = UDim2.new(0.04, 0, 0.14, 0)
 
@@ -3924,7 +3986,8 @@ end
 
 			ButtonDrop.Name = "ButtonDrop"
 
-			ButtonDrop.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+			ButtonDrop.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 			ButtonDrop.Size = UDim2.new(0, 213, 0, 30)
 
@@ -4012,7 +4075,7 @@ end
 
 				listtextbutton.Text = " "
 
-				listtextbutton.TextColor3 = Color3.fromRGB(0, 0, 0)
+				listtextbutton.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
 				listtextbutton.TextSize = 14.000
 
@@ -4020,9 +4083,11 @@ end
 
 				farmtoglist.Parent = listtextbutton
 
-				farmtoglist.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+				farmtoglist.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
-				farmtoglist.BorderColor3 = Color3.fromRGB(255, 0,0)
+
+				farmtoglist.BorderColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				farmtoglist.BorderSizePixel = 0
 
@@ -4036,7 +4101,7 @@ end
 
 				farmtoglist.Text = " "
 
-				farmtoglist.TextColor3 = Color3.fromRGB(0, 0, 0)
+				farmtoglist.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
 				farmtoglist.TextSize = 14.000
 
@@ -4048,7 +4113,8 @@ end
 
 				farmtoglist2.BackgroundColor3 = Color3.fromRGB(32, 32,32)
 
-				farmtoglist2.BorderColor3 = Color3.fromRGB(255, 0,0)
+				farmtoglist2.BorderColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				farmtoglist2.BorderSizePixel = 0
 
@@ -4062,7 +4128,7 @@ end
 
 				farmtoglist2.Text = " "
 
-				farmtoglist2.TextColor3 = Color3.fromRGB(0, 0, 0)
+				farmtoglist2.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
 				farmtoglist2.TextSize = 14.000
 
@@ -4106,7 +4172,8 @@ end
 
 				textlist.Text = tostring(v.Name)
 
-				textlist.TextColor3 = Color3.fromRGB(255, 0,0)
+				textlist.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				textlist.TextSize = 13.000
 
@@ -4188,7 +4255,8 @@ end
 
 					TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-					{TextColor3 = Color3.fromRGB(255, 0,0)} -- UDim2.new(0, 128, 0, 25)
+					{TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+} -- UDim2.new(0, 128, 0, 25)
 
 				):Play()
 
@@ -4388,7 +4456,8 @@ end
 
 				TextFrame2.Parent = FrameBox
 
-				TextFrame2.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+				TextFrame2.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				TextFrame2.BorderSizePixel = 0
 
@@ -4432,7 +4501,8 @@ end
 
 				TextBoxStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				TextBoxStroke.Color = Color3.fromRGB(255, 0,0)
+				TextBoxStroke.Color = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				TextBoxStroke.Transparency = 0.7
 
@@ -4454,7 +4524,8 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 = Color3.fromRGB(255, 0,0)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -4474,7 +4545,8 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(255, 0,0)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -4484,7 +4556,8 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(255, 0,0)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -4620,7 +4693,8 @@ end
 
 				BindStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				BindStroke.Color = Color3.fromRGB(255, 0,0)
+				BindStroke.Color = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				BindStroke.Transparency = 0.7
 
@@ -4726,7 +4800,8 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(255, 0,0)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -4736,7 +4811,8 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(255, 0,0)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -4746,7 +4822,8 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromRGB(255, 0,0)} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -4926,7 +5003,8 @@ end
 
 				MheeFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				MheeFrameStroke.Color = Color3.fromRGB(255, 0,0)
+				MheeFrameStroke.Color = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				MheeFrameStroke.Transparency = 0.7
 
@@ -4944,7 +5022,7 @@ end
 
 				TextFrameColor.Text = "  "
 
-				TextFrameColor.TextColor3 = Color3.fromRGB(0, 0, 0)
+				TextFrameColor.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
 				TextFrameColor.TextSize = 14.000
 
@@ -5014,7 +5092,7 @@ end
 
 				TextButton_Dropdown.Text = "  "
 
-				TextButton_Dropdown.TextColor3 = Color3.fromRGB(0, 0, 0)
+				TextButton_Dropdown.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
 				TextButton_Dropdown.TextSize = 14.000
 
@@ -5082,7 +5160,8 @@ end
 
 			TextButton_2_Toggle.BackgroundColor3 = Color3.fromRGB(155, 155, 155)
 
-	--        TextButton_2_Toggle.BorderColor3 = Color3.fromRGB(255, 0,0)
+	--        TextButton_2_Toggle.BorderColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 			TextButton_2_Toggle.BorderSizePixel = 0
 
@@ -5096,7 +5175,7 @@ end
 
 			TextButton_2_Toggle.Text = " "
 
-			TextButton_2_Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+			TextButton_2_Toggle.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
 			TextButton_2_Toggle.TextSize = 12.000
 
@@ -5116,7 +5195,8 @@ end
 
 			TextButton_3_Toggle.BackgroundColor3 = Color3.fromRGB(255, 255,255)
 
-	--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(255, 0,0)
+	--        TextButton_3_Toggle.BorderColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 			TextButton_3_Toggle.BorderSizePixel = 0
 
@@ -5130,7 +5210,7 @@ end
 
 			TextButton_3_Toggle.Text = " "
 
-			TextButton_3_Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+			TextButton_3_Toggle.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
 			TextButton_3_Toggle.TextSize = 12.000
 
@@ -5150,7 +5230,8 @@ end
 
 			TextButton_4_Toggle.BackgroundColor3 = Color3.fromRGB(155, 155,155)
 
-	--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(255, 0,0)
+	--        TextButton_3_Toggle.BorderColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 			TextButton_4_Toggle.BorderSizePixel = 0
 
@@ -5164,7 +5245,7 @@ end
 
 			TextButton_4_Toggle.Text = " "
 
-			TextButton_4_Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+			TextButton_4_Toggle.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
 			TextButton_4_Toggle.TextSize = 12.000
 
@@ -5200,7 +5281,7 @@ end
 
 			TextButton_Toggle.Text = " "
 
-			TextButton_Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+			TextButton_Toggle.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
 			TextButton_Toggle.TextSize = 12.000
 
@@ -5214,7 +5295,8 @@ end
 
 			TextButton_3_Toggle2.BackgroundColor3 = Color3.fromRGB(32, 32,32)
 
-			TextButton_3_Toggle2.BorderColor3 = Color3.fromRGB(255, 0,0)
+			TextButton_3_Toggle2.BorderColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 			TextButton_3_Toggle2.BorderSizePixel = 0
 
@@ -5228,7 +5310,8 @@ end
 
 			TextButton_3_Toggle2.Text = "Rainbow"
 
-			TextButton_3_Toggle2.TextColor3 = Color3.fromRGB(255, 0,0)
+			TextButton_3_Toggle2.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 			TextButton_3_Toggle2.TextSize = 13.000
 
@@ -5252,7 +5335,7 @@ end
 
 			OMF.Text = " "
 
-			OMF.TextColor3 = Color3.fromRGB(0, 0, 0)
+			OMF.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
 			OMF.TextSize = 12.000
 
@@ -5384,9 +5467,11 @@ end
 
 			BTN_XD.Parent = TextFrameColor
 
-			BTN_XD.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+			BTN_XD.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
 
-			BTN_XD.BorderColor3 = Color3.fromRGB(255, 0,0)
+
+			BTN_XD.BorderColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 			BTN_XD.BorderSizePixel = 0
 
@@ -5400,7 +5485,8 @@ end
 
 			BTN_XD.Text = "Confirm"
 
-			BTN_XD.TextColor3 = Color3.fromRGB(255, 0,0)
+			BTN_XD.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 			BTN_XD.TextSize = 11.000
 
@@ -5424,7 +5510,8 @@ end
 
 			MheeFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-			MheeFrameStroke.Color = Color3.fromRGB(255, 0,0)
+			MheeFrameStroke.Color = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 			MheeFrameStroke.Transparency = 0.7
 
@@ -5440,7 +5527,8 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 = Color3.fromRGB(255, 0,0)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -5450,7 +5538,8 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 = Color3.fromRGB(255, 0,0)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -5942,7 +6031,8 @@ end
 
 				LabelFarm2.Text = text
 
-				LabelFarm2.TextColor3 = Color3.fromRGB(255, 0,0)
+				LabelFarm2.TextColor3 = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				LabelFarm2.TextSize = 12.000
 
@@ -6000,7 +6090,8 @@ end
 
 				LabelStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				LabelStroke.Color = Color3.fromRGB(255, 0,0)
+				LabelStroke.Color = Color3.fromHSV(tick() * 24 % 5/5, 1, 1)
+
 
 				LabelStroke.Transparency = 0.7
 
