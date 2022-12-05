@@ -56,7 +56,14 @@ end
 		end
 
 	)()
-
+themes = {
+Background = Color3.fromRGB(15,15,15), 
+Glow = Color3.fromRGB(0,0,0), 
+Accent = Color3.fromRGB(10, 10, 10), 
+LightContrast = Color3.fromRGB(20, 20, 20), 
+DarkContrast = Color3.fromRGB(0.05,0.05,0.05),  
+TextColor = Color3.fromRGB(255, 255, 255)
+}
 	local Reduisceen = Instance.new("ScreenGui")
 
 	Reduisceen.Parent = game:GetService("CoreGui")
@@ -540,13 +547,7 @@ end
 			LableFrame.ClipsDescendants = true
 
 			LableFrame.BackgroundTransparency = 1
-   while true do
-task.wait()
-local t = 5
- local ue = tick() % t / t
-LableFrame.BackgroundColor3 = Color3.fromHSV(ue,1,1)
-LableFrame.Parent.Color = LableFrame.BackgroundColor3
-end
+  
 			local TextNoti = Instance.new("TextLabel")
 
 			TextNoti.Parent = LableFrame
@@ -803,8 +804,8 @@ end
 
 			ScrollingFrame_Pagefrist.Active = true
 
-			ScrollingFrame_Pagefrist.BackgroundColor3 = Color3.fromRGB(253, 172, 171) -- 250,0,0
-
+			
+            ScrollingFrame_Pagefrist.BackgroundColor3 = Color3.fromRGB(253, 172, 171)
 			ScrollingFrame_Pagefrist.BorderSizePixel = 0
 
 			ScrollingFrame_Pagefrist.Size = UDim2.new(0, 518, 0, 375)
@@ -812,7 +813,7 @@ end
 			ScrollingFrame_Pagefrist.ScrollBarThickness = 4
 
 			ScrollingFrame_Pagefrist.ScrollBarImageColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1) -- 250,0,0
-
+  
 			local UIGridLayout_Pagefrist = Instance.new("UIGridLayout")
 
 			local UIPadding_Pagefrist = Instance.new("UIPadding")
@@ -4863,12 +4864,8 @@ end
 
 				LineFrame.Parent = ScrollingFrame_Pageframe
               
-while true do
-task.wait()
-local t = 5
- local ue = tick() % t / t
-LineFrame.BackgroundColor3 = Color3.fromHSV(ue,1,1)
-end
+               LineFrame.BackgroundColor3 = Color3.fromRGB(250,0,0)
+      
 				LineFrame.BorderSizePixel = 0
 
     			LineFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
