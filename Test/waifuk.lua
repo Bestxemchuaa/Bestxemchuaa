@@ -24,7 +24,7 @@ end
 	local Mouse = LocalPlayer:GetMouse()
 
 	local tween = game:GetService("TweenService")
-
+   
 	local Red = {RainbowColorValue = 0, HueSelectionPosition = 0}
 
 	local PresetColor = Color3.fromRGB(66, 134, 255)
@@ -4862,9 +4862,13 @@ end
 				LineFrame.Name = "LineFrame"
 
 				LineFrame.Parent = ScrollingFrame_Pageframe
-
-				LineFrame.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
-
+              
+while true do
+task.wait()
+local t = 5
+ local ue = tick() % t / t
+LineFrame.BackgroundColor3 = Color3.fromHSV(ue,1,1)
+end
 				LineFrame.BorderSizePixel = 0
 
     			LineFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -4876,6 +4880,8 @@ end
 				LineFrame.BackgroundTransparency  = 0
 
 				LineFrame.ClipsDescendants = true
+
+
 
 
 
