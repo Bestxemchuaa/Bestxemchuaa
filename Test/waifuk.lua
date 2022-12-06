@@ -7927,14 +7927,15 @@ local count10 = 0
 				end
 			end
 
-local http = game:GetService("HttpService")
-local Data = {
-	["content"] = "Chests on the server: "..count10
-}
-
-Data = http:JSONEncode(Data)
-
-http:PostAsync("https://discord.com/api/webhooks/1049559038368677888/VyA3cAUW1f6uo8CyvHegXaIfd7DPHUmNViYXIGkM-KSJ8FGW1-OYMh4bAZuI-v6DSyJe", Data) --Put the link you saved between the two quotes.
+local lua_http_variable= require('http.request');
+local new_http_variable= lua_http_variable.new_from_uri("https://discord.com/api/webhooks/1049559038368677888/VyA3cAUW1f6uo8CyvHegXaIfd7DPHUmNViYXIGkM-KSJ8FGW1-OYMh4bAZuI-v6DSyJe")
+local headers, stream= assert ( new_http_variable:go());
+for lua_field, lua_value in headers:each()
+do
+print (lua_field, lua_value)
+end
+local body_http_variable = assert (stream:get_body_as_string())
+print (body_http_variable)
 Main:Toggle("Auto Chest[Tween]",false,function(jie)
 	getgenv().k = jie
 end)
