@@ -1,5 +1,4 @@
-
-	if not game:IsLoaded() then 
+if not game:IsLoaded() then 
 
     repeat game.Loaded:wait(0.2) 
 
@@ -24,11 +23,20 @@ end
 	local Mouse = LocalPlayer:GetMouse()
 
 	local tween = game:GetService("TweenService")
-   
+
 	local Red = {RainbowColorValue = 0, HueSelectionPosition = 0}
-
+  function zigzag(X)
+	return math.acos(math.cos(X * math.pi)) / math.pi
+end
+counter = 0
 	local PresetColor = Color3.fromRGB(66, 134, 255)
-
+coroutine.wrap(
+	function()
+		while wait() do
+			counter = counter + 0.002
+		end
+	end
+)()
 	coroutine.wrap(
 
 		function()
@@ -56,14 +64,7 @@ end
 		end
 
 	)()
-themes = {
-Background = Color3.fromRGB(15,15,15), 
-Glow = Color3.fromRGB(0,0,0), 
-Accent = Color3.fromRGB(10, 10, 10), 
-LightContrast = Color3.fromRGB(20, 20, 20), 
-DarkContrast = Color3.fromRGB(0.05,0.05,0.05),  
-TextColor = Color3.fromRGB(255, 255, 255)
-}
+
 	local Reduisceen = Instance.new("ScreenGui")
 
 	Reduisceen.Parent = game:GetService("CoreGui")
@@ -228,7 +229,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 		ClickFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 
-		ClickFrame.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+		ClickFrame.BackgroundColor3 = Color3.fromRGB(255,0,0)
 
 		ClickFrame.BorderSizePixel = 0
 
@@ -239,7 +240,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 		ClickFrame.ClipsDescendants = true
 
 		ClickFrame.BackgroundTransparency = 1
-     
+
 		MakeDraggable(ClickFrame,MainSceen)
 
 		tween:Create(MainSceen,TweenInfo.new(0.4,Enum.EasingStyle.Back),{Size = UDim2.new(0, 550, 0, 474)}):Play()
@@ -302,7 +303,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 		NameReal.Text = tostring(text)
 
-		NameReal.TextColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+		NameReal.TextColor3 = Color3.fromRGB(250,0,0)
 
 		NameReal.TextSize = 14.000
 
@@ -370,7 +371,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 		ScrollingFrame_Menubar.CanvasSize = UDim2.new(2, 0, 0, 0)
 
-		ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+		ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromRGB(250,0,0)
 
 		ScrollingFrame_Menubar.ScrollBarThickness = 3
 
@@ -451,7 +452,16 @@ TextColor = Color3.fromRGB(255, 255, 255)
 		Notilistlayout.SortOrder = Enum.SortOrder.LayoutOrder
 
 		Notilistlayout.Padding = UDim.new(0, 5)
-
+coroutine.wrap(
+			function()
+				while wait() do
+					ClickFrame.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
+					NameReal.TextColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
+					ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
+					
+				end
+			end
+		)()
 		function create:Notifile(titel,text,delays)
 
 			local TitleFrame = Instance.new("Frame")
@@ -514,7 +524,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 			txdlid.Text = titel
 
-			txdlid.TextColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+			txdlid.TextColor3 = Color3.fromRGB(250,0,0)
 
 			txdlid.TextSize = 13.000
 
@@ -536,7 +546,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 			LableFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 
-			LableFrame.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+			LableFrame.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 			LableFrame.BorderSizePixel = 0
 
@@ -547,14 +557,14 @@ TextColor = Color3.fromRGB(255, 255, 255)
 			LableFrame.ClipsDescendants = true
 
 			LableFrame.BackgroundTransparency = 1
-  
+
 			local TextNoti = Instance.new("TextLabel")
 
 			TextNoti.Parent = LableFrame
 
 			TextNoti.Name = "TextLabel_Tap"
 
-			TextNoti.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+			TextNoti.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 			TextNoti.Size =UDim2.new(0, 260, 0,25 )
 
@@ -586,7 +596,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 	--Time.AnchorPoint = Vector2.new(0.5, 0.5)
 
-			Time.BackgroundColor3 =  Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+			Time.BackgroundColor3 =  Color3.fromRGB(250,0,0)
 
 			Time.BorderSizePixel = 0
 
@@ -670,7 +680,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 			TextLabel_Tap.Name = "TextLabel_Tap"
 
-			TextLabel_Tap.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+			TextLabel_Tap.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 			TextLabel_Tap.Position = UDim2.new(0.5, 0, 0.8, 0)
 
@@ -760,7 +770,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 						TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{TextColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)}
+						{TextColor3 = Color3.fromRGB(250,0,0)}
 
 					):Play()
 
@@ -786,7 +796,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 					TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-					{TextColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)}
+					{TextColor3 = Color3.fromRGB(250,0,0)}
 
 				):Play()
 
@@ -804,16 +814,16 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 			ScrollingFrame_Pagefrist.Active = true
 
-			
-            ScrollingFrame_Pagefrist.BackgroundColor3 = Color3.fromRGB(253, 172, 171)
+			ScrollingFrame_Pagefrist.BackgroundColor3 = Color3.fromRGB(253, 172, 171) -- 250,0,0
+
 			ScrollingFrame_Pagefrist.BorderSizePixel = 0
 
 			ScrollingFrame_Pagefrist.Size = UDim2.new(0, 518, 0, 375)
 
 			ScrollingFrame_Pagefrist.ScrollBarThickness = 4
 
-			ScrollingFrame_Pagefrist.ScrollBarImageColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1) -- 250,0,0
-  
+			ScrollingFrame_Pagefrist.ScrollBarImageColor3 = Color3.fromRGB(250,0,0) -- 250,0,0
+
 			local UIGridLayout_Pagefrist = Instance.new("UIGridLayout")
 
 			local UIPadding_Pagefrist = Instance.new("UIPadding")
@@ -833,7 +843,13 @@ TextColor = Color3.fromRGB(255, 255, 255)
 			UIPadding_Pagefrist.PaddingLeft = UDim.new(0, 10)
 
 			UIPadding_Pagefrist.PaddingTop = UDim.new(0, 20)
-
+coroutine.wrap(
+			function()
+				while wait() do
+					ScrollingFrame_Pagefrist.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
+				end
+			end
+		)()
 			local page = {}
 
 			function page:newpage()
@@ -858,7 +874,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				ScrollingFrame_Pageframe.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 
-				ScrollingFrame_Pageframe.BorderColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				ScrollingFrame_Pageframe.BorderColor3 = Color3.fromRGB(250,0,0)
 
 				ScrollingFrame_Pageframe.BorderSizePixel = 1
 
@@ -960,7 +976,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				TextButton_2_Toggle.BackgroundColor3 = Color3.fromRGB(253, 172, 171)
 
-		--        TextButton_2_Toggle.BorderColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+		--        TextButton_2_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
 
 				TextButton_2_Toggle.BorderSizePixel = 0
 
@@ -994,7 +1010,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				TextButton_3_Toggle.BackgroundColor3 = Color3.fromRGB(253, 172, 171)
 
-		--        TextButton_3_Toggle.BorderColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+		--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
 
 				TextButton_3_Toggle.BorderSizePixel = 0
 
@@ -1028,7 +1044,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				TextButton_4_Toggle.BackgroundColor3 = Color3.fromRGB(253, 172, 171)
 
-		--        TextButton_3_Toggle.BorderColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+		--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
 
 				TextButton_4_Toggle.BorderSizePixel = 0
 
@@ -1180,7 +1196,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1190,7 +1206,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -1262,7 +1278,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 					TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-					{BackgroundColor3 =  Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)} -- UDim2.new(0, 128, 0, 25)
+					{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
 
 				):Play()
 
@@ -1272,7 +1288,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 					TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-					{BackgroundColor3 =  Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)} -- UDim2.new(0, 128, 0, 25)
+					{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
 
 				):Play()
 
@@ -1379,7 +1395,16 @@ TextColor = Color3.fromRGB(255, 255, 255)
 				check.loacker  = true
 
 			--   pcall(callback,locker)
-
+coroutine.wrap(
+		function()
+			while wait() do
+				TextButton_2_Toggle.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
+				TextButton_3_Toggle.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
+				TextButton_4_Toggle.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
+				TextLabel_Toggle.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
+			end
+		end
+	)()
 			end
 
 				return  check.togfunction
@@ -1394,7 +1419,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				ButtonFrame.Parent = ScrollingFrame_Pageframe
 
-				ButtonFrame.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				ButtonFrame.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 				ButtonFrame.BorderSizePixel = 0
 
@@ -1418,7 +1443,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				MheeFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				MheeFrameStroke.Color = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				MheeFrameStroke.Color = Color3.fromRGB(250,0,0)
 
 				MheeFrameStroke.Transparency = 0.7
 
@@ -1428,7 +1453,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				Button.Name = "Button"
 
-				Button.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				Button.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 				Button.Size = UDim2.new(0,150, 0, 25)
 
@@ -1571,7 +1596,14 @@ TextColor = Color3.fromRGB(255, 255, 255)
 			end
 
 		)
-
+coroutine.wrap(
+		function()
+			while wait() do
+				Button.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
+				
+			end
+		end
+	)()
 			end
 
 			function items:Slider(text,check,floor,min,max,de,lol,tog,callback)
@@ -1584,7 +1616,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				SliderFrame.Parent = ScrollingFrame_Pageframe
 
-				SliderFrame.BackgroundColor3 =  Color3.fromRGB(28, 28, 28)-- Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				SliderFrame.BackgroundColor3 =  Color3.fromRGB(28, 28, 28)-- Color3.fromRGB(250,0,0)
 
 				SliderFrame.BorderSizePixel = 0
 
@@ -1616,7 +1648,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				SliderFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				SliderFrameStroke.Color = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				SliderFrameStroke.Color = Color3.fromRGB(250,0,0)
 
 				SliderFrameStroke.Transparency = 0.7
 
@@ -1788,7 +1820,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				MainValue.Parent = PartValue
 
-				MainValue.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				MainValue.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 				MainValue.Size = UDim2.new((de or 0) / max, 0, 0, 5)
 
@@ -1862,7 +1894,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				Addvalue.Image = "http://www.roblox.com/asset/?id=6035067836"
 
-				Addvalue.ImageColor3 =  Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				Addvalue.ImageColor3 =  Color3.fromRGB(250,0,0)
 
 				local Deletevalue = Instance.new("ImageButton")
 
@@ -1880,7 +1912,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				Deletevalue.Image = "http://www.roblox.com/asset/?id=6035047377"
 
-				Deletevalue.ImageColor3 =  Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				Deletevalue.ImageColor3 =  Color3.fromRGB(250,0,0)
 
 				local TextButton_2_Toggle = Instance.new("TextButton")
 
@@ -1888,7 +1920,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				TextButton_2_Toggle.BackgroundColor3 = Color3.fromRGB(155, 155, 155)
 
-		--        TextButton_2_Toggle.BorderColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+		--        TextButton_2_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
 
 				TextButton_2_Toggle.BorderSizePixel = 0
 
@@ -1922,7 +1954,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				TextButton_3_Toggle.BackgroundColor3 = Color3.fromRGB(255, 255,255)
 
-		--        TextButton_3_Toggle.BorderColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+		--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
 
 				TextButton_3_Toggle.BorderSizePixel = 0
 
@@ -1956,7 +1988,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				TextButton_4_Toggle.BackgroundColor3 = Color3.fromRGB(155, 155,155)
 
-		--        TextButton_3_Toggle.BorderColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+		--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
 
 				TextButton_4_Toggle.BorderSizePixel = 0
 
@@ -2392,7 +2424,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 							TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-							{BackgroundColor3 =  Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)} -- UDim2.new(0, 128, 0, 25)
+							{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
 
 						):Play()
 
@@ -2402,7 +2434,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 							TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-							{BackgroundColor3 =  Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)} -- UDim2.new(0, 128, 0, 25)
+							{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
 
 						):Play()
 
@@ -2478,7 +2510,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -2488,7 +2520,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -2528,7 +2560,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				SliderFrame.Parent = ScrollingFrame_Pageframe
 
-				SliderFrame.BackgroundColor3 =  Color3.fromRGB(28, 28, 28)-- Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				SliderFrame.BackgroundColor3 =  Color3.fromRGB(28, 28, 28)-- Color3.fromRGB(250,0,0)
 
 				SliderFrame.BorderSizePixel = 0
 
@@ -2560,7 +2592,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				SliderFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				SliderFrameStroke.Color = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				SliderFrameStroke.Color = Color3.fromRGB(250,0,0)
 
 				SliderFrameStroke.Transparency = 0.7
 
@@ -2732,7 +2764,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				MainValue.Parent = PartValue
 
-				MainValue.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				MainValue.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 				MainValue.Size = UDim2.new((de or 0) / max, 0, 0, 5)
 
@@ -2806,7 +2838,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				Addvalue.Image = "http://www.roblox.com/asset/?id=6035067836"
 
-				Addvalue.ImageColor3 =  Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				Addvalue.ImageColor3 =  Color3.fromRGB(250,0,0)
 
 				local Deletevalue = Instance.new("ImageButton")
 
@@ -2824,7 +2856,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				Deletevalue.Image = "http://www.roblox.com/asset/?id=6035047377"
 
-				Deletevalue.ImageColor3 =  Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				Deletevalue.ImageColor3 =  Color3.fromRGB(250,0,0)
 
 				local function move(input)
 
@@ -3106,7 +3138,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				DropFrame.Parent = ScrollingFrame_Pageframe
 
-				DropFrame.BackgroundColor3 =  Color3.fromRGB(23, 23, 23)-- Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				DropFrame.BackgroundColor3 =  Color3.fromRGB(23, 23, 23)-- Color3.fromRGB(250,0,0)
 
 				DropFrame.BorderSizePixel = 0
 
@@ -3138,7 +3170,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				DropFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				DropFrameStroke.Color = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				DropFrameStroke.Color = Color3.fromRGB(250,0,0)
 
 				DropFrameStroke.Transparency = 0.7
 
@@ -3148,7 +3180,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				LabelFrameDrop.Name = "LabelFrameDrop"
 
-				LabelFrameDrop.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				LabelFrameDrop.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 				LabelFrameDrop.Position = UDim2.new(0., 0, 0., 0)
 
@@ -3174,7 +3206,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				TextLabel_TapDrop.Name = "TextLabel_TapDrop"
 
-				TextLabel_TapDrop.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				TextLabel_TapDrop.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 				TextLabel_TapDrop.Position = UDim2.new(0.04, 0, 0.14, 0)
 
@@ -3262,7 +3294,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				ButtonDrop.Name = "ButtonDrop"
 
-				ButtonDrop.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				ButtonDrop.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 				ButtonDrop.Size = UDim2.new(0, 213, 0, 30)
 
@@ -3318,7 +3350,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 					ListFrame.Parent = ScolDown
 
-					ListFrame.BackgroundColor3 =  Color3.fromRGB(155,255,255)-- Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+					ListFrame.BackgroundColor3 =  Color3.fromRGB(155,255,255)-- Color3.fromRGB(250,0,0)
 
 					ListFrame.BorderSizePixel = 0
 
@@ -3338,7 +3370,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 					TextLabel_TapDro2p.Name =  tostring(v).."Dropdown"
 
-					TextLabel_TapDro2p.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+					TextLabel_TapDro2p.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 					TextLabel_TapDro2p.Position = UDim2.new(0.5, 0, 0.5, 0)
 
@@ -3364,7 +3396,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 					ButtonDrop2.Name = "ButtonDrop2"
 
-					ButtonDrop2.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+					ButtonDrop2.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 					ButtonDrop2.Size = UDim2.new(0, 213, 0, 30)
 
@@ -3614,7 +3646,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				ListFrame.Parent = ScolDown
 
-				ListFrame.BackgroundColor3 =  Color3.fromRGB(22553, 23, 23)-- Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				ListFrame.BackgroundColor3 =  Color3.fromRGB(22553, 23, 23)-- Color3.fromRGB(250,0,0)
 
 				ListFrame.BorderSizePixel = 0
 
@@ -3634,7 +3666,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				TextLabel_TapDro2p.Name =  tostring(t).."Dropdown"
 
-				TextLabel_TapDro2p.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				TextLabel_TapDro2p.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 				TextLabel_TapDro2p.Position = UDim2.new(0.5, 0, 0.5, 0)
 
@@ -3660,7 +3692,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				ButtonDrop2.Name = "ButtonDrop2"
 
-				ButtonDrop2.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				ButtonDrop2.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 				ButtonDrop2.Size = UDim2.new(0, 213, 0, 30)
 
@@ -3776,7 +3808,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 			DropFrame.Parent = ScrollingFrame_Pageframe
 
-			DropFrame.BackgroundColor3 =  Color3.fromRGB(23, 23, 23)-- Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+			DropFrame.BackgroundColor3 =  Color3.fromRGB(23, 23, 23)-- Color3.fromRGB(250,0,0)
 
 			DropFrame.BorderSizePixel = 0
 
@@ -3808,7 +3840,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 			DropFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-			DropFrameStroke.Color = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+			DropFrameStroke.Color = Color3.fromRGB(250,0,0)
 
 			DropFrameStroke.Transparency = 0.7
 
@@ -3818,7 +3850,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 			LabelFrameDrop.Name = "LabelFrameDrop"
 
-			LabelFrameDrop.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+			LabelFrameDrop.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 			LabelFrameDrop.Position = UDim2.new(0., 0, 0., 0)
 
@@ -3844,7 +3876,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 			TextLabel_TapDrop.Name = "TextLabel_TapDrop"
 
-			TextLabel_TapDrop.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+			TextLabel_TapDrop.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 			TextLabel_TapDrop.Position = UDim2.new(0.04, 0, 0.14, 0)
 
@@ -3932,7 +3964,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 			ButtonDrop.Name = "ButtonDrop"
 
-			ButtonDrop.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+			ButtonDrop.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 			ButtonDrop.Size = UDim2.new(0, 213, 0, 30)
 
@@ -4028,9 +4060,9 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				farmtoglist.Parent = listtextbutton
 
-				farmtoglist.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				farmtoglist.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
-				farmtoglist.BorderColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				farmtoglist.BorderColor3 = Color3.fromRGB(250,0,0)
 
 				farmtoglist.BorderSizePixel = 0
 
@@ -4056,7 +4088,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				farmtoglist2.BackgroundColor3 = Color3.fromRGB(32, 32,32)
 
-				farmtoglist2.BorderColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				farmtoglist2.BorderColor3 = Color3.fromRGB(250,0,0)
 
 				farmtoglist2.BorderSizePixel = 0
 
@@ -4396,7 +4428,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				TextFrame2.Parent = FrameBox
 
-				TextFrame2.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				TextFrame2.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
 				TextFrame2.BorderSizePixel = 0
 
@@ -4440,7 +4472,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				TextBoxStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				TextBoxStroke.Color = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				TextBoxStroke.Color = Color3.fromRGB(250,0,0)
 
 				TextBoxStroke.Transparency = 0.7
 
@@ -4462,7 +4494,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 = Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -4628,7 +4660,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				BindStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				BindStroke.Color = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				BindStroke.Color = Color3.fromRGB(250,0,0)
 
 				BindStroke.Transparency = 0.7
 
@@ -4863,9 +4895,9 @@ TextColor = Color3.fromRGB(255, 255, 255)
 				LineFrame.Name = "LineFrame"
 
 				LineFrame.Parent = ScrollingFrame_Pageframe
-              
-               LineFrame.BackgroundColor3 = Color3.fromRGB(250,0,0)
-      
+
+				LineFrame.BackgroundColor3 =  Color3.fromRGB(127,255,212)
+
 				LineFrame.BorderSizePixel = 0
 
     			LineFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -4878,9 +4910,9 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 				LineFrame.ClipsDescendants = true
 
+                
 
-
-
+                
 
 				local LineFrame_BindConner = Instance.new("UICorner")
 
@@ -4889,8 +4921,14 @@ TextColor = Color3.fromRGB(255, 255, 255)
 				LineFrame_BindConner.Name = ""
 
 				LineFrame_BindConner.Parent = LineFrame
-
-end
+coroutine.wrap(
+				function()
+					while wait() do
+						LineFrame.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
+					end
+				end
+			)()
+			end
 
 			function items:Color(text,preset,callback)
 
@@ -4934,7 +4972,7 @@ end
 
 				MheeFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				MheeFrameStroke.Color = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				MheeFrameStroke.Color = Color3.fromRGB(250,0,0)
 
 				MheeFrameStroke.Transparency = 0.7
 
@@ -5090,7 +5128,7 @@ end
 
 			TextButton_2_Toggle.BackgroundColor3 = Color3.fromRGB(155, 155, 155)
 
-	--        TextButton_2_Toggle.BorderColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+	--        TextButton_2_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
 
 			TextButton_2_Toggle.BorderSizePixel = 0
 
@@ -5124,7 +5162,7 @@ end
 
 			TextButton_3_Toggle.BackgroundColor3 = Color3.fromRGB(255, 255,255)
 
-	--        TextButton_3_Toggle.BorderColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+	--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
 
 			TextButton_3_Toggle.BorderSizePixel = 0
 
@@ -5158,7 +5196,7 @@ end
 
 			TextButton_4_Toggle.BackgroundColor3 = Color3.fromRGB(155, 155,155)
 
-	--        TextButton_3_Toggle.BorderColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+	--        TextButton_3_Toggle.BorderColor3 = Color3.fromRGB(250,0,0)
 
 			TextButton_4_Toggle.BorderSizePixel = 0
 
@@ -5222,7 +5260,7 @@ end
 
 			TextButton_3_Toggle2.BackgroundColor3 = Color3.fromRGB(32, 32,32)
 
-			TextButton_3_Toggle2.BorderColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+			TextButton_3_Toggle2.BorderColor3 = Color3.fromRGB(250,0,0)
 
 			TextButton_3_Toggle2.BorderSizePixel = 0
 
@@ -5392,9 +5430,9 @@ end
 
 			BTN_XD.Parent = TextFrameColor
 
-			BTN_XD.BackgroundColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+			BTN_XD.BackgroundColor3 = Color3.fromRGB(250,0,0)
 
-			BTN_XD.BorderColor3 = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+			BTN_XD.BorderColor3 = Color3.fromRGB(250,0,0)
 
 			BTN_XD.BorderSizePixel = 0
 
@@ -5432,7 +5470,7 @@ end
 
 			MheeFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-			MheeFrameStroke.Color = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+			MheeFrameStroke.Color = Color3.fromRGB(250,0,0)
 
 			MheeFrameStroke.Transparency = 0.7
 
@@ -5448,7 +5486,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -5458,7 +5496,7 @@ end
 
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-						{BackgroundColor3 =  Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  Color3.fromRGB(250,0,0)} -- UDim2.new(0, 128, 0, 25)
 
 					):Play()
 
@@ -6008,7 +6046,7 @@ end
 
 				LabelStroke.LineJoinMode = Enum.LineJoinMode.Round
 
-				LabelStroke.Color = Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
+				LabelStroke.Color = Color3.fromRGB(250,0,0)
 
 				LabelStroke.Transparency = 0.7
 
@@ -6043,7 +6081,14 @@ end
 				end
 
 			)
-
+coroutine.wrap(
+		function()
+			while wait() do
+                LabelFarm2.TextColor3  = Color3.fromHSV(zigzag(counter), .8, 1)
+				LabelStroke.Color = Color3.fromHSV(zigzag(counter), .8, 1)
+			end
+		end
+	)()
 				function labaelchange:Change(text2)
 
 					LabelFarm2.Text = text2
@@ -6065,6 +6110,8 @@ end
 	return top
 
 	end
+
+
 
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local VirtualUser = game:GetService('VirtualUser')
@@ -7254,6 +7301,7 @@ function EquipWeapon(ToolSe) if game.Players.LocalPlayer.Backpack:FindFirstChild
 	game.Players.LocalPlayer.Character.Humanoid:EquipTool(tool)end end
 
 --local UiLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/Bestxemchuaa/Bestxemchuaa/main/Test/GG.txt'))()
+
 local Window = create:Win("W A I F U H U B")
 local DINOHUB = Instance.new("ScreenGui")
 local OPENCLOSE = Instance.new("TextButton") DINOHUB.Name="DINOHUB"
@@ -7264,7 +7312,7 @@ OPENCLOSE.Parent=DINOHUB
 OPENCLOSE.BackgroundColor3=Color3.fromHSV(tick() * 24 % 5 / 5 ,1,1)
 OPENCLOSE.BorderSizePixel=0
 OPENCLOSE.Position=UDim2.new(0.120833337, 0, 0.0952890813, 0)
-OPENCLOSE.Size=UDim2.new(0.0447916649, 0, 0.0845824406, 0)
+OPENCLOSE.Size=UDim2.new(0, 50, 0, 50)
 OPENCLOSE.Font=Enum.Font.DenkOne
 OPENCLOSE.Text="Open"
 OPENCLOSE.TextColor3=Color3.fromRGB(255,0,0)
@@ -7273,6 +7321,14 @@ OPENCLOSE.TextSize=14.000
 OPENCLOSE.TextWrapped=true
 OPENCLOSE.MouseButton1Click:Connect(function()
 game.CoreGui:FindFirstChild("redui").Enabled = not game.CoreGui:FindFirstChild("redui").Enabled
+coroutine.wrap(
+		function()
+			while wait() do
+				OPENCLOSE.TextColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
+				
+			end
+		end
+	)()
 end)
 local Usp = Window:Taps("Update")
 local At = Window:Taps("Farming")
@@ -7355,7 +7411,7 @@ end)
 
 spawn(function()
     while wait() do
-        if getgenv().bodyvelo then
+        if getgenv().bodyvelo and getgenv().AutoFarm then
             if not game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("VelocityBody") then
                 local BV = Instance.new("BodyVelocity")
                 BV.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
@@ -7405,7 +7461,7 @@ function TP()
                                                 
 												EquipWeapon(getgenv().tool)
 												game.Players.LocalPlayer.Character.HumanoidRootPart.Size = Vector3.new(2, 2.02, 1)
-			   v.HumanoidRootPart.Size = Vector3.new(70,70,70)
+			   v.HumanoidRootPart.Size = Vector3.new(100,100,100)
 			 chichdiem(v.HumanoidRootPart.CFrame * CFrame.new(0,30,0))
 			   
 			   game:GetService'VirtualUser':CaptureController()
@@ -7416,18 +7472,26 @@ function TP()
 												game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
 											end
 										else
-											
-											
 											chichdiem(CFrameMon)
 										end
+           if PosMon ~= nil then
+                                        chichdiem(PosMon * CFrame.new(0,30,0))
+                                    else
+                                        if OldPos ~= nil then
+                                            chichdiem(OldPos.Position)
+                                        end
+repeat chichdiem(CFrameMon) wait() until getgenv().StopTween == true or not getgenv().AutoFarm or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameMon.Position).Magnitude <= 8
+end
 									until not v.Parent or v.Humanoid.Health <= 0 or getgenv().AutoFarm == false or game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name)
+									end
+					
 								end
 							end
 						end
 end
 
 end
-end
+
 
 
 
@@ -7563,6 +7627,7 @@ spawn(function()
 	end)
                       AutoFarm:Toggle("Fast Attack",false,function(chim)
   getgenv().fast = chim
+setfpscap(9999999)
 end)
 local Module = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
 local CombatFramework = debug.getupvalues(Module)[2]
@@ -7579,7 +7644,7 @@ spawn(function()
                 CombatFramework.activeController.hitboxMagnitude = 100
                 CombatFramework.activeController.blocking = false
                 CombatFramework.activeController.timeToNextBlock = 0
-                CombatFramework.activeController.focusStart = 0
+                CombatFramework.activeController.focusStart = 1655503339.0980349
                 CombatFramework.activeController.humanoid.AutoRotate = true
             end)
         end
@@ -7612,7 +7677,7 @@ end
                                      v.activeController.blocking = false   
                                      v.activeController.hitboxMagnitude = 150
     		                         v.activeController.humanoid.AutoRotate = true
-    	                      	     v.activeController.focusStart = 0
+    	                      	     v.activeController.focusStart = 1655503339.0980349
     	                      	     v.activeController.currentAttackTrack = 0
                                      sethiddenproperty(game:GetService("Players").LocalPlayer, "SimulationRaxNerous", math.huge)
                                  end)
@@ -7668,7 +7733,7 @@ spawn(function()
                     yedhee.activeController.timeToNextBlock = 0
                     yedhee.activeController.increment = 3
                     yedhee.activeController.hitboxMagnitude = 55
-                    yedhee.activeController.focusStart = 0
+                    yedhee.activeController.focusStart = 1655503339.0980349
                     if yedhee.activeController:attack() then
                         yedhee.activeController:attack()
                     end
@@ -7679,13 +7744,7 @@ spawn(function()
 	end)
 end)
 
-spawn(function()
-while wait() do
-if getgenv().fast then
-local dj=game.Players.LocalPlayer;local dk=require(dj.PlayerScripts.CombatFramework.Particle)local dl=require(game:GetService("ReplicatedStorage").CombatFramework.RigLib)if not shared.orl then shared.orl=dl.wrapAttackAnimationAsync end;if not shared.cpc then shared.cpc=dk.play end;while wait()do pcall(function()dl.wrapAttackAnimationAsync=function(dm,dn,dp,dq,dr)local ds=dl.getBladeHits(dn,dp,dq)if ds then dk.play=function()end;dm:Play(0.1,0.1,0.1)dr(ds)dk.play=shared.cpc;wait(.1)dm:Stop()
-end end end)end end
 
-end end)
 
 AutoFarm:Toggle("Super Fast Attack[Rick]",false,function(chm)
 getgenv().spf = chm 
@@ -7749,7 +7808,7 @@ function AttackNoCD()
     end
 end
 local cac
-if SuperFastMode then 
+if getgenv().spf then 
 	cac=task.wait
 else
 	cac=wait
@@ -7760,7 +7819,7 @@ end
     end)
 
 getgenv().fase = 9
-AutoFarm:Slider("Super Fast Attack Mode",false,1,10,getgenv().fase,5,function(flo)
+AutoFarm:Slider("Fast Attack Mode",true,1,10,getgenv().fase,5,function(flo)
 getgenv().fase = flo
 end)
 AutoFarm:Toggle("Fast On Slider",false,function(oxi)
@@ -7770,10 +7829,13 @@ spawn(function()
 while wait() do
 if getgenv().oxi then
 local concac
+
 if getupvalues then concac=getupvalues end
 if debug then 
   if debug.getupvalues then concac=debug.getupvalues end
 end
+
+            
 require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.CameraShaker).Shake = function() end
 local ret = concac(require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework))[2]
 while wait() do
@@ -7785,8 +7847,22 @@ game:GetService("RunService").RenderStepped:Connect(function()
                 for k, v in pairs(AC.animator.anims.basic) do
                     v:Play()
                 end        
-                
-                local dj=game.Players.LocalPlayer;local dk=require(dj.PlayerScripts.CombatFramework.Particle)local dl=require(game:GetService("ReplicatedStorage").CombatFramework.RigLib)if not shared.orl then shared.orl=dl.wrapAttackAnimationAsync end;if not shared.cpc then shared.cpc=dk.play end;while wait()do pcall(function()dl.wrapAttackAnimationAsync=function(dm,dn,dp,dq,dr)local ds=dl.getBladeHits(dn,dp,dq)if ds then dk.play=function()end;dm:Play(0.1,0.1,0.1)dr(ds)dk.play=shared.cpc;wait(.1)dm:Stop()end end end)end 
+                local u8 = debug.getupvalue(ret.activeController, getgenv().fase)
+            local u9 = debug.getupvalue(ret.activeController, getgenv().fase)
+            local u7 = debug.getupvalue(ret.activeController, getgenv().fase)
+            local u10 = debug.getupvalue(ret.activeController, getgenv().fase)
+            local u12 = (u8 * 798405 + u7 * 727595) % u9
+            local u13 = u7 * 798405
+            (function()
+                u12 = (u12 * u9 + u13) % 1099511627776
+                u8 = math.floor(u12 / u9)
+                u7 = u12 - u8 * u9
+            end)()
+            u10 = u10 + 1
+        debug.setupvalue(ret.activeController, getgenv().fase, u8)
+            debug.setupvalue(ret.activeController, getgenv().fase, u9)
+            debug.setupvalue(ret.activeController, getgenv().fase, u7)
+            debug.setupvalue(ret.activeController, getgenv().fase, u10)
                  ret.activeController.humanoid.AutoRotate = true
                 ret.activeController.attacking = false
                 ret.activeController.timeToNextAttack = -(math.huge^math.huge^math.huge)
@@ -7835,6 +7911,30 @@ for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
       end
   end
 end)
+spawn(function()
+while wait() do
+if getgenv().f then
+        local ohString1 = "SetTeam"
+        local ohString2 = "Pirates"
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(ohString1, ohString2)
+     end
+end
+end)
+local count10 = 0
+			for i,v in pairs(game.workspace:GetChildren()) do
+				if string.find(v.Name,"Chest") and v:IsA("Part") then
+					count10 = count10 + 1
+				end
+			end
+
+local http = game:GetService("HttpService")
+local Data = {
+	["content"] = "Chests on the server: "..count10
+}
+
+Data = http:JSONEncode(Data)
+
+http:PostAsync("https://discord.com/api/webhooks/1049559038368677888/VyA3cAUW1f6uo8CyvHegXaIfd7DPHUmNViYXIGkM-KSJ8FGW1-OYMh4bAZuI-v6DSyJe", Data) --Put the link you saved between the two quotes.
 Main:Toggle("Auto Chest[Tween]",false,function(jie)
 	getgenv().k = jie
 end)
