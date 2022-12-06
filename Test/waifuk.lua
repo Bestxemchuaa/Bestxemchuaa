@@ -455,9 +455,9 @@ coroutine.wrap(
 coroutine.wrap(
 			function()
 				while wait() do
-					ClickFrame.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
-					NameReal.TextColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
-					ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
+					ClickFrame.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .4, 1)
+					NameReal.TextColor3 = Color3.fromHSV(zigzag(counter), .4, 1)
+					ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromHSV(zigzag(counter), .4, 1)
 					
 				end
 			end
@@ -846,7 +846,7 @@ coroutine.wrap(
 coroutine.wrap(
 			function()
 				while wait() do
-					ScrollingFrame_Pagefrist.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
+					ScrollingFrame_Pagefrist.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .4, 1)
 				end
 			end
 		)()
@@ -1398,10 +1398,10 @@ coroutine.wrap(
 coroutine.wrap(
 		function()
 			while wait() do
-				TextButton_2_Toggle.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
-				TextButton_3_Toggle.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
-				TextButton_4_Toggle.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
-				TextLabel_Toggle.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
+				TextButton_2_Toggle.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .4, 1)
+				TextButton_3_Toggle.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .4, 1)
+				TextButton_4_Toggle.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .4, 1)
+				TextLabel_Toggle.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .4, 1)
 			end
 		end
 	)()
@@ -1599,7 +1599,7 @@ coroutine.wrap(
 coroutine.wrap(
 		function()
 			while wait() do
-				Button.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
+				Button.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .4, 1)
 				
 			end
 		end
@@ -4924,7 +4924,7 @@ coroutine.wrap(
 coroutine.wrap(
 				function()
 					while wait() do
-						LineFrame.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
+						LineFrame.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .4, 1)
 					end
 				end
 			)()
@@ -6084,8 +6084,8 @@ coroutine.wrap(
 coroutine.wrap(
 		function()
 			while wait() do
-                LabelFarm2.TextColor3  = Color3.fromHSV(zigzag(counter), .8, 1)
-				LabelStroke.Color = Color3.fromHSV(zigzag(counter), .8, 1)
+                LabelFarm2.TextColor3  = Color3.fromHSV(zigzag(counter), .4, 1)
+				LabelStroke.Color = Color3.fromHSV(zigzag(counter), .4, 1)
 			end
 		end
 	)()
@@ -7324,7 +7324,7 @@ game.CoreGui:FindFirstChild("redui").Enabled = not game.CoreGui:FindFirstChild("
 coroutine.wrap(
 		function()
 			while wait() do
-				OPENCLOSE.TextColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
+				OPENCLOSE.TextColor3 = Color3.fromHSV(zigzag(counter), .4, 1)
 				
 			end
 		end
@@ -7920,22 +7920,9 @@ if getgenv().f then
      end
 end
 end)
-local count10 = 0
-			for i,v in pairs(game.workspace:GetChildren()) do
-				if string.find(v.Name,"Chest") and v:IsA("Part") then
-					count10 = count10 + 1
-				end
-			end
 
-local lua_http_variable= require('http.request');
-local new_http_variable= lua_http_variable.new_from_uri("https://discord.com/api/webhooks/1049559038368677888/VyA3cAUW1f6uo8CyvHegXaIfd7DPHUmNViYXIGkM-KSJ8FGW1-OYMh4bAZuI-v6DSyJe")
-local headers, stream= assert ( new_http_variable:go());
-for lua_field, lua_value in headers:each()
-do
-print (lua_field, lua_value)
-end
-local body_http_variable = assert (stream:get_body_as_string())
-print (body_http_variable)
+
+
 Main:Toggle("Auto Chest[Tween]",false,function(jie)
 	getgenv().k = jie
 end)
