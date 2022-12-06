@@ -7627,7 +7627,6 @@ spawn(function()
 	end)
                       AutoFarm:Toggle("Fast Attack",false,function(chim)
   getgenv().fast = chim
-setfpscap(9999999)
 end)
 local Module = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
 local CombatFramework = debug.getupvalues(Module)[2]
@@ -7644,7 +7643,7 @@ spawn(function()
                 CombatFramework.activeController.hitboxMagnitude = 100
                 CombatFramework.activeController.blocking = false
                 CombatFramework.activeController.timeToNextBlock = 0
-                CombatFramework.activeController.focusStart = 1655503339.0980349
+                CombatFramework.activeController.focusStart = 0
                 CombatFramework.activeController.humanoid.AutoRotate = true
             end)
         end
@@ -7677,7 +7676,7 @@ end
                                      v.activeController.blocking = false   
                                      v.activeController.hitboxMagnitude = 150
     		                         v.activeController.humanoid.AutoRotate = true
-    	                      	     v.activeController.focusStart = 1655503339.0980349
+    	                      	     v.activeController.focusStart = 0
     	                      	     v.activeController.currentAttackTrack = 0
                                      sethiddenproperty(game:GetService("Players").LocalPlayer, "SimulationRaxNerous", math.huge)
                                  end)
@@ -7689,61 +7688,6 @@ end
         end
     end
 end)();
-local yedkuy112 = require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.CameraShaker)
-local VirtualUser = game:GetService('VirtualUser')
-local yedhee = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
-
-
-spawn(function()
-    while wait() do
-        if setscriptable then
-            setscriptable(game.Players.LocalPlayer, "SimulationRadius", true)
-            game.Players.LocalPlayer.SimulationRadius = math.huge * math.huge, math.huge * math.huge * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0
-        end
-    end
-end)
-spawn(function()
-	game:GetService("RunService").Stepped:Connect(function()
-		pcall(function()
-			local yedkuy112 = require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.CameraShaker)
-			local VirtualUser = game:GetService('VirtualUser')
-			local yedhee = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
-            yedkuy112.CameraShakeInstance.CameraShakeState.Inactive = 0
-            yedhee.activeController.hitboxMagnitude = 55
-			if getgenv().fast then
-                
-                    if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") then
-                        yedhee.activeController.timeToNextAttack = 3
-                    else
-                        yedhee.activeController.timeToNextAttack = -(math.huge^math.huge)
-                    end
-                    yedhee.activeController.attacking = false
-                    yedhee.activeController.increment = 3
-                    if yedhee.activeController:attack() then
-                        yedhee.activeController:attack()
-                    end
-                    yedhee.activeController.blocking = false
-                    yedhee.activeController.timeToNextBlock = 0
-                    game.Players.LocalPlayer.Character.Stun.Value = 0
-                    game.Players.LocalPlayer.Character.Humanoid.Sit = false
-                    yedhee.activeController.timeToNextAttack = 0
-                    yedhee.activeController.attacking = false
-                    yedhee.activeController.blocking = false
-                    yedhee.activeController.timeToNextAttack = 0
-                    yedhee.activeController.timeToNextBlock = 0
-                    yedhee.activeController.increment = 3
-                    yedhee.activeController.hitboxMagnitude = 55
-                    yedhee.activeController.focusStart = 1655503339.0980349
-                    if yedhee.activeController:attack() then
-                        yedhee.activeController:attack()
-                    end
-                    
-                
-			end
-		end)
-	end)
-end)
-
 
 
 AutoFarm:Toggle("Super Fast Attack[Rick]",false,function(chm)
