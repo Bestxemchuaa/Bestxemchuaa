@@ -33,7 +33,7 @@ counter = 0
 coroutine.wrap(
 	function()
 		while wait() do
-			counter = counter + 0.002
+			counter = counter + 0.005
 		end
 	end
 )()
@@ -455,9 +455,9 @@ coroutine.wrap(
 coroutine.wrap(
 			function()
 				while wait() do
-					ClickFrame.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .4, 1)
-					NameReal.TextColor3 = Color3.fromHSV(zigzag(counter), .4, 1)
-					ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromHSV(zigzag(counter), .4, 1)
+					ClickFrame.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
+					NameReal.TextColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
+					ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
 					
 				end
 			end
@@ -846,7 +846,7 @@ coroutine.wrap(
 coroutine.wrap(
 			function()
 				while wait() do
-					ScrollingFrame_Pagefrist.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .4, 1)
+					ScrollingFrame_Pagefrist.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
 				end
 			end
 		)()
@@ -1398,10 +1398,10 @@ coroutine.wrap(
 coroutine.wrap(
 		function()
 			while wait() do
-				TextButton_2_Toggle.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .4, 1)
-				TextButton_3_Toggle.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .4, 1)
-				TextButton_4_Toggle.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .4, 1)
-				TextLabel_Toggle.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .4, 1)
+				TextButton_2_Toggle.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
+				TextButton_3_Toggle.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
+				TextButton_4_Toggle.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
+				TextLabel_Toggle.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
 			end
 		end
 	)()
@@ -1599,7 +1599,7 @@ coroutine.wrap(
 coroutine.wrap(
 		function()
 			while wait() do
-				Button.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .4, 1)
+				Button.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
 				
 			end
 		end
@@ -4924,7 +4924,7 @@ coroutine.wrap(
 coroutine.wrap(
 				function()
 					while wait() do
-						LineFrame.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .4, 1)
+						LineFrame.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
 					end
 				end
 			)()
@@ -6084,8 +6084,8 @@ coroutine.wrap(
 coroutine.wrap(
 		function()
 			while wait() do
-                LabelFarm2.TextColor3  = Color3.fromHSV(zigzag(counter), .4, 1)
-				LabelStroke.Color = Color3.fromHSV(zigzag(counter), .4, 1)
+                LabelFarm2.TextColor3  = Color3.fromHSV(zigzag(counter), .8, 1)
+				LabelStroke.Color = Color3.fromHSV(zigzag(counter), .8, 1)
 			end
 		end
 	)()
@@ -7324,8 +7324,8 @@ game.CoreGui:FindFirstChild("redui").Enabled = not game.CoreGui:FindFirstChild("
 coroutine.wrap(
 		function()
 			while wait() do
-				OPENCLOSE.TextColor3 = Color3.fromHSV(zigzag(counter), .4, 1)
-				
+				OPENCLOSE.TextColor3 = Color3.fromHSV(zigzag(counter), .6, 1)
+				OPENCLOSE.BackgroundColor3 = Color3.fromHSV(zigzag(counter), .8, 1)
 			end
 		end
 	)()
@@ -7369,11 +7369,13 @@ spawn(function()  game:GetService("RunService").Heartbeat:Connect(function() if 
 else  if game:GetService("Workspace"):FindFirstChild("LOL") then  game:GetService("Workspace"):FindFirstChild("LOL"):Destroy() end end end) end)
 spawn(function()  game:GetService("RunService").Stepped:Connect(function()  if getgenv().NoClip or getgenv().AutoFarm or getgenv().Observation or getgenv().AutoNew or getgenv().Factory or getgenv().GunMastery or getgenv().k or getgenv().Mastery or FramBoss or FramAllBoss or getgenv().getgenv().AutoBartilo or getgenv().MobAura or getgenv().AutoRengoku or getgenv().AutoSharkman or getgenv().Ectoplasm or getgenv().PoleHop or getgenv().SwanHop or getgenv().BlackBeardHop or getgenv().Chest or getgenv().Electro or rainbowhaki or Hunter or observationv2 or getgenv().ElitehuntHop or getgenv().EliteHunt or getgenv().Pole or getgenv().Tushitahop or getgenv().YamaHop or getgenv().StoreFruit or getgenv().HolyTorch then  for _, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do  if v:IsA("BasePart") then
    v.CanCollide = false end     end    end end) end)
-   Up:Label("Update 1.1")
+   Up:Label("Update 2")
+   Up:Label("kimchidoaoSEXYAMA#3786 Youtube: Best Xem Chua")
    Up:Label("Add Auto Electric Claw")
    Up:Label("Fix Auto Something Not Work")
    Up:Label("New Misc")
-   
+   Up:Label("Fix Auto Farm")
+   Up:Label("New No Clip")
    AutoFarm:Label("Auto Farm Level")
 AutoFarm:Toggle("Auto Farm",false,function(vu)
     getgenv().AutoFarm= vu
@@ -7444,58 +7446,42 @@ wait(1)
     end
 end
 function TP()
+    CheckQuest()
     local mob = game:GetService("Workspace").Enemies:GetChildren()
     local MyLevel = game.Players.LocalPlayer.Data.Level.Value
     if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true then
-					if game:GetService("Workspace").Enemies:FindFirstChild(Ms) then
-						for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-							if v.Name == Ms and v:FindFirstChild("Humanoid") then
-								if v.Humanoid.Health > 0 then
-									repeat game:GetService("RunService").Heartbeat:wait()
-										if game:GetService("Workspace").Enemies:FindFirstChild(Ms) then
-											if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
-                                                
-                                                AutoHaki()
-												v.HumanoidRootPart.CanCollide = false
-												
-                                                
-												EquipWeapon(getgenv().tool)
-												game.Players.LocalPlayer.Character.HumanoidRootPart.Size = Vector3.new(2, 2.02, 1)
-			   v.HumanoidRootPart.Size = Vector3.new(100,100,100)
-			 chichdiem(v.HumanoidRootPart.CFrame * CFrame.new(0,30,0))
-			   
+        for i,v in pairs(mob) do
+            if v.Name == Ms then
+repeat wait()
+spawn(function()
+											if game:GetService("Workspace").Enemies:FindFirstChild(Ms) and v.Humanoid.Health > 0 and v:FindFirstChild("Humanoid") then
+												if LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text:find(NameMon) then
+               if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
+                  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
+               end
+               game.Players.LocalPlayer.Character.HumanoidRootPart.Size = Vector3.new(2, 2.02, 1)
+			   v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+			   chichdiem(v.HumanoidRootPart.CFrame * CFrame.new(0,30,0))
+			   EquipWeapon(getgenv().tool)
 			   game:GetService'VirtualUser':CaptureController()
 			   game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-												PosMon = v.HumanoidRootPart.CFrame
-											else
-												
-												game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
-											end
-										else
-											chichdiem(CFrameMon)
-										end
-           if PosMon ~= nil then
-                                        chichdiem(PosMon * CFrame.new(0,30,0))
-                                    else
-                                        if OldPos ~= nil then
-                                            chichdiem(OldPos.Position)
-                                        end
-repeat chichdiem(CFrameMon) wait() until getgenv().StopTween == true or not getgenv().AutoFarm or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameMon.Position).Magnitude <= 8
+			end
 end
-									until not v.Parent or v.Humanoid.Health <= 0 or getgenv().AutoFarm == false or game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name)
-									end
-					
-								end
-							end
-						end
+end)
+			until not v.Parent or v.Humanoid.Health <= 0 or getgenv().AutoFarm == false
+									end 
+			
+CheckQuest() 
 end
+else
+				CheckQuest()
+				repeat chichdiem(CFrameMon) wait() until getgenv().StopTween == true or not getgenv().AutoFarm or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameMon.Position).Magnitude <= 8
 
-end
+            end
+        end
+    
 
-
-
-
-local SelectToolWeapona = AutoFarm:Dropdown("SelectWeapon",false,lol,function(Select)
+local SelectToolWeapona = AutoFarm:Dropdown("Select Weapon",false,lol,function(Select)
     getgenv().tool = Select
 end)
 
@@ -7752,7 +7738,7 @@ function AttackNoCD()
     end
 end
 local cac
-if getgenv().spf then 
+if SuperFastMode then 
 	cac=task.wait
 else
 	cac=wait
@@ -7772,6 +7758,7 @@ end)
 spawn(function()
 while wait() do
 if getgenv().oxi then
+local plr = game.Players.LocalPlayer
 local concac
 
 if getupvalues then concac=getupvalues end
@@ -7782,6 +7769,9 @@ end
             
 require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.CameraShaker).Shake = function() end
 local ret = concac(require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework))[2]
+local CbFw = debug.getupvalues(require(plr.PlayerScripts.CombatFramework))
+local CbFw2 = CbFw[2]
+ret = CbFw2.activeController
 while wait() do
 spawn(function()
 game:GetService("RunService").RenderStepped:Connect(function()
@@ -7803,6 +7793,11 @@ game:GetService("RunService").RenderStepped:Connect(function()
                 u7 = u12 - u8 * u9
             end)()
             u10 = u10 + 1
+                        if plr.Character:FindFirstChildOfClass("Tool") and AC.blades and AC.blades[1] then 
+                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(GetCurrentBlade()))
+                game.ReplicatedStorage.Remotes.Validator:FireServer(math.floor(u12 / 1099511627776 * 16777215), u10)
+                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, i, "") 
+            end
         debug.setupvalue(ret.activeController, getgenv().fase, u8)
             debug.setupvalue(ret.activeController, getgenv().fase, u9)
             debug.setupvalue(ret.activeController, getgenv().fase, u7)
@@ -8168,11 +8163,11 @@ spawn(function()
 end)
 
 Main:Toggle("Auto Buy Enchancement ",false,function(vu)
-	Enchancement = vu
+	getgenv().Enchancement = vu
 end)
 spawn(function()
 	while wait() do
-		if Enchancement then
+		if getgenv().Enchancement then
 			pcall(function()
 			local args = {
 				[1] = "ColorsDealer",
@@ -8728,6 +8723,11 @@ spawn(function()
 			if Skillaimbot then
 				if game.Players:FindFirstChild(getgenv().pla) and game.Players:FindFirstChild(getgenv().pla).Character:FindFirstChild("HumanoidRootPart") and game.Players:FindFirstChild(getgenv().pla).Character:FindFirstChild("Humanoid") and game.Players:FindFirstChild(getgenv().pla).Character.Humanoid.Health > 0 then
 					AimBotSkillPosition = game.Players:FindFirstChild(getgenv().pla).Character:FindFirstChild("HumanoidRootPart").Position
+if getgenv().killplr and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
+																	game:service('VirtualInputManager'):SendKeyEvent(true, "V", false, game)
+																	wait(.1)
+																	game:service('VirtualInputManager'):SendKeyEvent(false, "V", false, game)
+																	end
 				end
 			end
 		end
@@ -10154,6 +10154,45 @@ Misc:Toggle("Auto Click",autoclick,function(value)
 		getgenv().NoClip = value
 	end)
 	spawn(function()
+        pcall(function()
+            while wait() do
+                if getgenv().NoClip == true then
+                    if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
+                        local Noclip = Instance.new("BodyVelocity")
+                        Noclip.Name = "BodyClip"
+                        Noclip.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+                        Noclip.MaxForce = Vector3.new(100000,100000,100000)
+                        Noclip.Velocity = Vector3.new(0,0,0)
+                    end
+                end
+            end
+        end)
+    end)
+    
+    spawn(function()
+        pcall(function()
+            game:GetService("RunService").Stepped:Connect(function()
+                if getgenv().NoClip == true then
+                    for _, v in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
+                        if v:IsA("BasePart") then
+                            v.CanCollide = false    
+                        end
+                    end
+                end
+            end)
+        end)
+    end)
+    
+    spawn(function()
+        while wait() do
+            if getgenv().NoClip == true then
+                pcall(function()
+                    game:GetService("ReplicatedStorage").Remotes.CommE:FireServer("Ken",true)
+                end)
+            end    
+        end
+    end)
+	spawn(function()
 	while wait() do
 if getgenv().WalkWater then
 	if game.workspace:FindFirstChild("WaterWalk") then
@@ -10191,3 +10230,5 @@ spawn(function()
     end
     end
 end) 
+    
+    
