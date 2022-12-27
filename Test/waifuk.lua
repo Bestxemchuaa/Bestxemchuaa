@@ -12,17 +12,11 @@ if placeIdd == 2753915549 or placeIdd == 4442272183 or placeIdd == 7449423635 th
     BF= true
 end
 if BF then
-repeat wait() until game:IsLoaded()
+
 
 local Above = CFrame.new(0,30,0)
 local Between = CFrame.new(0,0,20)
 local Under = CFrame.new(0,-10,0)
-getgenv().config = {
-	["getgenv().FarmMode"] = "Teleport", -- or Tween
-	["getgenv().FarmTween"] = Between, -- or Above,Between,Under
-    ["getgenv().WhiteScreen"] = false, -- white screen
-	["getgenv().Webhook"] = "write here"   -- Webhook for you
-	}
 if not game:IsLoaded() then 
 
     repeat game.Loaded:wait(0.2) 
@@ -7325,6 +7319,7 @@ local RaidsTabs =  Window:Taps("Raid/Teleport")
 local Miscs = Window:Taps("Misc")
 -------------
 local Up = Usp:newpage()
+local Up2 = Usp:newpage()
 local AutoFarm = At:newpage()
 local Main = At:newpage()
 local Stat = Statss:newpage()
@@ -7363,7 +7358,10 @@ spawn(function()  game:GetService("RunService").Stepped:Connect(function()  if g
    Up:Label("Use lockmob, don't use bringmob")
    Up:Label("Update Auto Farm")
    Up:Label("Noel Update")
- 
+ Up2:Button("Discord Waifu HUB",function()
+ setclipboard("https://discord.gg/9x2qqbHwjv")
+ end)
+ Up2:Label("Super Fast Attack")
 AutoFarm:Toggle("Auto Farm",false,function(vu)
     getgenv().AutoFarm= vu
 end)
@@ -7909,7 +7907,78 @@ AutoFarm:Toggle("Super Fast Attack[Risk]",true,function(chm)
 getgenv().spf = chm 
 
 end)
-
+local plr = game.Players.LocalPlayer
+    
+    local CbFw = debug.getupvalues(require(plr.PlayerScripts.CombatFramework))
+    local CbFw2 = CbFw[2]
+    
+    function GetCurrentBlade() 
+        local p13 = CbFw2.activeController
+        local ret = p13.blades[1]
+        if not ret then return end
+        while ret.Parent~=game.Players.LocalPlayer.Character do ret=ret.Parent end
+        return ret
+    end
+    function AttackNoCDD() 
+        local AC = CbFw2.activeController
+        for i = 1, 1 do 
+            local bladehit = require(game.ReplicatedStorage.CombatFramework.RigLib).getBladeHits(
+                plr.Character,
+                {plr.Character.HumanoidRootPart},
+                60
+            )
+            local cac = {}
+            local hash = {}
+            for k, v in pairs(bladehit) do
+                if v.Parent:FindFirstChild("HumanoidRootPart") and not hash[v.Parent] then
+                    table.insert(cac, v.Parent.HumanoidRootPart)
+                    hash[v.Parent] = true
+                end
+            end
+            bladehit = cac
+            if #bladehit > 0 then
+                local u8 = debug.getupvalue(AC.attack, 5)
+                local u9 = debug.getupvalue(AC.attack, 6)
+                local u7 = debug.getupvalue(AC.attack, 4)
+                local u10 = debug.getupvalue(AC.attack, 7)
+                local u12 = (u8 * 798405 + u7 * 727595) % u9
+                local u13 = u7 * 798405
+                (function()
+                    u12 = (u12 * u9 + u13) % 1099511627776
+                    u8 = math.floor(u12 / u9)
+                    u7 = u12 - u8 * u9
+                end)()
+                u10 = u10 + 1
+                debug.setupvalue(AC.attack, 5, u8)
+                debug.setupvalue(AC.attack, 6, u9)
+                debug.setupvalue(AC.attack, 4, u7)
+                debug.setupvalue(AC.attack, 7, u10)
+                pcall(function()
+                    for k, v in pairs(AC.animator.anims.basic) do
+                        v:Play()
+                    end                  
+                end)
+                if plr.Character:FindFirstChildOfClass("Tool") and AC.blades and AC.blades[1] then 
+                    game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(GetCurrentBlade()))
+                    game.ReplicatedStorage.Remotes.Validator:FireServer(math.floor(u12 / 1099511627776 * 16777215), u10)
+                    game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, i, "") 
+                end
+            end
+        end
+    end
+    
+  require(game.ReplicatedStorage.Util.CameraShaker):Stop()
+  spawn(function()
+    while task.wait() do
+          pcall(function()
+              
+                  if getgenv().spf then
+                    AttackNoCDD() 
+              end
+          end)
+        end
+  end)
+  
 local plr = game.Players.LocalPlayer
 	local CbFw = getupvalues(require(plr.PlayerScripts.CombatFramework))
 	local CbFw2 = CbFw[2]
