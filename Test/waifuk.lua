@@ -1,3 +1,28 @@
+local placeId = game.PlaceId if placeId == 2753915549 then OldWorld = true elseif placeId == 4442272183 then NewWorld = true elseif placeId == 7449423635 then ThreeWorld = true BF = true end
+--loading game buoi
+ if not game:IsLoaded() then   
+repeat game.Loaded:wait(0.2)  wait(10)
+until game:IsLoaded() 
+repeat wait() until game.Players.LocalPlayer
+repeat wait() until game.Players.LocalPlayer.Character
+repeat wait() until game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen") == false
+end
+local placeIdd = game.PlaceId
+if placeIdd == 2753915549 or placeIdd == 4442272183 or placeIdd == 7449423635 then
+    BF= true
+end
+if BF then
+repeat wait() until game:IsLoaded()
+
+local Above = CFrame.new(0,30,0)
+local Between = CFrame.new(0,0,20)
+local Under = CFrame.new(0,-10,0)
+getgenv().config = {
+	["getgenv().FarmMode"] = "Teleport", -- or Tween
+	["getgenv().FarmTween"] = Between, -- or Above,Between,Under
+    ["getgenv().WhiteScreen"] = false, -- white screen
+	["getgenv().Webhook"] = "write here"   -- Webhook for you
+	}
 if not game:IsLoaded() then 
 
     repeat game.Loaded:wait(0.2) 
@@ -9,8 +34,28 @@ if not game:IsLoaded() then
 end
 
 -----------------------------------------
+-- Fluxus fluxus.request
+--require
+require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
 
-	do  local ui =  game:GetService("CoreGui"):FindFirstChild("redui")  if ui then ui:Destroy() end end
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+do  local ui =  game:GetService("CoreGui"):FindFirstChild("redui")  if ui then ui:Destroy() end end
 
 	local UserInputService = game:GetService("UserInputService")
 
@@ -6120,15 +6165,7 @@ function chichdiem(CFgo) local Distance = (CFgo.Position - game.Players.LocalPla
    if Distance < 50 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFgo    end
    local tween, err = pcall(function()  tween = tween_s:Create(game.Players.LocalPlayer.Character["HumanoidRootPart"], info, {CFrame = CFgo})
     tween:Play()  end) end
-local placeId = game.PlaceId if placeId == 2753915549 then OldWorld = true elseif placeId == 4442272183 then NewWorld = true elseif placeId == 7449423635 then ThreeWorld = true BF = true end
---loading game buoi
- if not game:IsLoaded() then   
-repeat game.Loaded:wait(0.2)  wait(10)
-until game:IsLoaded() 
-repeat wait() until game.Players.LocalPlayer
-repeat wait() until game.Players.LocalPlayer.Character
-repeat wait() until game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen") == false
-end
+
 -----
 -- Function
 function isnil(thing)
@@ -6216,7 +6253,21 @@ function UpdateEspPlayer()
 			end)
 		end
 	end
-    
+    function getplrsname() for i,v in pairs(game:GetChildren()) do if v.ClassName == "Players" then return v.Name end end end local players = getplrsname() local plr = game[players].LocalPlayer coroutine.resume(coroutine.create(function() while wait(1) do coroutine.resume(coroutine.create(function() for _,v in pairs(game[players]:GetPlayers()) do if v.Name ~= plr.Name and v.Character then v.Character.RightUpperLeg.CanCollide = false v.Character.RightUpperLeg.Transparency = 75 v.Character.RightUpperLeg.Size = Vector3.new(21,21,21) v.Character.LeftUpperLeg.CanCollide = false v.Character.LeftUpperLeg.Transparency = 75 v.Character.LeftUpperLeg.Size = Vector3.new(21,21,21) v.Character.HeadHB.CanCollide = false v.Character.HeadHB.Transparency = 75 v.Character.HeadHB.Size = Vector3.new(21,21,21) v.Character.HumanoidRootPart.CanCollide = false v.Character.HumanoidRootPart.Transparency = 75 v.Character.HumanoidRootPart.Size = Vector3.new(21,21,21) end end end)) end end))
+local gui = Instance.new("BillboardGui");
+gui.Name = "";
+gui.AlwaysOnTop = true;
+gui.LightInfluence = 0;
+gui.Size = UDim2.new(1.75, 0, 1.75, 0);
+local frame = Instance.new("Frame", gui);
+frame.BackgroundColor3 = Color3.fromRGB(250, 0, 0);
+frame.Size = UDim2.new(1, 0, 1, 0);
+frame.BorderSizePixel = 4;
+frame.BorderColor3 = Color3.fromRGB(0, 0, 0);
+local gi = gui:Clone();
+local body = frame:Clone();
+body.Parent = gi;
+body.BackgroundColor3 = Color3.fromRGB(0, 170, 170);
     function UpdateIslandESP() 
         for i,v in pairs(game:GetService("Workspace")["_WorldOrigin"].Locations:GetChildren()) do
             pcall(function()
@@ -6468,68 +6519,7 @@ local mouse=game.Players.LocalPlayer:GetMouse''
 		end)
 		start()
 	end
-function racev4()
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local Player = game:GetService("Players").LocalPlayer
-
-local ArgsDash = {
-	Character = game.Players.LocalPlayer.Character,
-	CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame,
-	Color1 = Color3.fromRGB(102, 255, 153),
-	Color2 = Color3.fromRGB(102, 255, 153),
-	Color3 = Color3.fromRGB(102, 255, 153),
-
-}
-
-local old; old = hookmetamethod(game, "__namecall", newcclosure(function(self, ...)
-	if self.Name == "CommE" then
-		local args = {...}
-
-		if args[1] == "Dodge" then
-Player.Character.Humanoid:LoadAnimation(ReplicatedStorage.Util.Anims.Storage["2"].RaceTransform):Play()
-         
-          
-			coroutine.wrap (function() wait(1) require(ReplicatedStorage.Effect.Container.RaceTransformation.Main)(ArgsDash) end)()
-            wait(6)
-                        if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("Agility") then
-                local inf = Instance.new("ParticleEmitter")
-                inf.Acceleration = Vector3.new(0,0,0)
-                inf.Archivable = true
-                inf.Drag = 20
-                inf.EmissionDirection = Enum.NormalId.Top
-                inf.Enabled = true
-                inf.Lifetime = NumberRange.new(0,0)
-                inf.LightInfluence = 0
-                inf.LockedToPart = true
-                inf.Name = "Agility"
-                inf.Rate = 500
-                local numberKeypoints2 = {
-                    NumberSequenceKeypoint.new(0, 0);
-                    NumberSequenceKeypoint.new(1, 4); 
-                }
-                inf.Size = NumberSequence.new(numberKeypoints2)
-                inf.RotSpeed = NumberRange.new(9999, 99999)
-                inf.Rotation = NumberRange.new(0, 0)
-                inf.Speed = NumberRange.new(30, 30)
-                inf.SpreadAngle = Vector2.new(0,0,0,0)
-                inf.Texture = ""
-                inf.VelocityInheritance = 0
-                inf.ZOffset = 2
-                inf.Transparency = NumberSequence.new(0)
-                inf.Color = ColorSequence.new(Color3.fromRGB(0,0,0),Color3.fromRGB(0,0,0))
-                inf.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
-            end
-        else
-            if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("Agility") then
-                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("Agility"):Destroy()
-            end
-				end
-	end
-	
-	
-end))
-end
 local numpos = 0
   function bypasstp(x)
       spawn(function()
@@ -6711,7 +6701,7 @@ if OldWorld then
                 CFrameMon = CFrame.new(5433.39307, 88.678093, 514.986877, 0.879988372, 0, -0.474995494, 0, 1, 0, 0.474995494, 0, 0.879988372)
                 PosMon = Vector3.new(5433.39307, 88.678093, 514.986877, 0.879988372, 0, -0.474995494, 0, 1, 0, 0.474995494, 0, 0.879988372)
         elseif MyLevel == 250 or MyLevel <= 274 then 
-            Ms = "Toga Warrior [Lv. 225]"
+            Ms = "Toga Warrior [Lv. 250]"
             NaemQuest = "ColosseumQuest"
             LevelQuest = 1
             NameMon = "Toga Warrior"
@@ -6728,7 +6718,7 @@ if OldWorld then
             PosQuest = Vector3.new(-1576.11743, 7.38933945, -2983.30762)
             CFrameMon = CFrame.new(-1274.75903, 58.1895943, -3188.16309)
             PosMon = Vector3.new(-1274.75903, 58.1895943, -3188.16309)
-        elseif MyLevel == 300 or MyLevel <= 329 then 
+        elseif MyLevel == 300 or MyLevel <= 324 then 
             Ms = "Military Soldier [Lv. 300]"
             NaemQuest = "MagmaQuest"
             LevelQuest = 1
@@ -6737,8 +6727,8 @@ if OldWorld then
             PosQuest = Vector3.new(-5316.55859, 12.2370615, 8517.2998)
             CFrameMon = CFrame.new(-5363.01123, 41.5056877, 8548.47266)
             PosMon = Vector3.new(-5363.01123, 41.5056877, 8548.47266)
-        elseif MyLevel == 300 or MyLevel <= 374 then 
-            Ms = "Military Spy [Lv. 330]"
+        elseif MyLevel == 325 or MyLevel <= 374 then 
+            Ms = "Military Spy [Lv. 325]"
             NaemQuest = "MagmaQuest"
             LevelQuest = 2
             NameMon = "Military Spy"
@@ -7176,127 +7166,124 @@ if ThreeWorld then
             PosQuest = Vector3.new(-9480.8271484375, 142.13066101074, 5566.0712890625)
             CFrameMon = CFrame.new(-10125.234375, 183.94705200195, 6242.013671875)
             PosMon = Vector3.new(-10125.234375, 183.94705200195, 6242.013671875)
-        elseif MyLevel >= 2025 and MyLevel <= 2049  then
-            Ms = "Demonic Soul [Lv. 2025]"
-            NaemQuest = "HauntedQuest2"
-            LevelQuest = 1
-            NameMon = "Demonic Soul"
-            CFrameQuest = CFrame.new(-9516.9931640625, 178.00651550293, 6078.4653320313)
-            PosQuest = Vector3.new(-9516.9931640625, 178.00651550293, 6078.4653320313)
-            CFrameMon = CFrame.new(-9712.03125, 204.69589233398, 6193.322265625)
-            PosMon = Vector3.new(-9712.03125, 204.69589233398, 6193.322265625)
-        elseif MyLevel >= 2050 and MyLevel <= 2074  then
-            Ms = "Posessed Mummy [Lv. 2050]"
-            NaemQuest = "HauntedQuest2"
-            LevelQuest = 2
-            NameMon = "Posessed Mummy"
-            CFrameQuest = CFrame.new(-9516.9931640625, 178.00651550293, 6078.4653320313)
-            PosQuest = Vector3.new(-9516.9931640625, 178.00651550293, 6078.4653320313)
-            CFrameMon = CFrame.new(-9545.7763671875, 69.619895935059, 6339.5615234375)    
-            PosMon = Vector3.new(-9545.7763671875, 69.619895935059, 6339.5615234375)
-        elseif MyLevel >= 2075 and MyLevel <= 2099  then
+        elseif MyLevel == 2025 or MyLevel <= 2049 then
+			Ms = "Demonic Soul [Lv. 2025]"
+			NaemQuest = "HauntedQuest2"
+			LevelQuest = 1
+			NameMon = "Demonic Soul"
+			CFrameQuest = CFrame.new(-9514.78027, 171.162918, 6078.82373, 0.301918149, 7.4535027e-09, 0.953333855, -3.22802141e-09, 1, -6.79604995e-09, -0.953333855, -1.02553133e-09, 0.301918149)
+			CFrameMon = CFrame.new(-9466.72949, 171.162918, 6132.01514)
+		elseif MyLevel == 2050 or MyLevel <= 2074 then
+			Ms = "Posessed Mummy [Lv. 2050]" 
+			NaemQuest = "HauntedQuest2"
+			LevelQuest = 2
+			NameMon = "Posessed Mummy"
+			CFrameQuest = CFrame.new(-9514.78027, 171.162918, 6078.82373, 0.301918149, 7.4535027e-09, 0.953333855, -3.22802141e-09, 1, -6.79604995e-09, -0.953333855, -1.02553133e-09, 0.301918149)
+			CFrameMon = CFrame.new(-9589.93848, 4.85058546, 6190.27197)
+        elseif MyLevel == 2075 or MyLevel <= 2099 then
             Ms = "Peanut Scout [Lv. 2075]"
             NaemQuest = "NutsIslandQuest"
             LevelQuest = 1
             NameMon = "Peanut Scout"
-            CFrameQuest = CFrame.new(-2105.53198, 37.2495995, -10195.5088, -0.766061664, 0, -0.642767608, 0, 1, 0, 0.642767608, 0, -0.766061664)
-            PosQuest = Vector3.new(-2105.53198, 37.2495995, -10195.5088, -0.766061664, 0, -0.642767608, 0, 1, 0, 0.642767608, 0, -0.766061664)
-            CFrameMon = CFrame.new(-2126.47998, 192.095154, -10204.6553, 0.0779861137, -9.29044361e-08, 0.996954441, 6.59006432e-08, 1, 8.80332109e-08, -0.996954441, 5.88345728e-08, 0.0779861137)    
-            PosMon = Vector3.new(-2126.47998, 192.095154, -10204.6553, 0.0779861137, -9.29044361e-08, 0.996954441, 6.59006432e-08, 1, 8.80332109e-08, -0.996954441, 5.88345728e-08, 0.0779861137)
-        elseif MyLevel >= 2100 and MyLevel <= 2124  then
+            CFrameQuest = CFrame.new(-2103.9375, 38.139019012451, -10192.702148438)
+            CFrameMon = CFrame.new(-2150.587890625, 122.49767303467, -10358.994140625)
+		elseif MyLevel == 2100 or MyLevel <= 2124 then
             Ms = "Peanut President [Lv. 2100]"
             NaemQuest = "NutsIslandQuest"
             LevelQuest = 2
             NameMon = "Peanut President"
-            CFrameQuest = CFrame.new(-2105.53198, 37.2495995, -10195.5088, -0.766061664, 0, -0.642767608, 0, 1, 0, 0.642767608, 0, -0.766061664)
-            PosQuest = Vector3.new(-2105.53198, 37.2495995, -10195.5088, -0.766061664, 0, -0.642767608, 0, 1, 0, 0.642767608, 0, -0.766061664)
-            CFrameMon = CFrame.new(-2126.47998, 192.095154, -10204.6553, 0.0779861137, -9.29044361e-08, 0.996954441, 6.59006432e-08, 1, 8.80332109e-08, -0.996954441, 5.88345728e-08, 0.0779861137)    
-            PosMon = Vector3.new(-2126.47998, 192.095154, -10204.6553, 0.0779861137, -9.29044361e-08, 0.996954441, 6.59006432e-08, 1, 8.80332109e-08, -0.996954441, 5.88345728e-08, 0.0779861137)
-        elseif MyLevel >= 2125 and MyLevel <= 2149  then
+            CFrameQuest = CFrame.new(-2103.9375, 38.139019012451, -10192.702148438)
+            CFrameMon = CFrame.new(-2150.587890625, 122.49767303467, -10358.994140625)
+        elseif MyLevel == 2125 or MyLevel <= 2149 then
             Ms = "Ice Cream Chef [Lv. 2125]"
             NaemQuest = "IceCreamIslandQuest"
             LevelQuest = 1
             NameMon = "Ice Cream Chef"
-            CFrameQuest = CFrame.new(-819.376709, 64.9259796, -10967.2832, -0.766061664, 0, 0.642767608, 0, 1, 0, -0.642767608, 0, -0.766061664)
-            PosQuest = Vector3.new(-819.376709, 64.9259796, -10967.2832, -0.766061664, 0, 0.642767608, 0, 1, 0, -0.642767608, 0, -0.766061664)
-            CFrameMon = CFrame.new(-789.941528, 209.382889, -11009.9805, -0.0703101531, -0, -0.997525156, -0, 1.00000012, -0, 0.997525275, 0, -0.0703101456)    
-            PosMon = Vector3.new(-789.941528, 209.382889, -11009.9805, -0.0703101531, -0, -0.997525156, -0, 1.00000012, -0, 0.997525275, 0, -0.0703101456)
-        elseif MyLevel >= 2150 and MyLevel <= 2200 then
+            CFrameQuest = CFrame.new(-819.84533691406, 65.845329284668, -10965.487304688)
+            CFrameMon = CFrame.new(-890.55895996094, 186.34135437012, -11127.306640625)
+        elseif MyLevel == 2150 or MyLevel <= 2199 then
             Ms = "Ice Cream Commander [Lv. 2150]"
             NaemQuest = "IceCreamIslandQuest"
             LevelQuest = 2
             NameMon = "Ice Cream Commander"
-            CFrameQuest = CFrame.new(-819.376709, 64.9259796, -10967.2832, -0.766061664, 0, 0.642767608, 0, 1, 0, -0.642767608, 0, -0.766061664)
-            PosQuest = Vector3.new(-819.376709, 64.9259796, -10967.2832, -0.766061664, 0, 0.642767608, 0, 1, 0, -0.642767608, 0, -0.766061664)
-            CFrameMon = CFrame.new(-789.941528, 209.382889, -11009.9805, -0.0703101531, -0, -0.997525156, -0, 1.00000012, -0, 0.997525275, 0, -0.0703101456)    
-            PosMon = Vector3.new(-789.941528, 209.382889, -11009.9805, -0.0703101531, -0, -0.997525156, -0, 1.00000012, -0, 0.997525275, 0, -0.0703101456)
-            elseif MyLevel >= 2200 and MyLevel <= 2225 then
+            CFrameQuest = CFrame.new(-819.84533691406, 65.845329284668, -10965.487304688)
+            CFrameMon = CFrame.new(-890.55895996094, 186.34135437012, -11127.306640625)
+		elseif MyLevel == 2200 or MyLevel <= 2224 then
             Ms = "Cookie Crafter [Lv. 2200]"
             NaemQuest = "CakeQuest1"
             LevelQuest = 1
             NameMon = "Cookie Crafter"
-            CFrameQuest = CFrame.new(-2021.29150390625, 37.79822540283203, -12027.0205078125)
-            PosQuest = CFrame.new(-2021.29150390625, 37.79822540283203, -12027.0205078125)
-            CFrameMon = CFrame.new(-2272.864013671875, 146.5398406982422, -12189.0478515625)
-            PosMon = CFrame.new(-2272.864013671875, 146.5398406982422, -12189.0478515625)
-        elseif MyLevel >= 2225 and MyLevel <= 2250 then
+            CFrameQuest = CFrame.new(-2021.5509033203125, 37.798221588134766, -12028.103515625)
+            CFrameMon = CFrame.new(-2273.00244140625, 90.22590637207031, -12151.62109375)
+		elseif MyLevel == 2225 or MyLevel <= 2249 then
             Ms = "Cake Guard [Lv. 2225]"
             NaemQuest = "CakeQuest1"
             LevelQuest = 2
             NameMon = "Cake Guard"
-            CFrameQuest = CFrame.new(-2021.29150390625, 37.79822540283203, -12027.0205078125)
-            PosQuest = CFrame.new(-2021.29150390625, 37.79822540283203, -12027.0205078125)
-            CFrameMon = CFrame.new(-1823.2464599609375, 210.2261505126953, -12292.82421875)
-            PosMon = CFrame.new(-1823.2464599609375, 210.2261505126953, -12292.82421875)
-        elseif MyLevel >= 2250 and MyLevel <= 2275 then
+            CFrameQuest = CFrame.new(-2021.5509033203125, 37.798221588134766, -12028.103515625)
+            CFrameMon = CFrame.new(-1442.373046875, 158.14111328125, -12277.37109375)
+		elseif MyLevel == 2250 or MyLevel <= 2274 then
             Ms = "Baking Staff [Lv. 2250]"
             NaemQuest = "CakeQuest2"
             LevelQuest = 1
             NameMon = "Baking Staff"
-            CFrameQuest = CFrame.new(-1928.324462890625, 37.798133850097656, -12843.0517578125)
-            PosQuest = CFrame.new(-1928.324462890625, 37.798133850097656, -12843.0517578125)
-            CFrameMon = CFrame.new(-2000.436767578125, 385.1067810058594, -13096.3330078125)
-            PosMon = CFrame.new(-2000.436767578125, 385.1067810058594, -13096.3330078125)
-        elseif MyLevel == 2275 and MyLevel <= 2300 then
-
+            CFrameQuest = CFrame.new(-1927.9107666015625, 37.79813003540039, -12843.78515625)
+            CFrameMon = CFrame.new(-1837.2803955078125, 129.0594482421875, -12934.5498046875)
+		elseif MyLevel == 2275 or MyLevel <= 2300 then
             Ms = "Head Baker [Lv. 2275]"
-
             NaemQuest = "CakeQuest2"
             LevelQuest = 2
             NameMon = "Head Baker"
             CFrameQuest = CFrame.new(-1927.9107666015625, 37.79813003540039, -12843.78515625)
             CFrameMon = CFrame.new(-2203.302490234375, 109.90937042236328, -12788.7333984375)
-         elseif MyLevel == 2300 and Level <= 2324 then
+         elseif MyLevel == 2300 or MyLevel <= 2324 then
                Ms = "Cocoa Warrior [Lv. 2300]"
                LevelQuest = 1
                NaemQuest = "ChocQuest1"
                NameMon = "Cocoa Warrior"
                CFrameQuest = CFrame.new(231.742981, 25.3354111, -12199.0537, 0.998278677, -5.16006757e-08, 0.0586484075, 4.79685092e-08, 1, 6.33390442e-08, -0.0586484075, -6.04167383e-08, 0.998278677)
                CFrameMon = CFrame.new(231.742981, 25.3354111, -12199.0537, 0.998278677, -5.16006757e-08, 0.0586484075, 4.79685092e-08, 1, 6.33390442e-08, -0.0586484075, -6.04167383e-08, 0.998278677)
-            elseif MyLevel == 2325 and Level <= 2349 then
+            elseif MyLevel == 2325 or MyLevel <= 2349 then
                Ms = "Chocolate Bar Battler [Lv. 2325]"
                LevelQuest = 2
                NaemQuest = "ChocQuest1"
                NameMon = "Chocolate Bar Battler"
               CFrameQuest = CFrame.new(231.742981, 25.3354111, -12199.0537, 0.998278677, -5.16006757e-08, 0.0586484075, 4.79685092e-08, 1, 6.33390442e-08, -0.0586484075, -6.04167383e-08, 0.998278677)
               CFrameMon = CFrame.new(231.742981, 25.3354111, -12199.0537, 0.998278677, -5.16006757e-08, 0.0586484075, 4.79685092e-08, 1, 6.33390442e-08, -0.0586484075, -6.04167383e-08, 0.998278677)
-              elseif MyLevel == 2350 and Level <= 2374 then
+              elseif MyLevel == 2350 or MyLevel <= 2375 then
                Ms = "Sweet Thief [Lv. 2350]"
                LevelQuest = 1
                NaemQuest = "ChocQuest2"
                NameMon = "Sweet Thief"
               CFrameQuest = CFrame.new(149.867218, 24.8196201, -12775.5283, -0.0371122323, -7.14229245e-08, -0.99931109, -6.93553162e-08, 1, -6.88964548e-08, 0.99931109, 6.6750637e-08, -0.0371122323)
               CFrameMon = CFrame.new(149.867218, 24.8196201, -12775.5283, -0.0371122323, -7.14229245e-08, -0.99931109, -6.93553162e-08, 1, -6.88964548e-08, 0.99931109, 6.6750637e-08, -0.0371122323)
-             elseif MyLevel >= 2375 then
+              elseif MyLevel == 2375 or MyLevel <= 2400 then
                Ms = "Candy Rebel [Lv. 2375]"
                LevelQuest = 2
                NaemQuest = "ChocQuest2"
                NameMon = "Candy Rebel"
               CFrameQuest = CFrame.new(149.867218, 24.8196201, -12775.5283, -0.0371122323, -7.14229245e-08, -0.99931109, -6.93553162e-08, 1, -6.88964548e-08, 0.99931109, 6.6750637e-08, -0.0371122323)
-              CFrameMon = CFrame.new(149.867218, 24.8196201, -12775.5283, -0.0371122323, -7.14229245e-08, -0.99931109, -6.93553162e-08, 1, -6.88964548e-08, 0.99931109, 6.6750637e-08, -0.0371122323)end
+              CFrameMon = CFrame.new(149.867218, 24.8196201, -12775.5283, -0.0371122323, -7.14229245e-08, -0.99931109, -6.93553162e-08, 1, -6.88964548e-08, 0.99931109, 6.6750637e-08, -0.0371122323)
+              elseif MyLevel == 2400 or MyLevel <= 2425 then
+               Ms = "Candy Pirate [Lv. 2400]" 
+               LevelQuest = 1
+               NaemQuest = "CandyQuest1"
+               NameMon = "Candy Pirate"
+              CFrameQuest = CFrame.new(-1147.686279296875, 16.133047103881836, -14443.783203125)
+              CFrameMon = CFrame.new(-1347.1708984375, 16.93343162536621, -14422.8955078125)
+              elseif MyLevel == 2425 or MyLevel <= 2450 then
+               Ms = "Snow Demon [Lv. 2425]" 
+               LevelQuest = 2
+               NaemQuest = "CandyQuest2"
+               NameMon = "Snow Demon"
+              CFrameQuest = CFrame.new(-1147.686279296875, 16.133047103881836, -14443.783203125)
+              CFrameMon = CFrame.new(-929.830810546875, 16.821361541748047, -14616.544921875)
+end
     end
 end
 CheckQuest()
+
+
 function EquipWeapon(ToolSe) if game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe) then local tool = game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe) wait(.4)
 	game.Players.LocalPlayer.Character.Humanoid:EquipTool(tool)end end
 
@@ -7369,14 +7356,14 @@ spawn(function()  game:GetService("RunService").Heartbeat:Connect(function() if 
 else  if game:GetService("Workspace"):FindFirstChild("LOL") then  game:GetService("Workspace"):FindFirstChild("LOL"):Destroy() end end end) end)
 spawn(function()  game:GetService("RunService").Stepped:Connect(function()  if getgenv().NoClip or getgenv().AutoFarm or getgenv().Observation or getgenv().AutoNew or getgenv().Factory or getgenv().GunMastery or getgenv().k or getgenv().Mastery or FramBoss or FramAllBoss or getgenv().getgenv().AutoBartilo or getgenv().MobAura or getgenv().AutoRengoku or getgenv().AutoSharkman or getgenv().Ectoplasm or getgenv().PoleHop or getgenv().SwanHop or getgenv().BlackBeardHop or getgenv().Chest or getgenv().Electro or rainbowhaki or Hunter or observationv2 or getgenv().ElitehuntHop or getgenv().EliteHunt or getgenv().Pole or getgenv().Tushitahop or getgenv().YamaHop or getgenv().StoreFruit or getgenv().HolyTorch then  for _, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do  if v:IsA("BasePart") then
    v.CanCollide = false end     end    end end) end)
-   Up:Label("Update 2")
+   Up:Label("Note")
    Up:Label("kimchidoaoSEXYAMA#3786 Youtube: Best Xem Chua")
-   Up:Label("Add Auto Electric Claw")
-   Up:Label("Fix Auto Something Not Work")
-   Up:Label("New Misc")
-   Up:Label("Fix Auto Farm")
-   Up:Label("New No Clip")
-   AutoFarm:Label("Auto Farm Level")
+   Up:Label("Aimbot")
+   Up:Label("Use bringmob, don't use lockmob")
+   Up:Label("Use lockmob, don't use bringmob")
+   Up:Label("Update Auto Farm")
+   Up:Label("Noel Update")
+ 
 AutoFarm:Toggle("Auto Farm",false,function(vu)
     getgenv().AutoFarm= vu
 end)
@@ -7413,7 +7400,7 @@ end)
 
 spawn(function()
     while wait() do
-        if getgenv().bodyvelo and getgenv().AutoFarm then
+        if getgenv().AutoFarm then
             if not game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("VelocityBody") then
                 local BV = Instance.new("BodyVelocity")
                 BV.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
@@ -7433,9 +7420,10 @@ function AutoQuest()     if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visibl
         CheckQuest()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetHomePoint")
 wait(1)
-            chichdiem(CFrameQuest)
-           
-        wait(0.4)
+if getgenv().config["getgenv().FarmMode"] == "Teleport" then
+if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQuest.Position).Magnitude <= 1500 then
+                                  chichdiem(CFrameQuest)
+                                  wait(0.4)
         local args = {
             [1] = "StartQuest",
             [2] = NaemQuest,
@@ -7443,8 +7431,58 @@ wait(1)
         }
             
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-    end
+        wait(0.4) 
+                
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrameMon
+                              else
+                                  bypasstp(CFrameQuest)
+        wait(0.4)
+        local argsf = {
+            [1] = "StartQuest",
+            [2] = NaemQuest,
+            [3] = LevelQuest
+        }
+            
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(argsf))
+        quest()
+                wait(0.4)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrameMon
 end
+elseif getgenv().config["getgenv().FarmMode"] == "Tween" then
+chichdiem(CFrameQuest)
+wait(0.4)
+local args = {
+            [1] = "StartQuest",
+            [2] = NaemQuest,
+            [3] = LevelQuest
+        }
+            
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+      wait(0.4)
+      chichdiem(CFrameMon)
+end
+end
+end
+function quest()
+local args = {
+            [1] = "StartQuest",
+            [2] = NaemQuest,
+            [3] = LevelQuest
+        }
+            
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+        wait(0.4) 
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrameMon
+end
+-- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "Script Waifu HUB By Kimchidoao234",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
 function TP()
     CheckQuest()
     local mob = game:GetService("Workspace").Enemies:GetChildren()
@@ -7452,35 +7490,29 @@ function TP()
     if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true then
         for i,v in pairs(mob) do
             if v.Name == Ms then
-repeat wait()
-spawn(function()
-											if game:GetService("Workspace").Enemies:FindFirstChild(Ms) and v.Humanoid.Health > 0 and v:FindFirstChild("Humanoid") then
-												if LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text:find(NameMon) then
                if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
                   game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
                end
                game.Players.LocalPlayer.Character.HumanoidRootPart.Size = Vector3.new(2, 2.02, 1)
-			   v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
-			   chichdiem(v.HumanoidRootPart.CFrame * CFrame.new(0,30,0))
-			   EquipWeapon(getgenv().tool)
+			   v.HumanoidRootPart.Size = Vector3.new(60,60,60)
+			
+			  if getgenv().config["getgenv().FarmMode"] == "Teleport" then
+EquipWeapon(getgenv().tool)
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * getgenv().config["getgenv().FarmTween"]
+game:GetService'VirtualUser':CaptureController()
+			   game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+elseif getgenv().config["getgenv().FarmMode"] == "Tween" then
+EquipWeapon(getgenv().tool)
+
+chichdiem(v.HumanoidRootPart.CFrame * getgenv().config["getgenv().FarmTween"])
 			   game:GetService'VirtualUser':CaptureController()
 			   game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-			end
-end
-end)
-			until not v.Parent or v.Humanoid.Health <= 0 or getgenv().AutoFarm == false
-									end 
-			
-CheckQuest() 
-end
-else
-				CheckQuest()
-				repeat chichdiem(CFrameMon) wait() until getgenv().StopTween == true or not getgenv().AutoFarm or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameMon.Position).Magnitude <= 8
-
-            end
+           end
         end
-    
-
+    end
+end
+end
 local SelectToolWeapona = AutoFarm:Dropdown("Select Weapon",false,lol,function(Select)
     getgenv().tool = Select
 end)
@@ -7499,7 +7531,6 @@ AutoFarm:Button("Refresh Weapon", function()
 	end
 end)
 AutoFarm:Line()
-AutoFarm:Label("Setting Farm")
     AutoFarm:Toggle("Lock Mob",false,function(lm)
   getgenv().lockmob=lm 
 end)
@@ -7532,7 +7563,7 @@ end
 end
 end)
 
-AutoFarm:Toggle("Bring Mobs",false,function(bm)
+AutoFarm:Toggle("Bring Mob",false,function(bm)
         getgenv().bringmobs=bm
  end)
 spawn(function()
@@ -7614,23 +7645,93 @@ spawn(function()
                       AutoFarm:Toggle("Fast Attack",false,function(chim)
   getgenv().fast = chim
 end)
+local DelThis = {"CurvedRing","SwordSlash","SlashHit"}
+workspace._WorldOrigin.ChildAdded:Connect(function(child)
+   if table.find(DelThis,child.Name) then wait() child:Destroy() end
+end)
+require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.CameraShaker).Shake = function() end
+local up = getupvalues(require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework))
+local ret = up[2]
+spawn(function()
+game.RunService.RenderStepped:Connect(function() 
+if getgenv().fast then
+pcall(function()
+    ret.activeController.attacking = false
+                ret.activeController.timeToNextAttack = 0
+                ret.activeController.increment = 3
+                ret.activeController.hitboxMagnitude = 100
+                ret.activeController.blocking = false
+                ret.activeController.timeToNextBlock = 0
+                ret.activeController.focusStart = 0
+                ret.activeController.humanoid.AutoRotate = true
+    ret.activeController:attack()    
+    end)
+end
+end)
+end)
+
+require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
+local CameraShaker = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework.CameraShaker)
+spawn(function()
+game:GetService("RunService").RenderStepped:Connect(function()
+    pcall(function()
+        if getgenv().fast then
+Fast.activeController.timeToNextAttack = 0
+Fast.activeController.hitboxMagnitude = 50
+game:GetService'VirtualUser':CaptureController()
+game:GetService'VirtualUser':Button1Down(Vector2.new(686, 352))
+CameraShaker.CameraShakeInstance.CameraShakeState = {FadingIn = 3, FadingOut = 2, Sustained = 0, Inactive = 1}
+end
+end)
+end)
+end)
+spawn(function()
+   game:GetService("RunService").RenderStepped:Connect(function()
+    pcall(function()
+        if getgenv().fast then
+            local Combat = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
+            local Cemara = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework.CameraShaker)
+            Cemara.CameraShakeInstance.CameraShakeState = {FadingIn = 3, FadingOut = 2, Sustained = 0, Inactive = 1}
+            Combat.activeController.timeToNextAttack = 0
+            Combat.activeController.hitboxMagnitude = 120
+            Combat.activeController.increment = 3
+        end
+    end)
+end) 
+end)
+ 
+ 
+spawn(function()
+   game:GetService("RunService").RenderStepped:Connect(function()
+    pcall(function()
+        if getgenv().fast then
+            game:GetService'VirtualUser':CaptureController()
+            game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+        end
+    end)
+end) 
+end)
+AutoFarm:Toggle("Fast Attack[Lag]",false,function(skien)
+getgenv().FastAttack = skien
+end)
 local Module = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
-local CombatFramework = debug.getupvalues(Module)[2]
+local CombatFrameworks = debug.getupvalues(Module)[2]
 local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
 
 spawn(function()
     while true do
-        if getgenv().fast then
+        if getgenv().FastAttack then
             pcall(function()
                 CameraShakerR:Stop()
-                CombatFramework.activeController.attacking = false
-                CombatFramework.activeController.timeToNextAttack = 0
-                CombatFramework.activeController.increment = 3
-                CombatFramework.activeController.hitboxMagnitude = 100
-                CombatFramework.activeController.blocking = false
-                CombatFramework.activeController.timeToNextBlock = 0
-                CombatFramework.activeController.focusStart = 0
-                CombatFramework.activeController.humanoid.AutoRotate = true
+                CombatFrameworks.activeController.attacking = false
+                CombatFrameworks.activeController.timeToNextAttack = 0
+                CombatFrameworks.activeController.increment = 3
+                CombatFrameworks.activeController.hitboxMagnitude = 100
+                CombatFrameworks.activeController.blocking = false
+                CombatFrameworks.activeController.timeToNextBlock = 0
+                CombatFrameworks.activeController.focusStart = 0
+                CombatFrameworks.activeController.humanoid.AutoRotate = true
+                CombatFrameworks.activeController:attack()
             end)
         end
         task.wait()
@@ -7638,33 +7739,39 @@ spawn(function()
 end)
 spawn(function()
 		while wait() do
-			if getgenv().fast then
+			if getgenv().FastAttack then
 				Click()
 			end
 		end
 	end)
 coroutine.wrap(function()
-local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:Stop()
-    for v,v in pairs(getreg()) do
-        if typeof(v) == "function" and getfenv(v).script == game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then
-             for v,v in pairs(debug.getupvalues(v)) do
-                if typeof(v) == "table" then
+local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
+local Attack = 0.1
+for i,v in pairs(getreg()) do
+    if typeof(v) == "function" and getfenv(v).script == game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then
+        for x,w in pairs(debug.getupvalues(v)) do
+             if typeof(w) == "table" then
                     spawn(function()
                         game:GetService("RunService").RenderStepped:Connect(function()
-                            if getgenv().fast then
+                            if getgenv().FastAttack then
                                  pcall(function()
-                                 if v.activeController:attack() then
-v.activeController:attack()
+                                 CameraShaker:Stop()
+                                 if w.activeController:attack() then
+w.activeController:attack()
 end
-                                     v.activeController.timeToNextAttack = -(math.huge^math.huge^math.huge)
-                                     v.activeController.attacking = false
-                                     v.activeController.increment = 4
-                                     v.activeController.blocking = false   
-                                     v.activeController.hitboxMagnitude = 150
-    		                         v.activeController.humanoid.AutoRotate = true
-    	                      	     v.activeController.focusStart = 0
-    	                      	     v.activeController.currentAttackTrack = 0
+                                     w.activeController.timeToNextAttack = -(math.huge^math.huge^math.huge)
+                                     w.activeController.attacking = false
+                                     w.activeController.increment = 4
+                                     w.activeController.blocking = false   
+                                     w.activeController.hitboxMagnitude = 150
+    		                         w.activeController.humanoid.AutoRotate = true
+    	                      	     w.activeController.focusStart = 0
+    	                      	     w.activeController.currentAttackTrack = 0
+                                     if w.activeController and tick() >= Attack then 
+                                  Attack = tick() + 0.1
+
                                      sethiddenproperty(game:GetService("Players").LocalPlayer, "SimulationRaxNerous", math.huge)
+                                     end
                                  end)
                              end
                          end)
@@ -7675,161 +7782,412 @@ end
     end
 end)();
 
+ 
+spawn(function()
+local CombatFrameworkR = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework) 
 
-AutoFarm:Toggle("Super Fast Attack[Rick]",false,function(chm)
+local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
+CameraShakerR:Stop()
+spawn(function()
+	for i = 1,math.huge do
+		game:GetService("RunService").Heartbeat:wait()
+		if getgenv().FastAttack  then
+			pcall(function()
+					CombatFrameworkR.activeController.attacking = false
+					CombatFrameworkR.activeController.timeToNextAttack = 0
+					CombatFrameworkR.activeController.increment = 3
+					CombatFrameworkR.activeController.hitboxMagnitude = 50
+					CombatFrameworkR.activeController:attack()
+			end)
+		end
+		game:GetService("RunService").Heartbeat:wait()
+	end
+end)
+end)
+
+local yedkuy112 = require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.CameraShaker)
+local VirtualUser = game:GetService('VirtualUser')
+local yedhee = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
+
+
+spawn(function()
+    while wait() do
+        if setscriptable then
+            setscriptable(game.Players.LocalPlayer, "SimulationRadius", true)
+            game.Players.LocalPlayer.SimulationRadius = math.huge * math.huge, math.huge * math.huge * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0 * 1 / 0
+        end
+    end
+end)
+spawn(function()
+	game:GetService("RunService").Stepped:Connect(function()
+		pcall(function()
+			local yedkuy112 = require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.CameraShaker)
+			local VirtualUser = game:GetService('VirtualUser')
+			local yedhee = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
+            yedkuy112.CameraShakeInstance.CameraShakeState.Inactive = 0
+            yedhee.activeController.hitboxMagnitude = 55
+			if getgenv().FastAttack then
+                
+                    if game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") then
+                        yedhee.activeController.timeToNextAttack = 3
+                    else
+                        yedhee.activeController.timeToNextAttack = -(math.huge^math.huge)
+                    end
+                    yedhee.activeController.attacking = false
+                    yedhee.activeController.increment = 3
+                    if yedhee.activeController:attack() then
+                        yedhee.activeController:attack()
+                    end
+                    yedhee.activeController.blocking = false
+                    yedhee.activeController.timeToNextBlock = 0
+                    game.Players.LocalPlayer.Character.Stun.Value = 0
+                    game.Players.LocalPlayer.Character.Humanoid.Sit = false
+                    yedhee.activeController.timeToNextAttack = 0
+                    yedhee.activeController.attacking = false
+                    yedhee.activeController.blocking = false
+                    yedhee.activeController.timeToNextAttack = 0
+                    yedhee.activeController.timeToNextBlock = 0
+                    yedhee.activeController.increment = 3
+                    yedhee.activeController.hitboxMagnitude = 55
+                    yedhee.activeController.focusStart = 0
+                    if yedhee.activeController:attack() then
+                        yedhee.activeController:attack()
+                    end
+                    
+                
+			end
+		end)
+	end)
+end)
+
+spawn(function()--critical damage
+      local backup = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
+      local Crit = getupvalues(backup)[2]
+      local CombatFrameworkR = getupvalues(backup)[2]
+      local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
+      function maxincrement()
+          return #Crit.activeController.anims.basic
+      end
+      spawn(function()
+      while wait() do
+if getgenv().FastAttack then
+          local old
+          old = hookmetamethod(game, "__namecall",function(self,...)
+              local method = getnamecallmethod() local args = {...}
+      
+              if method:lower() == "fireserver" then
+                  if args[1] == "hit" then
+                      args[3] = maxincrement()
+                      return old(self,unpack(args))
+                  end end
+              return old(self,...)
+              end)
+          end
+end
+end)
+      end)
+  
+spawn(function()
+	game:GetService("RunService").Heartbeat:connect(function()
+		pcall(function()
+			if getgenv().FastAttack  then
+					VirtualUser:CaptureController()
+					VirtualUser:ClickButton1(Vector2.new(851, 158), game:GetService("Workspace").Camera.CFrame)
+			end
+		end)
+	end)
+	game:GetService("RunService").Heartbeat:connect(function()
+		pcall(function()
+			if getgenv().FastAttack  then
+					VirtualUser:CaptureController()
+					VirtualUser:ClickButton1(Vector2.new(851, 158), game:GetService("Workspace").Camera.CFrame)
+			end
+		end)
+	end)
+end)
+AutoFarm:Toggle("Super Fast Attack[Risk]",true,function(chm)
 getgenv().spf = chm 
+
+end)
+
 local plr = game.Players.LocalPlayer
+	local CbFw = getupvalues(require(plr.PlayerScripts.CombatFramework))
+	local CbFw2 = CbFw[2]
 
-local CbFw = debug.getupvalues(require(plr.PlayerScripts.CombatFramework))
-local CbFw2 = CbFw[2]
-
-function GetCurrentBlade() 
-    local p13 = CbFw2.activeController
-    local ret = p13.blades[1]
-    if not ret then return end
-    while ret.Parent~=game.Players.LocalPlayer.Character do ret=ret.Parent end
-    return ret
-end
-function AttackNoCD() 
-    local AC = CbFw2.activeController
-    for i = 1, 1 do 
-        local bladehit = require(game.ReplicatedStorage.CombatFramework.RigLib).getBladeHits(
-            plr.Character,
-            {plr.Character.HumanoidRootPart},
-            60
-        )
-        local cac = {}
-        local hash = {}
-        for k, v in pairs(bladehit) do
-            if v.Parent:FindFirstChild("HumanoidRootPart") and not hash[v.Parent] then
-                table.insert(cac, v.Parent.HumanoidRootPart)
-                hash[v.Parent] = true
+    function GetCurrentBlade() 
+        local p13 = CbFw2.activeController
+        local ret = p13.blades[1]
+        if not ret then return end
+        while ret.Parent~=game.Players.LocalPlayer.Character do ret=ret.Parent end
+        return ret
+    end
+    
+    function AttackNoCD()
+        if getgenv().spf then
+            if not Auto_Raid then
+                local AC = CbFw2.activeController
+                for i = 1, 1 do 
+                    local bladehit = require(game.ReplicatedStorage.CombatFramework.RigLib).getBladeHits(
+                        plr.Character,
+                        {plr.Character.HumanoidRootPart},
+                        60
+                    )
+                    local cac = {}
+                    local hash = {}
+                    for k, v in pairs(bladehit) do
+                        if v.Parent:FindFirstChild("HumanoidRootPart") and not hash[v.Parent] then
+                            table.insert(cac, v.Parent.HumanoidRootPart)
+                            hash[v.Parent] = true
+                        end
+                    end
+                    bladehit = cac
+                    if #bladehit > 0 then
+                        local u8 = debug.getupvalue(AC.attack, 5)
+                        local u9 = debug.getupvalue(AC.attack, 6)
+                        local u7 = debug.getupvalue(AC.attack, 4)
+                        local u10 = debug.getupvalue(AC.attack, 7)
+                        local u12 = (u8 * 798405 + u7 * 727595) % u9
+                        local u13 = u7 * 798405
+                        (function()
+                            u12 = (u12 * u9 + u13) % 1099511627776
+                            u8 = math.floor(u12 / u9)
+                            u7 = u12 - u8 * u9
+                        end)()
+                        u10 = u10 + 1
+                        debug.setupvalue(AC.attack, 5, u8)
+                        debug.setupvalue(AC.attack, 6, u9)
+                        debug.setupvalue(AC.attack, 4, u7)
+                        debug.setupvalue(AC.attack, 7, u10)
+                        pcall(function()
+                            if plr.Character:FindFirstChildOfClass("Tool") and AC.blades and AC.blades[1] then
+                                AC.animator.anims.basic[1]:Play(0.01,0.01,0.01)
+                                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(GetCurrentBlade()))
+                                game.ReplicatedStorage.Remotes.Validator:FireServer(math.floor(u12 / 1099511627776 * 16777215), u10)
+                                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, i, "")
+                            end
+                        end)
+                    end
+                end
             end
         end
-        bladehit = cac
-        if #bladehit > 0 then
-            local u8 = debug.getupvalue(AC.attack, 5)
-            local u9 = debug.getupvalue(AC.attack, 6)
-            local u7 = debug.getupvalue(AC.attack, 4)
-            local u10 = debug.getupvalue(AC.attack, 7)
-            local u12 = (u8 * 798405 + u7 * 727595) % u9
-            local u13 = u7 * 798405
-            (function()
-                u12 = (u12 * u9 + u13) % 1099511627776
-                u8 = math.floor(u12 / u9)
-                u7 = u12 - u8 * u9
-            end)()
-            u10 = u10 + 1
-            debug.setupvalue(AC.attack, 5, u8)
-            debug.setupvalue(AC.attack, 6, u9)
-            debug.setupvalue(AC.attack, 4, u7)
-            debug.setupvalue(AC.attack, 7, u10)
-            pcall(function()
-                for k, v in pairs(AC.animator.anims.basic) do
-                    v:Play()
-                end                  
+        if getgenv().spf and getgenv().fast then
+            local Fast = getupvalues(require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework))
+            local Lop = Fast[2]
+            Lop.activeController.timeToNextAttack = (-math.huge^math.huge*math.huge)
+            Lop.activeController.attacking = false
+            Lop.activeController.timeToNextBlock = 0
+            Lop.activeController.humanoid.AutoRotate = 80
+            Lop.activeController.increment = 3
+            Lop.activeController.blocking = false
+            Lop.activeController.hitboxMagnitude = 80
+        end
+    end
+local SeraphFrame = debug.getupvalues(require(game:GetService("Players").LocalPlayer.PlayerScripts:WaitForChild("CombatFramework")))[2]
+    local VirtualUser = game:GetService('VirtualUser')
+    local RigControllerR = debug.getupvalues(require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework.RigController))[2]
+    local Client = game:GetService("Players").LocalPlayer
+    local DMG = require(Client.PlayerScripts.CombatFramework.Particle.Damage)
+
+    function SeraphFuckWeapon() 
+        local p13 = SeraphFrame.activeController
+        local wea = p13.blades[1]
+        if not wea then return end
+        while wea.Parent~=game.Players.LocalPlayer.Character do wea=wea.Parent end
+        return wea
+    end
+
+    function getHits(Size)
+        local Hits = {}
+        local Enemies = workspace.Enemies:GetChildren()
+        local Characters = workspace.Characters:GetChildren()
+        for i=1,#Enemies do local v = Enemies[i]
+            local Human = v:FindFirstChildOfClass("Humanoid")
+            if Human and Human.RootPart and Human.Health > 0 and game.Players.LocalPlayer:DistanceFromCharacter(Human.RootPart.Position) < Size+5 then
+                table.insert(Hits,Human.RootPart)
+            end
+        end
+        for i=1,#Characters do local v = Characters[i]
+            if v ~= game.Players.LocalPlayer.Character then
+                local Human = v:FindFirstChildOfClass("Humanoid")
+                if Human and Human.RootPart and Human.Health > 0 and game.Players.LocalPlayer:DistanceFromCharacter(Human.RootPart.Position) < Size+5 then
+                    table.insert(Hits,Human.RootPart)
+                end
+            end
+        end
+        return Hits
+    end
+
+    task.spawn(
+        function()
+        while wait(0.075) do
+            if getgenv().spf then
+                if SeraphFrame.activeController then
+                    -- if v.Humanoid.Health > 0 then
+                        SeraphFrame.activeController.timeToNextAttack = (-math.huge ^ math.huge)
+                        SeraphFrame.activeController.focusStart = 0
+                        SeraphFrame.activeController.hitboxMagnitude = 40
+                        SeraphFrame.activeController.humanoid.AutoRotate = true
+                        SeraphFrame.activeController.increment = 4
+                    -- end
+                end
+            end
+        end
+    end)
+
+    function Boost()
+        spawn(function()
+        game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(SeraphFuckWeapon()))
+        end)
+    end
+
+    function Unboost()
+        spawn(function()
+        game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("unequipWeapon",tostring(SeraphFuckWeapon()))
+        end)
+    end
+
+    local cdnormal = 0
+    local Animation = Instance.new("Animation")
+    local CooldownFastAttack = 0
+    Attack = function()
+        local ac = SeraphFrame.activeController
+        if ac and ac.equipped then
+            task.spawn(
+                function()
+                if tick() - cdnormal > 0.5 then
+                    ac:attack()
+                    cdnormal = tick()
+                else
+                    Animation.AnimationId = ac.anims.basic[2]
+                    ac.humanoid:LoadAnimation(Animation):Play(1, 1)
+                    game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", getHits(120), 2, "")
+                end
             end)
-            if plr.Character:FindFirstChildOfClass("Tool") and AC.blades and AC.blades[1] then 
-                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(GetCurrentBlade()))
-                game.ReplicatedStorage.Remotes.Validator:FireServer(math.floor(u12 / 1099511627776 * 16777215), u10)
-                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, i, "") 
-            end
         end
     end
-end
-local cac
-if SuperFastMode then 
-	cac=task.wait
-else
-	cac=wait
-end
-while cac() do 
-	AttackNoCD()
-end
-    end)
 
-getgenv().fase = 9
-AutoFarm:Slider("Fast Attack Mode",true,1,10,getgenv().fase,5,function(flo)
-getgenv().fase = flo
-end)
-AutoFarm:Toggle("Fast On Slider",false,function(oxi)
-getgenv().oxi = oxi
-end)
-spawn(function()
-while wait() do
-if getgenv().oxi then
-local plr = game.Players.LocalPlayer
-local concac
-
-if getupvalues then concac=getupvalues end
-if debug then 
-  if debug.getupvalues then concac=debug.getupvalues end
-end
-
-            
-require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.CameraShaker).Shake = function() end
-local ret = concac(require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework))[2]
-local CbFw = debug.getupvalues(require(plr.PlayerScripts.CombatFramework))
-local CbFw2 = CbFw[2]
-ret = CbFw2.activeController
-while wait() do
-spawn(function()
-game:GetService("RunService").RenderStepped:Connect(function()
-  pcall(function()
-  if getgenv().oxi then
-           pcall(function()
-                for k, v in pairs(AC.animator.anims.basic) do
-                    v:Play()
-                end        
-                local u8 = debug.getupvalue(ret.activeController, getgenv().fase)
-            local u9 = debug.getupvalue(ret.activeController, getgenv().fase)
-            local u7 = debug.getupvalue(ret.activeController, getgenv().fase)
-            local u10 = debug.getupvalue(ret.activeController, getgenv().fase)
-            local u12 = (u8 * 798405 + u7 * 727595) % u9
-            local u13 = u7 * 798405
-            (function()
-                u12 = (u12 * u9 + u13) % 1099511627776
-                u8 = math.floor(u12 / u9)
-                u7 = u12 - u8 * u9
-            end)()
-            u10 = u10 + 1
-                        if plr.Character:FindFirstChildOfClass("Tool") and AC.blades and AC.blades[1] then 
-                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(GetCurrentBlade()))
-                game.ReplicatedStorage.Remotes.Validator:FireServer(math.floor(u12 / 1099511627776 * 16777215), u10)
-                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, i, "") 
+    b = tick()
+    spawn(function()
+        while wait(0.075) do
+            if getgenv().spf then
+                if b - tick() > 0.75 then
+                    wait()
+                    b = tick()
+                end
+                pcall(function()
+                    for i, v in pairs(game.Workspace.Enemies:GetChildren()) do
+                        if v.Humanoid.Health > 0 then
+                            if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 40 then
+                                Attack()
+                                wait()
+                                Boost()
+                            end
+                        end
+                    end
+                end)
             end
-        debug.setupvalue(ret.activeController, getgenv().fase, u8)
-            debug.setupvalue(ret.activeController, getgenv().fase, u9)
-            debug.setupvalue(ret.activeController, getgenv().fase, u7)
-            debug.setupvalue(ret.activeController, getgenv().fase, u10)
-                 ret.activeController.humanoid.AutoRotate = true
-                ret.activeController.attacking = false
-                ret.activeController.timeToNextAttack = -(math.huge^math.huge^math.huge)
-                ret.activeController.increment = getgenv().fase
-                ret.activeController.hitboxMagnitude = 100
-                ret.activeController.blocking = false
-                ret.activeController.timeToNextBlock = 0
-                ret.activeController.focusStart = getgenv().fase
-                ret.activeController.humanoid.AutoRotate = true
-                ret.activeController.currentAttackTrack = getgenv().fase
-sethiddenproperty(game:GetService("Players").LocalPlayer, "SimulationRaxNerous", math.huge)
-end)
-    end
+        end
     end)
+
+    k = tick()
+    spawn(function()
+        while wait(0.075) do
+            if getgenv().spf then
+                if k - tick() > 0.75 then
+                    wait()
+                    k = tick()
+                end
+                pcall(function()
+                    for i, v in pairs(game.Workspace.Enemies:GetChildren()) do
+                        if v.Humanoid.Health > 0 then
+                            if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 40 then
+                            wait(.000025)
+                            Unboost()
+                            end
+                        end
+                    end
+                end)
+            end
+        end
     end)
-  end)
-end
-end
-end
-end)
+
+    tjw1 = true
+    task.spawn(
+        function()
+            local a = game.Players.LocalPlayer
+            local b = require(a.PlayerScripts.CombatFramework.Particle)
+            local c = require(game:GetService("ReplicatedStorage").CombatFramework.RigLib)
+            if not shared.orl then
+                shared.orl = c.wrapAttackAnimationAsync
+            end
+            if not shared.cpc then
+                shared.cpc = b.play
+            end
+            if tjw1 then
+                pcall(
+                    function()
+                        c.wrapAttackAnimationAsync = function(d, e, f, g, h)
+                            local i = c.getBladeHits(e, f, g)
+                            if i then
+                                b.play = function()
+                                end
+                                d:Play(0.10, 0.10, 0.10)
+                                h(i)
+                                b.play = shared.cpc
+                                wait(.7)
+                                d:Stop()
+                            end
+                        end
+                    end
+                )
+            end
+        end
+    )
+
+
+    local Client = game.Players.LocalPlayer
+    local STOP = require(Client.PlayerScripts.CombatFramework.Particle)
+    local STOPRL = require(game:GetService("ReplicatedStorage").CombatFramework.RigLib)
+    task.spawn(function()
+        pcall(function()
+            if not shared.orl then
+                shared.orl = STOPRL.wrapAttackAnimationAsync
+            end
+                if not shared.cpc then
+                    shared.cpc = STOP.play 
+                end
+            spawn(function()
+                game:GetService("RunService").Stepped:Connect(function()
+                    STOPRL.wrapAttackAnimationAsync = function(a,b,c,d,func)
+                        local Hits = STOPRL.getBladeHits(b,c,d)
+                        if Hits then
+                            if getgenv().spf then
+                                STOP.play = function() end
+                                a:Play(0.1,0.1,0.1)
+                                func(Hits)
+                                STOP.play = shared.cpc
+                                wait(a.length * 0.5)
+                                a:Stop()
+                            else
+                                func(Hits)
+                                STOP.play = shared.cpc
+                                wait(a.length * 0.5)
+                                a:Stop()
+                            end
+                        end
+                    end
+                end)
+            end)
+        end)
+    end)
               Main:Label("Auto Something")               
                    
 	Main:Toggle("Auto Chest[TP]",false,function(jiee)
-	getgenv().f = jiee
+	getgenv().TPCHEST = jiee
 end)
 spawn(function()
 while wait() do
-if getgenv().f then
+if getgenv().TPCHEST then
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
       if string.find(v.Name, "Chest") then
@@ -7838,7 +8196,7 @@ for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
           wait(.15)
       end
   end
-  game.Players.LocalPlayer.Character.Head:Destroy()
+  
   for _,v in pairs(game:GetService("Workspace"):GetDescendants()) do
    if string.find(v.Name, "Chest") and v:IsA("TouchTransmitter") then
    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) --0 is touch
@@ -7852,7 +8210,7 @@ for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 end)
 spawn(function()
 while wait() do
-if getgenv().f then
+if getgenv().TPCHEST then
         local ohString1 = "SetTeam"
         local ohString2 = "Pirates"
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(ohString1, ohString2)
@@ -7860,8 +8218,397 @@ if getgenv().f then
 end
 end)
 
+spawn(function()
+while wait() do
+if getgenv().TPCHEST then
+for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
+            if v.Name == "CurvedRing" or v.Name == "SlashHit" or v.Name == "DamageCounter" or v.Name == "SwordSlash" or v.Name == "SlashTail" or v.Name == "Sounds" then
+                v:Destroy() 
+            end
+        end
 
+end
+end
+end)
+ Main:Toggle("Auto Chest[Vip]",false,function(jieeu)
+	getgenv().ChestVip = jieeu
+end)
+spawn(function()
+while task.wait() do
+if getgenv().ChestVip then
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+      if string.find(v.Name, "Chest") then
+          print(v.Name)
+          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+          wait(.15)
+      end
+  end
+  
+  for _,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+   if string.find(v.Name, "Chest") and v:IsA("TouchTransmitter") then
+   firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) --0 is touch
+   wait()
+   firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1) -- 1 is untouch
+   end
+   end
+wait(60)
+local PlaceID = game.PlaceId
+		local AllIDs = {}
+		local foundAnything = ""
+		local actualHour = os.date("!*t").hour
+		local Deleted = false
+		function TPReturner()
+			local Site;
+			if foundAnything == "" then
+				Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
+			else
+				Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
+			end
+			local ID = ""
+			if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+				foundAnything = Site.nextPageCursor
+			end
+			local num = 0;
+			for i,v in pairs(Site.data) do
+				local Possible = true
+				ID = tostring(v.id)
+				if tonumber(v.maxPlayers) > tonumber(v.playing) then
+					for _,Existing in pairs(AllIDs) do
+						if num ~= 0 then
+							if ID == tostring(Existing) then
+								Possible = false
+							end
+						else
+							if tonumber(actualHour) ~= tonumber(Existing) then
+								local delFile = pcall(function()
+									-- delfile("NotSameServers.json")
+									AllIDs = {}
+									table.insert(AllIDs, actualHour)
+								end)
+							end
+						end
+						num = num + 1
+					end
+					if Possible == true then
+						table.insert(AllIDs, ID)
+						wait()
+						pcall(function()
+							-- writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+							wait()
+							game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+						end)
+						wait(4)
+					end
+				end
+			end
+		end
+		function Teleport() 
+			while wait() do
+				pcall(function()
+					TPReturner()
+					if foundAnything ~= "" then
+						TPReturner()
+					end
+				end)
+			end
+		end
+		Teleport()
+	end)
 
+ 
+      end
+  end
+end)
+local text = Main:Toggle("Webhook",false,function(jie)
+	x = getgenv().config["getgenv().Webhook"]
+local HttpService = game:GetService("HttpService");
+game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.Visible = true
+local function Fornum(number)
+   local i, k, j = tostring(number):match("(%-?%d?)(%d*)(%.?.*)")
+   return i..k:reverse():gsub("(%d%d%d)", "%1,"):reverse()..j
+end
+function unequip() --- equip tool
+   game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+end
+unequip()
+BuyDragonTalon = tonumber(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon",true))
+HasTalon = ""
+if BuyDragonTalon then
+   if BuyDragonTalon == 1 then
+      HasTalon = "DragonTalon,"
+   end
+end
+local count10 = 0
+for i,v in pairs(game.workspace:GetChildren()) do
+				if string.find(v.Name,"Chest") and v:IsA("Part") then
+					count10 = count10 + 1
+				end
+			end
+local count = 0
+for i,v in pairs(game.Workspace:GetChildren()) do
+				if v.Name == "Blox Fruit Dealer" then
+				else
+					if string.find(v.Name, "Fruit") and v:IsA("Tool") then
+						count = count + 1
+					end
+					if string.find(v.Name, "Fruit") and v:IsA("Model") then
+						count = count + 1
+					end
+				end
+			end
+
+BuySuperhuman = tonumber(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman",true))
+HasSuperhuman = ""
+if BuySuperhuman then
+   if BuySuperhuman == 1 then
+      HasSuperhuman = "Superhuman"
+   end
+end
+
+BuySharkmanKarate = tonumber(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate",true))
+if BuySharkmanKarate then
+   if BuySharkmanKarate == 1 then
+      HasKarate = "SharkmanKarate"
+   end
+end
+
+BuyDeathStep = tonumber(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep",true))
+HasDeathStep = ""
+if BuyDeathStep then
+   if BuyDeathStep == 1 then
+      HasDeathStep = "DeathStep"
+   end
+end
+
+BuyElectricClaw = tonumber(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw",true))
+HasElectricClaw = ""
+if BuyElectricClaw then
+   if BuyElectricClaw == 1 then
+      HasElectricClaw = "ElectricClaw"
+   end
+end
+
+BuyGodhuman = tonumber(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman",true))
+HasGodhuman = ""
+if BuyGodhuman then
+   if BuyGodhuman == 1 then
+      HasGodhuman = "Godhuman"
+   end
+end
+
+UseMelee = "Now Have"
+UseSword = "Now Have"
+UseGun = "Now Have"
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+   if v.ClassName == "Tool" and v.ToolTip == "Melee" then
+      UseMelee = v.Name
+   elseif v.ClassName == "Tool" and v.ToolTip == "Sword" then
+      UseSword = v.Name
+   elseif v.ClassName == "Tool" and v.ToolTip == "Gun" then
+      UseGun = v.Name
+   else
+   end
+end
+
+UseAcc = "Now Have"
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do 
+   if v.ClassName == "Accessory" and v:FindFirstChild("IsAccessory") then
+      UseAcc = v.Name
+   end
+end
+
+local gg = {}
+for i, v in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryFruits")) do 
+   table.insert(gg,v.Name.." : "..v.Price)
+end
+
+FruitInevtory = ""
+for i,v in pairs(gg) do
+    FruitInevtory = FruitInevtory.. v..'\n'
+end
+
+local Common = {}
+local Uncommon = {}
+local Rare = {}
+local Legendary = {}
+local Mythical = {}
+for i,v in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")) do
+   if v.Rarity == 0 then
+      table.insert(Common,v.Name)
+   elseif v.Rarity == 1 then
+      table.insert(Uncommon,v.Name)
+   elseif v.Rarity == 2 then
+      table.insert(Rare,v.Name)
+   elseif v.Rarity == 3 then
+      table.insert(Legendary,v.Name)
+   elseif v.Rarity == 4 then
+      table.insert(Mythical,v.Name)
+   end
+end
+
+pcall(function()
+   for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+      if v:IsA("Tool") and v.ToolTip == "Sword" or v.ToolTip == "Gun" and v:FindFirstChild("Rarity") then
+         if v.Rarity.Value == 0 then
+            table.insert(Common,v.Name)
+         elseif  v.Rarity.Value == 1 then
+            table.insert(Uncommon,v.Name)
+         elseif  v.Rarity.Value == 2 then
+            table.insert(Rare,v.Name)
+         elseif  v.Rarity.Value == 3 then
+            table.insert(Legendary,v.Name)
+         elseif  v.Rarity.Value == 4 then
+            table.insert(Mythical,v.Name)
+         end
+      end
+   end
+end)
+
+pcall(function()
+   for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+      if v:IsA("Tool") and v.ToolTip == "Sword" or v.ToolTip == "Gun" and v:FindFirstChild("Rarity") then
+         if v.Rarity.Value == 0 then
+            table.insert(Common,v.Name)
+         elseif  v.Rarity.Value == 1 then
+            table.insert(Uncommon,v.Name)
+         elseif  v.Rarity.Value == 2 then
+            table.insert(Rare,v.Name)
+         elseif  v.Rarity.Value == 3 then
+            table.insert(Legendary,v.Name)
+         elseif  v.Rarity.Value == 4 then
+            table.insert(Mythical,v.Name)
+         end
+      end
+   end
+end)
+
+local Commonz = ""
+local Uncommonz = ""
+local Rarez = ""
+local Legendaryz = ""
+local Mythicalz = ""
+for i,v in pairs(Common) do Commonz = Commonz.. v..'\n'end
+for i,v in pairs(Uncommon) do Uncommonz = Uncommonz.. v..'\n'end
+for i,v in pairs(Rare) do Rarez = Rarez.. v..'\n'end
+for i,v in pairs(Legendary) do Legendaryz = Legendaryz.. v..'\n'end
+for i,v in pairs(Mythical) do Mythicalz = Mythicalz.. v..'\n'end
+
+local awake = {}
+local awakez =  ""
+for i, v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.TopContainer.Frame:GetChildren()) do 
+   if v:IsA('ImageButton') then
+      if  v.Name == 'Template' then
+      else
+         table.insert(awake,v.Name) 
+      end
+   end
+end
+local awakez =  ""
+for i,v in pairs(awake) do
+   awakez = awakez..v.."✅".."\n"
+end
+
+unequip()
+function SendMessage(Webhook)
+   local re
+   if syn then
+       re = syn.request 
+   else
+       re = request
+   end
+       re({
+       Url = Webhook,
+       Method = "POST",
+       Headers = {
+           ["Content-Type"] = "application/json"
+       },
+       Body = game:GetService("HttpService"):JSONEncode({
+       ["content"] = "<@947640192897007716>",
+       ["username"] = "Waifu Hub - Webhook",
+       ["avatar_url"] = "https://media.discordapp.net/attachments/961289875993292870/1005673982432911410/IMG_0025.jpg?width=394&height=700",
+           ["embeds"] = {
+           {
+           ["author"] = {
+                   ["name"] = "Waifu Webhook Status",
+                   ["icon_url"] = 'https://media.discordapp.net/attachments/961289875993292870/1005673982432911410/IMG_0025.jpg?width=394&height=700',
+           },
+           ["fields"] = {
+               {
+                   ["name"] = "User Name",
+                   ["value"] = '||'..game.Players.localPlayer.Name..'||',
+                   ['inline'] = true
+               },
+               
+               {
+                   ["name"] = "My Level",
+                   ["value"] = Fornum(game:GetService("Players").localPlayer.Data.Level.value),
+                   ['inline'] = true
+               },
+
+               {
+                   ["name"] = "Fragments",
+                   ["value"] = "ƒ"..Fornum(game:GetService("Players").localPlayer.Data.Fragments.value),
+                   ['inline'] = true
+               },
+
+               {
+                   ["name"] = "Bounty/Honor",
+                   ["value"] = Fornum(game:GetService("Players").localPlayer.leaderstats["Bounty/Honor"].value),
+                   ['inline'] = true
+               },
+
+               {
+                   ["name"] = "Beli",
+                   ["value"] = "$"..Fornum(game:GetService("Players").localPlayer.Data.Beli.value),
+                   ['inline'] = true
+               },
+
+               {
+                   ["name"] = "Race",
+                   ["value"] = game:GetService("Players").localPlayer.Data.Race.value,
+                   ['inline'] = true
+               },
+
+               {
+                   ["name"] = "Devil Fruit",
+                   ["value"] = game:GetService("Players").localPlayer.Data.DevilFruit.value,
+                   ['inline'] = true
+               },
+               
+               {
+               	["name"] = "Chest In Server",
+                   ["value"] = "```chest: "..count10.."```",
+                   ['inline'] = true
+               },
+                        {
+               	["name"] = "Fruit In Server",
+                   ["value"] = "```Fruit: "..count.."```",
+                   ['inline'] = true
+               },
+               {
+                      	["name"] = "Player In Server",
+                   ["value"] = "```Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers.."```",
+                   ['inline'] = true
+               },
+               {
+                   	["name"] = "Check Candy",
+                   ["value"] = "```Candy : "..game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Candies","Check").."```",
+                   ['inline'] = true
+},
+           },
+           ["color"] = tonumber(0x017ffc),
+           ["footer"] = {["text"] = "Check Acc"}
+            
+           }
+   }   
+       })
+   
+   })
+end
+SendMessage(x)
+game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.Visible = false
+end)
 Main:Toggle("Auto Chest[Tween]",false,function(jie)
 	getgenv().k = jie
 end)
@@ -7881,7 +8628,39 @@ end)
 		end
 end
 end)
-
+Main:Toggle("Auto Buy Exp x2",false,function(a)
+			getgenv().AutoBuyExp = a
+		end)
+		Main:Toggle("Auto Buy Exp x2 [ Exp Expire ]",false,function(a)
+			getgenv().AutoBuyExpExpire = a
+		end)
+		spawn(function()
+			while wait() do
+				if getgenv().AutoBuyExp then
+					local args = {
+						[1] = "Candies",
+						[2] = "Buy",
+						[3] = 1,
+						[4] = 1
+					}
+					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+				end
+end
+end)
+spawn(function()
+while wait() do
+				if getgenv().AutoBuyExpExpire and game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("Main") and not string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Level.Exp.Text,"2x ends in") then
+					local args = {
+						[1] = "Candies",
+						[2] = "Buy",
+						[3] = 1,
+						[4] = 1
+					}
+					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+				end
+			end
+		end)
+	
 Main:Toggle("Auto Evo Race",false,function(vu)
 		getgenv().Autorace = vu
 	end)
@@ -8294,6 +9073,24 @@ Main:Toggle("Auto Farm All Boss",false,function(value)
 end
 end
 end)
+Main:Toggle("Auto Random Bone",false,function(e)
+			getgenv().RandomBone = e
+		end)
+		
+		spawn(function()
+		    while wait() do
+		        if getgenv().RandomBone then
+                        local args = {
+                            [1] = "Bones",
+                            [2] = "Buy",
+                            [3] = 1,
+                            [4] = 1
+                        }
+                        
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+		            end
+		        end
+		    end)
 
 
 local Boss = {}
@@ -8693,6 +9490,15 @@ pcall(function()
 while wait() do
 if getgenv().killplr then
 chichdiem(game.Players[getgenv().pla].Character.HumanoidRootPart.CFrame * CFrame.new(0,0,4))
+game:service('VirtualInputManager'):SendKeyEvent(true, "Z", false, game)
+                wait(1)
+                game:service('VirtualInputManager'):SendKeyEvent(true, "X", false, game)
+                wait(1)
+                game:service('VirtualInputManager'):SendKeyEvent(true, "C", false, game)
+                wait(1)
+                game:service('VirtualInputManager'):SendKeyEvent(true, "V", false, game)
+                wait(4)
+                chichdiem(game.Players[getgenv().pla].Character.HumanoidRootPart.CFrame * CFrame.new(0,30,0))
 end
 end
 end)
@@ -8703,6 +9509,7 @@ spawn(function()
 				if game.Players:FindFirstChild(getgenv().pla) and (game.Players:FindFirstChild(getgenv().pla).Character.HumanoidRootPart.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).magnitude >= 300 then
 					KillTween = chichdiem(game.Players:FindFirstChild(getgenv().pla).Character.HumanoidRootPart.Position,game.Players:FindFirstChild(getgenv().pla).Character.HumanoidRootPart.CFrame)
 				elseif game.Players:FindFirstChild(getgenv().pla) and (game.Players:FindFirstChild(getgenv().pla).Character.HumanoidRootPart.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).magnitude >= 300 then
+              
 					game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(getgenv().pla).Character.HumanoidRootPart.CFrame * CFrame.new(0,25,0)
 					game.Players:FindFirstChild(getgenv().pla).Character.HumanoidRootPart.CanCollide = false
 					game.Players:FindFirstChild(getgenv().pla).Character.HumanoidRootPart.Size = Vector3.new(50,50,50)
@@ -8774,7 +9581,75 @@ end
 end)
 end)
 
+Pvp:Toggle("Aimbot",false,function(aim)
+getgenv().Aimbot = aim
+end)
+	spawn(function()
+	while wait() do
+if getgenv().Aimbot then
+	local Cam = workspace.CurrentCamera
+	
+	local hotkey = true
+	function lookAt(target, eye)
+		Cam.CFrame = CFrame.new(target, eye)
+	end
+	
+	function getClosestPlayerToCursor(trg_part)
+		local nearest = nil
+		local last = math.huge
+		for i,v in pairs(game.Players:GetPlayers()) do
+			if v ~= game.Players.LocalPlayer and game.Players.LocalPlayer.Character and v.Character and v.Character:FindFirstChild(trg_part) then
+				if game.Players.LocalPlayer.Character:FindFirstChild(trg_part) then
+					local ePos, vissss = workspace.CurrentCamera:WorldToViewportPoint(v.Character[trg_part].Position)
+					local AccPos = Vector2.new(ePos.x, ePos.y)
+					local mousePos = Vector2.new(workspace.CurrentCamera.ViewportSize.x / 2, workspace.CurrentCamera.ViewportSize.y / 2)
+					local distance = (AccPos - mousePos).magnitude
+					if distance < last and vissss and hotkey and distance < 400 then
+						last = distance
+						nearest = v
+					end
+				end
+			end
+		end
+		return nearest
+	end
+	game:GetService("RunService").RenderStepped:Connect(function()
+		local closest = getClosestPlayerToCursor("Head")
+		if getgenv().Aimbot  and closest and closest.Character:FindFirstChild("Head") then
+			lookAt(Cam.CFrame.p, closest.Character:FindFirstChild("Head").Position)
+		end
+	end)
+end
+end
+end)
+spawn(function()
+   pcall(function()
+   while wait() do
+if getgenv().killplr then
+getgenv().HeadSize = 60
 
+game:GetService('RunService').RenderStepped:connect(function()
+if getgenv().Aimbot then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(getgenv().HeadSize,getgenv().HeadSize,getgenv().HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+v.Character.HumanoidRootPart.Material = "Neon"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end)
+
+
+
+end
+end
+end)
+end)
 Pvp:Toggle("Spectate Player", false, function(se)
     getgenv().Sp = se
     local plr1 = game.Players.LocalPlayer.Character.Humanoid
@@ -8784,7 +9659,285 @@ Pvp:Toggle("Spectate Player", false, function(se)
     until getgenv().Sp == false 
     game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
 end)
+Pvp:Toggle("Auto Bounty Hop",false,function(autobt)
+getgenv().Auto_Bounty = autobt
+end)
 
+	spawn(function()
+		while wait() do
+			for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do  
+				if v:IsA("Tool") then
+					if v:FindFirstChild("RemoteFunctionShoot") then 
+						getgenv().WeaponUseKillGun = v.Name
+					end
+				end
+			end
+		end
+	end)
+	
+	spawn(function()
+		game:GetService("RunService").Heartbeat:connect(function()
+			pcall(function()
+				if getgenv().Auto_Bounty == true or getgenv().HopServerOn == true then
+					if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid") then
+						if syn then
+							game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(11)
+						else
+							for _, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+								if v:IsA("BasePart") then
+									v.CanCollide = false    
+								end
+							end
+						end
+					end
+				end
+			end)
+		end)
+	end)
+	
+	spawn(function()
+		while wait() do
+			pcall(function()
+				if getgenv().Auto_Bounty then
+					wait(120)
+					getgenv().HopServerOn = true
+				end
+			end)
+		end
+	end)
+	
+	spawn(function()
+		while wait(1) do
+			pcall(function()
+				if getgenv().Auto_Bounty then
+					if game:GetService("Players")["LocalPlayer"].PlayerGui.Main.PvpDisabled.Visible == true then
+						local args = {
+							[1] = "EnablePvp"
+						}
+	
+						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+					end
+				end
+			end)
+		end
+	end)
+	spawn(function()
+		if getgenv().Auto_Bounty then
+			if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
+				game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
+			end
+		end
+	end)
+	
+	spawn(function()
+		while wait(1) do
+			pcall(function()
+				if getgenv().Auto_Bounty then
+					if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
+						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
+					end
+				end
+			end)
+		end
+	end)
+	
+	
+	spawn(function()
+		while wait(1) do
+			if getgenv().Auto_Bounty then
+				if OldWorld then
+					game.Players.LocalPlayer:Kick("Not Support First Sea")
+					break
+				end
+			end
+		end
+	end)
+	getgenv().GodModeOn = false
+	
+	spawn(function()
+		while wait() do
+			if getgenv().Auto_Bounty then
+				wait(.1)
+				if OldWorld then
+					game.Players.LocalPlayer:Kick("\n Not Support First Sea ")
+				end
+				if game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("CrewBBG") then
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CrewBBG:Destroy()
+				end
+				wait(.1)
+				getgenv().GodModeOn = true
+				break
+			end
+		end
+	end)
+	
+	if getgenv().DistancePlayers == nil then
+		getgenv().DistancePlayers = 10
+	end
+	
+	killandhopsize = false
+	
+	spawn(function()
+		while wait() do
+			pcall(function()
+				if getgenv().Auto_Bounty and killandhopsize then
+					for i, v in pairs(game:GetService("Workspace").Characters:GetChildren()) do
+						if v.Name == NameKill then
+							v.HumanoidRootPart.CanCollide = false
+							v.HumanoidRootPart.Size = Vector3.new(120,120,120)
+						end
+					end
+				end
+			end)
+		end
+	end)
+	
+	spawn(function()
+		while wait() do
+			if getgenv().SelectWeaponKillHop == nil or getgenv().SelectWeaponKillHop == "" then
+				for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+					if v.ToolTip == "Melee" then
+						getgenv().SelectWeaponKillHop = v.Name
+					end
+				end
+				for i ,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+					if v.ToolTip == "Melee" then
+						getgenv().SelectWeaponKillHop = v.Name
+					end
+				end
+			end
+		end
+	end)
+	
+	spawn(function()
+		while wait() do
+			pcall(function()
+				if getgenv().Auto_Bounty then
+					for i, v in pairs(game:GetService("Workspace").Characters:GetChildren()) do
+						if game:GetService("Players")[v.Name].Data.Level.Value >= 1200 and v.Name ~= game.Players.LocalPlayer.Name and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") then
+							repeat game:GetService('RunService').Stepped:wait()
+								if getgenv().GodModeOn then
+									if game.Players.LocalPlayer.Backpack:FindFirstChild(getgenv().SelectWeaponKillHop) or game.Players.LocalPlayer.Character:FindFirstChild(getgenv().SelectWeaponKillHop) then
+										if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
+											game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
+										end
+										
+										spawn(function()
+											if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 75 then
+												game:service('VirtualInputManager'):SendKeyEvent(true, "Z", false, game)
+												wait()
+												game:service('VirtualInputManager'):SendKeyEvent(false, "X", false, game)
+												wait()
+												game:service('VirtualInputManager'):SendKeyEvent(true, "C", false, game)
+												wait()
+												game:service('VirtualInputManager'):SendKeyEvent(true, "V", false, game)
+											end
+										end)
+										NameKill = v.Name
+										KillHealt = v.Humanoid.Health
+										MaxKillHealt = v.Humanoid.MaxHealth
+										killandhopsize = true
+										chichdiem(v.HumanoidRootPart.CFrame * CFrame.new(0,getgenv().DistancePlayers,-15))
+									end
+								end
+							until not v.Parent or not v or not v:FindFirstChild("Humanoid") or not v:FindFirstChild("HumanoidRootPart") or getgenv().Auto_Bounty == false or v.Humanoid.Health <= 0 or NextPlayer == true or getgenv().HopServerOn == true
+							NextPlayer = false
+							killandhopsize = false
+						end
+					end
+				elseif getgenv().HopServerOn == true then
+					repeat wait()
+						killandhopsize = false
+						chichdiem(CFrame.new(-390.096313, 331.886475, 673.464966))
+					until getgenv().Auto_Bounty == false or getgenv().HopServerOn == false
+				end
+			end)
+		end
+	end)
+	
+	spawn(function()
+		while wait() do
+			if getgenv().HopServerOn == true then
+				pcall(function()
+					getgenv().Auto_Bounty = false
+					killandhopsize = false
+					local PlaceID = game.PlaceId
+					local AllIDs = {}
+					local foundAnything = ""
+					local actualHour = os.date("!*t").hour
+					local Deleted = false
+					--[[
+					local File = pcall(function()
+						AllIDs = game:GetService('HttpService'):JSONDecode(readfile("NotSameServers.json"))
+					end)
+					if not File then
+						table.insert(AllIDs, actualHour)
+						writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+					end
+					]]
+					function TPReturner()
+						local Site;
+						if foundAnything == "" then
+							Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
+						else
+							Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
+						end
+						local ID = ""
+						if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+							foundAnything = Site.nextPageCursor
+						end
+						local num = 0;
+						for i,v in pairs(Site.data) do
+							local Possible = true
+							ID = tostring(v.id)
+							if tonumber(v.maxPlayers) > tonumber(v.playing) then
+								for _,Existing in pairs(AllIDs) do
+									if num ~= 0 then
+										if ID == tostring(Existing) then
+											Possible = false
+										end
+									else
+										if tonumber(actualHour) ~= tonumber(Existing) then
+											local delFile = pcall(function()
+												-- delfile("NotSameServers.json")
+												AllIDs = {}
+												table.insert(AllIDs, actualHour)
+											end)
+										end
+									end
+									num = num + 1
+								end
+								if Possible == true then
+									table.insert(AllIDs, ID)
+									wait()
+									pcall(function()
+										-- writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+										wait()
+										game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+									end)
+									wait(4)
+								end
+							end
+						end
+					end
+	
+					function Teleport()
+						while wait() do
+							pcall(function()
+								TPReturner()
+								if foundAnything ~= "" then
+									TPReturner()
+								end
+							end)
+						end
+					end
+	
+					Teleport()
+				end)
+			end
+		end
+	end)
+	
 Pvp:Button("Teleport", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = chichdiem(game.Players[getgenv().pla].Character.HumanoidRootPart.CFrame)
 end)
@@ -8853,7 +10006,55 @@ end)
 			end
 		end
 	end)
+	ShopTab:Label("Candy",true)
 	
+			if game:GetService("ReplicatedStorage").Remotes["CommF_"]:InvokeServer("Candies","Check") then
+		ShopTab:Label("Candy",true)
+		local string_1 = "Candies";
+		local string_2 = "Check";
+		local Target = game:GetService("ReplicatedStorage").Remotes["CommF_"];
+		BonePoint = ShopTab:Label("You Have ".. Target:InvokeServer(string_1, string_2) .." Candy",true)
+		spawn(function()
+			while wait() do
+				BonePoint:Refresh("You Have ".. Target:InvokeServer(string_1, string_2) .." Candy")
+			end
+		end)
+		local v237, v238 = game.ReplicatedStorage.Remotes.CommF_:InvokeServer("Candies", "Check");
+		for i,v in pairs(v238[1]) do
+			ShopTab:Button(v[1] .. " [ ".. v[2] .. " Candy ]",function()
+				local args = {
+					[1] = "Candies",
+					[2] = "Buy",
+					[3] = 1,
+					[4] = i
+				}
+				game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+			end)
+		end
+		for i,v in pairs(v238[2]) do
+			ShopTab:Button(v[1] .. " [ ".. v[2] .. " Candy ]",function()
+				local args = {
+					[1] = "Candies",
+					[2] = "Buy",
+					[3] = 2,
+					[4] = i
+				}
+				game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+			end)
+		end
+		for i,v in pairs(v238[3]) do
+			ShopTab:Button(v[1] .. " [ ".. v[2] .. " Candy ]",function()
+				local args = {
+					[1] = "Candies",
+					[2] = "Buy",
+					[3] = 3,
+					[4] = i
+				}
+				game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+			end)
+		end
+		ShopTab:Line()
+	end
 	ShopTab:Label("Fighting Style",true)
 	ShopTab:Button("Black Leg",function()
 		local args = {
@@ -9542,16 +10743,37 @@ spawn(function()
         end
     end)
     
-Misc:Toggle("Race v4",false,function(v)
-getgenv().racev4 = v
+Misc:Button("Mink v4",function(v)
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local Player = game:GetService("Players").LocalPlayer
+
+local ArgsDash = {
+	Character = game.Players.LocalPlayer.Character,
+	CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame,
+	Color1 = Color3.fromRGB(102, 255, 153),
+	Color2 = Color3.fromRGB(102, 255, 153),
+	Color3 = Color3.fromRGB(102, 255, 153),
+
+}
+
+local old; old = hookmetamethod(game, "__namecall", newcclosure(function(self, ...)
+	if self.Name == "CommE" then
+		local args = {...}
+
+		if args[1] == "Dodge" then
+Player.Character.Humanoid:LoadAnimation(ReplicatedStorage.Util.Anims.Storage["2"].RaceTransform):Play()
+         
+          
+			coroutine.wrap (function() wait(1) require(ReplicatedStorage.Effect.Container.RaceTransformation.Main)(ArgsDash) end)()
+            
+				end
+	end
+	
+	return old(self, ...)
+end))
 end)
-spawn(function()
-while wait() do
-if getgenv().racev4 then
-racev4()
-end
-end
-end)
+
 Misc:Toggle("Infinite Ability",true,function(value)
         getgenv().InfAbility = value
         if value == false then
@@ -9586,7 +10808,7 @@ Misc:Toggle("Infinite Ability",true,function(value)
         end
     end)
     
-    Misc:Toggle("Infinite Geppo",getgenv().InfGeppo,function(value)
+    Misc:Toggle("Infinite Geppo",false,function(value)
         getgenv().InfGeppo = value
     end)
     
@@ -10207,7 +11429,7 @@ if getgenv().WalkWater then
 	end
 end
 end)
-Misc2:Toggle("White Screen",false,function(kop)
+Misc2:Toggle("White Screen",getgenv().config["getgenv().WhiteScreen"],function(kop)
 getgenv().WhiteScreen= kop
 end)
 spawn(function()
@@ -10229,6 +11451,8 @@ spawn(function()
         end
     end
     end
-end) 
-    
+end)
+   
+    end
+    -- Bf
     
