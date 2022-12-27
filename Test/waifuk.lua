@@ -7528,9 +7528,9 @@ AutoFarm:Button("Refresh Weapon", function()
 end)
 AutoFarm:Line()
 Mode = {
-	Above = CFrame.new(0,30,0),
- Between = CFrame.new(0,0,20),
- Under = CFrame.new(0,-10,0)
+	"Above"= CFrame.new(0,30,0),
+ "Between" = CFrame.new(0,0,20),
+ "Under" = CFrame.new(0,-10,0)
 }
 	AutoFarm:Dropdown("Farm Mode",true,Mode,function(Hk)
 	getgenv().Mode = Hk
