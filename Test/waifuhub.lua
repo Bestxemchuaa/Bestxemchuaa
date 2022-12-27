@@ -7493,17 +7493,29 @@ function TP()
 			   v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 			
 			  if getgenv().Teleport then
-EquipWeapon(getgenv().tool)
 
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * getgenv().Mode
+EquipWeapon(getgenv().tool)
 game:GetService'VirtualUser':CaptureController()
 			   game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+if getgenv().Mode == "Above" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,30,0)
+
+			elseif getgenv().Mode == "Between" then
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,0,20)
+  elseif getgenv().Mode == "Under" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,-10,0)
+			end
 elseif getgenv().Tween then
 EquipWeapon(getgenv().tool)
-
-chichdiem(v.HumanoidRootPart.CFrame * getgenv().Mode)
-			   game:GetService'VirtualUser':CaptureController()
+game:GetService'VirtualUser':CaptureController()
 			   game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+			if getgenv().Mode == "Above" then
+chichdiem(v.HumanoidRootPart.CFrame * CFrame.new(0,30,0))
+			   elseif getgenv().Mode == "Between" then
+chichdiem(v.HumanoidRootPart.CFrame * CFrame.new(0,0,20))
+elseif getgenv().Mode == "Under" then
+chichdiem(v.HumanoidRootPart.CFrame * CFrame.new(0,-10,0))
+			end
            end
         end
     end
@@ -7528,9 +7540,9 @@ AutoFarm:Button("Refresh Weapon", function()
 end)
 AutoFarm:Line()
 Mode = {
-	"Above"= CFrame.new(0,30,0),
- "Between" = CFrame.new(0,0,20),
- "Under" = CFrame.new(0,-10,0)
+	"Above",
+ "Between",
+ "Under" 
 }
 	AutoFarm:Dropdown("Farm Mode",true,Mode,function(Hk)
 	getgenv().Mode = Hk
