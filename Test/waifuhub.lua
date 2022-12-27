@@ -7,12 +7,6 @@ repeat wait() until game.Players.LocalPlayer
 repeat wait() until game.Players.LocalPlayer.Character
 repeat wait() until game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen") == false
 end
-local placeIdd = game.PlaceId
-if placeIdd == 2753915549 or placeIdd == 4442272183 or placeIdd == 7449423635 then
-    BF= true
-end
-if BF then
-
 
 
 if not game:IsLoaded() then 
@@ -11478,6 +11472,6 @@ spawn(function()
     end
 end)
    
-    end
+  
     -- Bf
     
