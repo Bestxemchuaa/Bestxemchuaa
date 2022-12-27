@@ -14,9 +14,7 @@ end
 if BF then
 
 
-local Above = CFrame.new(0,30,0)
-local Between = CFrame.new(0,0,20)
-local Under = CFrame.new(0,-10,0)
+
 if not game:IsLoaded() then 
 
     repeat game.Loaded:wait(0.2) 
@@ -7418,7 +7416,7 @@ function AutoQuest()     if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visibl
         CheckQuest()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetHomePoint")
 wait(1)
-if getgenv().config["getgenv().FarmMode"] == "Teleport" then
+if getgenv().Teleport then
 if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQuest.Position).Magnitude <= 1500 then
                                   chichdiem(CFrameQuest)
                                   wait(0.4)
@@ -7446,7 +7444,7 @@ if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQuest.P
                 wait(0.4)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrameMon
 end
-elseif getgenv().config["getgenv().FarmMode"] == "Tween" then
+elseif getgenv().Tween then
 chichdiem(CFrameQuest)
 wait(0.4)
 local args = {
@@ -7494,16 +7492,16 @@ function TP()
                game.Players.LocalPlayer.Character.HumanoidRootPart.Size = Vector3.new(2, 2.02, 1)
 			   v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 			
-			  if getgenv().config["getgenv().FarmMode"] == "Teleport" then
+			  if getgenv().Teleport then
 EquipWeapon(getgenv().tool)
 
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * getgenv().config["getgenv().FarmTween"]
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * getgenv().Mode
 game:GetService'VirtualUser':CaptureController()
 			   game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-elseif getgenv().config["getgenv().FarmMode"] == "Tween" then
+elseif getgenv().Tween then
 EquipWeapon(getgenv().tool)
 
-chichdiem(v.HumanoidRootPart.CFrame * getgenv().config["getgenv().FarmTween"])
+chichdiem(v.HumanoidRootPart.CFrame * getgenv().Mode)
 			   game:GetService'VirtualUser':CaptureController()
 			   game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
            end
@@ -7529,6 +7527,20 @@ AutoFarm:Button("Refresh Weapon", function()
 	end
 end)
 AutoFarm:Line()
+Mode = {
+	Above = CFrame.new(0,30,0),
+ Between = CFrame.new(0,0,20),
+ Under = CFrame.new(0,-10,0)
+}
+	AutoFarm:Dropdown("Farm Mode",true,Mode,function(Hk)
+	getgenv().Mode = Hk
+end)
+AutoFarm:Toggle("Farm TP",true,function(tru)
+getgenv().Teleport = tru
+end)
+AutoFarm:Toggle("Farm Tween",false,function(fal)
+getgenv().Tween = fal
+end)
     AutoFarm:Toggle("Lock Mob",false,function(lm)
   getgenv().lockmob=lm 
 end)
@@ -8318,8 +8330,11 @@ local PlaceID = game.PlaceId
       end
   end
 end)
-local text = Main:Toggle("Webhook",false,function(jie)
-	x = getgenv().config["getgenv().Webhook"]
+Main:TextBox("Webhook","Write Here",function(lom)
+getgenv().Wb = lom
+end)
+local text = Main:Button("Webhook",false,function(jie)
+	x = getgenv().Wb
 local HttpService = game:GetService("HttpService");
 game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.Visible = true
 local function Fornum(number)
