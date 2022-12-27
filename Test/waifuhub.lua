@@ -7354,6 +7354,7 @@ spawn(function()  game:GetService("RunService").Stepped:Connect(function()  if g
  setclipboard("https://discord.gg/9x2qqbHwjv")
  end)
  Up2:Label("Super Fast Attack")
+ Up2:Label("Fix Bug")
 AutoFarm:Toggle("Auto Farm",false,function(vu)
     getgenv().AutoFarm= vu
 end)
@@ -7533,12 +7534,7 @@ AutoFarm:Button("Refresh Weapon", function()
 	end
 end)
 AutoFarm:Line()
-Mode = {
-	"Above",
- "Between",
- "Under" 
-}
-	AutoFarm:Dropdown("Farm Mode",true,Mode,function(Hk)
+	AutoFarm:Dropdown("Farm Mode",false,{"Above","Between","Under"},function(Hk)
 	getgenv().Mode = Hk
 end)
 AutoFarm:Toggle("Farm TP",true,function(tru)
@@ -8336,11 +8332,9 @@ local PlaceID = game.PlaceId
       end
   end
 end)
-Main:TextBox("Webhook","Write Here",function(lom)
-getgenv().Wb = lom
-end)
+
 local text = Main:Button("Webhook",false,function(jie)
-	x = getgenv().Wb
+	x = getgenv().Webhook 
 local HttpService = game:GetService("HttpService");
 game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.Visible = true
 local function Fornum(number)
@@ -11448,7 +11442,7 @@ if getgenv().WalkWater then
 	end
 end
 end)
-Misc2:Toggle("White Screen",getgenv().config["getgenv().WhiteScreen"],function(kop)
+Misc2:Toggle("White Screen",false,function(kop)
 getgenv().WhiteScreen= kop
 end)
 spawn(function()
