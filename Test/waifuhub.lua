@@ -7319,6 +7319,7 @@ local RaidsTabs =  Window:Taps("Raid/Teleport")
 local Miscs = Window:Taps("Misc")
 -------------
 local Up = Usp:newpage()
+local Up2 = Usp:newpage()
 local AutoFarm = At:newpage()
 local Main = At:newpage()
 local Stat = Statss:newpage()
@@ -7357,7 +7358,10 @@ spawn(function()  game:GetService("RunService").Stepped:Connect(function()  if g
    Up:Label("Use lockmob, don't use bringmob")
    Up:Label("Update Auto Farm")
    Up:Label("Noel Update")
- 
+ Up2:Button("Discord Waifu HUB",function()
+ setclipboard("https://discord.gg/9x2qqbHwjv")
+ end)
+ Up2:Label("Super Fast Attack")
 AutoFarm:Toggle("Auto Farm",false,function(vu)
     getgenv().AutoFarm= vu
 end)
